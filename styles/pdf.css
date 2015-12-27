@@ -1,0 +1,10 @@
+/* CSS for pdf */
+code {
+    padding: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 70%;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}

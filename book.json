@@ -1,0 +1,5 @@
+{   "plugins": ["mathjax"],
+    "pdf": {"fontSize": 9},
+    "styles": {
+        "pdf": "styles/pdf.css"}
+     }
