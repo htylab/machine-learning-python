@@ -1,16 +1,17 @@
 # 特徵選擇 Feature Selection 
 ##範例四: [Feature selection using SelectFromModel and LassoCV](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_select_from_model_boston.html#example-feature-selection-plot-select-from-model-boston-py)
 
-此範例是示範以LassoCV來挑選特徵，Lasso是用來計算稀疏矩陣的線性模形。在某些情況下是非常有用的，因為在此演算過程中會逐漸減少變數值，有效的減少參數的數目，直到剩下的參數據有相依性。因此，Lasso法以及它的變形式都可算是在壓縮參數關係。
-在某些情況下，他可以準確的恢復非零權重的值。([請參考此範例](http://scikit-learn.org/stable/auto_examples/applications/plot_tomography_l1_reconstruction.html#example-applications-plot-tomography-l1-reconstruction-py))
+此範例是示範以`LassoCV`來挑選特徵，Lasso是一種用來計算稀疏矩陣的線性模形。在某些情況下是非常有用的，因為在此演算過程中會以較少數的特徵來找最佳解，基於參數有相依性的情況下，使變數的數目有效的縮減。因此，Lasso法以及它的變形式可算是壓縮參數關係基本方法。
+在某些情況下，此方法可以準確的偵測非零權重的值。([請參考此說明範例](http://scikit-learn.org/stable/auto_examples/applications/plot_tomography_l1_reconstruction.html#example-applications-plot-tomography-l1-reconstruction-py))
 
 
-Lasso的目標函數:
+Lasso最佳化的目標函數:
 
 ![](http://scikit-learn.org/stable/_images/math/5ff15825a85204658e3e5aa6e3b5952b8f709c27.png)
 
-1. 以疊代方式計算模型
-2. 以交叉驗證來取得影響力特徵
+1. 以`LassoCV`法來計算目標資訊性特徵數目較少的資料
+2. 用`SelectFromModel`以百分比方式來選擇特徵
+3. 提高`SelectFromModel`的`.threshold`使目標資訊性特徵數逼近預期的數目
 
 
 Python source code: [plot_select_from_model_boston.py](http://scikit-learn.org/stable/_downloads/plot_select_from_model_boston.py)
@@ -67,6 +68,7 @@ plt.show()
 當設定好門檻值，並做訓練後，可以用transform(X)取得計算過後，被認為是具有影響力的特徵以及對應的樣本，可以由其列的數目知道總影響力特徵有幾個。
 後面使用了增加門檻值來達到限制最後特徵數目的
 使用門檻值來決定後來選取的參數，其說明在下一個標題。
+需要用後設轉換
 ### (三)設定選取參數的門檻值
 
 
