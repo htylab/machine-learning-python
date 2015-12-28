@@ -4,7 +4,7 @@
 * [分類法 Classification](Classification/Classification.md)
    * [Ex 1: Recognizing hand-written digits](Classification/ex1_Recognizing_hand-written_digits.md)
    * [EX 2: Normal and Shrinkage Linear Discriminant Analysis for classification](Classification/ex2_normal_and_shrinkage_linear_discriminant_anal_.md)
-* [特徵選擇 Feature Selection](Feature_Selection/ex1pipeline_svm_md.md)
+* [特徵選擇 Feature Selection](intro.md/ex1pipelinesvm_md_md.md)
    * [Ex 1: Pipeline Anova SVM](Feature_Selection/ex1_pipeline_anova_svm.md)
    * [Ex 2: Recursive Feature Elimination](Feature_Selection/ex2_Recursive_feature_elimination.md)
    * [Ex 3: Recursive Feature Elimination with Cross-Validation](Feature_Selection/ex3_rfe_crossvalidation__md.md)
