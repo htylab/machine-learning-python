@@ -4,7 +4,7 @@
 
 
 範例一
-![](EX1.png)
+[![](EX1.png)](Feature_Selection/ex1_pipeline_anova_svm.md)
 
 範例二
 ![](EX2.png)
