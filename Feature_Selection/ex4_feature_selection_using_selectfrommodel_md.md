@@ -10,7 +10,7 @@ Lasso最佳化的目標函數:
 ![](http://scikit-learn.org/stable/_images/math/5ff15825a85204658e3e5aa6e3b5952b8f709c27.png)
 
 1. 以`LassoCV`法來計算目標資訊性特徵數目較少的資料
-2. 用`SelectFromModel`以百分比方式來選擇特徵
+2. 用`SelectFromModel`設定特徵重要性的門檻值來選擇特徵
 3. 提高`SelectFromModel`的`.threshold`使目標資訊性特徵數逼近預期的數目
 
 
