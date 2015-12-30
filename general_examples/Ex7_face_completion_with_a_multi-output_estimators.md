@@ -44,17 +44,22 @@ data = data.images.reshape((len(data.images), -1))
 train = data[targets < 30]
 test = data[targets >= 30]
 ```
-test從100張亂數選5張出來變成(5,4096)
+測試影像從100張亂數選5張出來變成(5,4096)
 ```python
 # Test on a subset of people
 n_faces = 5
 rng = check_random_state(4)
 face_ids = rng.randint(test.shape[0], size=(n_faces, ))
 test = test[face_ids, :]
+```
 
+把每張訓練影像和測試影像都切割成上下兩部分，
+X_人臉上半部分
+Y_人臉下半部分
+```python
 n_pixels = data.shape[1]
-X_train = train[:, :np.ceil(0.5 * n_pixels)]  # Upper half of the faces
-y_train = train[:, np.floor(0.5 * n_pixels):]  # Lower half of the faces
+X_train = train[:, :np.ceil(0.5 * n_pixels)]  
+y_train = train[:, np.floor(0.5 * n_pixels):]  
 X_test = test[:, :np.ceil(0.5 * n_pixels)]
 y_test = test[:, np.floor(0.5 * n_pixels):]
 ```
