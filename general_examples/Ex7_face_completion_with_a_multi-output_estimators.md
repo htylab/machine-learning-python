@@ -1,7 +1,7 @@
 ##範例七: Face completion with a multi-output estimators
 http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.html
 
-這個範例用來展示scikit-learn 如何用 extremely randomized trees, k nearest neighbors, linear regression and ridge regression 演算法來完成人臉估測。
+這個範例用來展示scikit-learn 如何用 extremely randomized trees, k nearest neighbors, linear regression 和 ridge regression 演算法來完成人臉估測。
 
 
 
@@ -65,3 +65,26 @@ X_test = test[:, :np.ceil(0.5 * n_pixels)]
 y_test = test[:, np.floor(0.5 * n_pixels):]
 ```
 
+
+分別用extremely randomized trees, k nearest neighbors, linear regression 和 ridge regression 演算法來完成人臉估測
+
+```python
+ESTIMATORS = {
+    "Extra trees": ExtraTreesRegressor(n_estimators=10, max_features=32,random_state=0),
+    "K-nn": KNeighborsRegressor(),
+    "Linear regression": LinearRegression(),
+    "Ridge": RidgeCV(),
+}
+```
+
+分別把訓練資料人臉上、下部分放入`estimator.fit()`中進行訓練。
+
+`y_test_predict`為一個dict型別資料，存放5位測試者分別用四種演算法得到的人臉下半部估計結果。
+
+```python
+y_test_predict = dict()
+for name, estimator in ESTIMATORS.items():
+    estimator.fit(X_train, y_train)
+    y_test_predict[name] = estimator.predict(X_test)
+
+```
