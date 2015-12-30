@@ -22,7 +22,7 @@ http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.ht
 
 
 
-使用 datasets.load_digits() 將資料存入， data 為一個dict型別資料，我們看一下資料的內容。
+使用 `datasets.load_digits()` 將資料存入， `data` 為一個dict型別資料，我們看一下資料的內容。
 
 ```python
 from sklearn.datasets import fetch_olivetti_faces
@@ -44,7 +44,7 @@ data = data.images.reshape((len(data.images), -1))
 train = data[targets < 30]
 test = data[targets >= 30]
 ```
-測試影像從100張亂數選5張出來，變數test的大小變成(5,4096)
+測試影像從100張亂數選5張出來，變數`test`的大小變成(5,4096)
 ```python
 # Test on a subset of people
 n_faces = 5
@@ -54,8 +54,8 @@ test = test[face_ids, :]
 ```
 
 把每張訓練影像和測試影像都切割成上下兩部分，
-X_人臉上半部分
-Y_人臉下半部分
+X_人臉上半部分，
+Y_人臉下半部分。
 ```python
 n_pixels = data.shape[1]
 X_train = train[:, :np.ceil(0.5 * n_pixels)]  
