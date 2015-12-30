@@ -21,24 +21,11 @@ http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.ht
 7. from sklearn.linear_model import RidgeCV
 
 
-```python
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-from sklearn.datasets import fetch_olivetti_faces
-from sklearn.utils.validation import check_random_state
-
-from sklearn.ensemble import ExtraTreesRegressor
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import RidgeCV
-
-```
 使用 datasets.load_digits() 將資料存入， data 為一個dict型別資料，我們看一下資料的內容。
 
 ```python
-
+from sklearn.datasets import fetch_olivetti_faces
 data = fetch_olivetti_faces()
 targets = data.target
 
