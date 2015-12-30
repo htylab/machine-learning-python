@@ -65,7 +65,7 @@ X_test = test[:, :np.ceil(0.5 * n_pixels)]
 y_test = test[:, np.floor(0.5 * n_pixels):]
 ```
 
-
+## (二)資料訓練
 分別用extremely randomized trees, k nearest neighbors, linear regression 和 ridge regression 演算法來完成人臉估測
 
 ```python
@@ -77,7 +77,7 @@ ESTIMATORS = {
 }
 ```
 
-分別把訓練資料人臉上、下部分放入`estimator.fit()`中進行訓練。
+分別把訓練資料人臉上、下部分放入`estimator.fit()`中進行訓練。上半部分人臉為條件影像，下半部人臉為目標影像。
 
 `y_test_predict`為一個dict型別資料，存放5位測試者分別用四種演算法得到的人臉下半部估計結果。
 
@@ -88,7 +88,7 @@ for name, estimator in ESTIMATORS.items():
     y_test_predict[name] = estimator.predict(X_test)
 ```
 
-用`matplotlib.pyplot`畫出結果
+## (三)`matplotlib.pyplot`畫出結果
 
 每張影像都是64*64，總共有5位測試者，每位測試者分別有1張原圖，加上使用4種演算法得到的估測結果。
 
