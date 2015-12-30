@@ -71,7 +71,7 @@ y_test = test[:, np.floor(0.5 * n_pixels):]
 1. extremely randomized trees (絕對隨機森林演算法)
 2. k nearest neighbors (K-鄰近演算法)
 3. linear regression (線性回歸演算法)
-4. ridge regression (嶺回歸演算法)
+4. ridge regression (脊回歸演算法)
 
 
 ```python
