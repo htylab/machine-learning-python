@@ -34,7 +34,7 @@ data = data.images.reshape((len(data.images), -1))
 | 顯示 | 說明 |
 | -- | -- |
 | ('images', (400, 64, 64))| 共有40個人，每個人各有10張影像，共有 400 張影像，影像大小為 64x64 |
-| ('data', ((400, 4096))) | data 則是將64x64的矩陣攤平成4096個元素之一維向量 |
+| ('data', (400, 4096)) | data 則是將64x64的矩陣攤平成4096個元素之一維向量 |
 | ('targets', (400,)) | 說明400張圖與40個人之分類對應 0-39，記錄每張影像是哪一個人 |
 | DESCR | 資料之描述 |
 
@@ -44,7 +44,7 @@ data = data.images.reshape((len(data.images), -1))
 train = data[targets < 30]
 test = data[targets >= 30]
 ```
-
+test從100張亂數選5張出來變成(5,4096)
 ```python
 # Test on a subset of people
 n_faces = 5
