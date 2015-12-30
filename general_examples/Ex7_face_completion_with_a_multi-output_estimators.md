@@ -44,7 +44,7 @@ data = data.images.reshape((len(data.images), -1))
 train = data[targets < 30]
 test = data[targets >= 30]
 ```
-測試影像從100張亂數選5張出來，變數**test**的大小變成(5,4096)
+測試影像從100張亂數選5張出來，變數test的大小變成(5,4096)
 ```python
 # Test on a subset of people
 n_faces = 5
