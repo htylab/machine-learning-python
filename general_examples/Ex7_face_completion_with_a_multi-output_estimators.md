@@ -53,7 +53,8 @@ face_ids = rng.randint(test.shape[0], size=(n_faces, ))
 test = test[face_ids, :]
 ```
 
-把每張訓練影像和測試影像都切割成上下兩部分，
+把每張訓練影像和測試影像都切割成上下兩部分:
+
 X_人臉上半部分，
 Y_人臉下半部分。
 ```python
@@ -63,3 +64,4 @@ y_train = train[:, np.floor(0.5 * n_pixels):]
 X_test = test[:, :np.ceil(0.5 * n_pixels)]
 y_test = test[:, np.floor(0.5 * n_pixels):]
 ```
+
