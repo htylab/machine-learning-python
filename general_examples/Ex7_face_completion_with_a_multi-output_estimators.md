@@ -11,13 +11,13 @@ http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.ht
 
 引入之函式庫如下
 
-1. numpy
-2. matplotlib.pyplot: 用來繪製影像
-2. sklearn.datasets: 用來繪入內建之影像資料庫
-3. sklearn.utils.validation: 用來取亂數
-4. sklearn.ensemble 
-5. sklearn.neighbors 
-6. sklearn.linear_model 
+1. `numpy`
+2. `matplotlib.pyplot`: 用來繪製影像
+2. `sklearn.datasets`: 用來繪入內建之影像資料庫
+3. `sklearn.utils.validation`: 用來取亂數
+4. `sklearn.ensemble` 
+5. `sklearn.neighbors` 
+6. `sklearn.linear_model` 
 
 
 
