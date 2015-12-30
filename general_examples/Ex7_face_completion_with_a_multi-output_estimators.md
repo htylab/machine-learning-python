@@ -1,7 +1,7 @@
 ##範例七: Face completion with a multi-output estimators
 http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.html
 
-這個範例用來展示scikit-learn 如何用 extremely randomized trees, k nearest neighbors, linear regression 和 ridge regression 演算法來完成人臉估測。
+這個範例用來展示scikit-learn如何用 `extremely randomized trees`, `k nearest neighbors`, `linear regression` 和 `ridge regression` 演算法來完成人臉估測。
 
 
 
