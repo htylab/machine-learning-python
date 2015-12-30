@@ -28,7 +28,7 @@ http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.ht
 from sklearn.datasets import fetch_olivetti_faces
 data = fetch_olivetti_faces()
 targets = data.target
-
+data = data.images.reshape((len(data.images), -1))
 ```
 
 | 顯示 | 說明 |
@@ -43,4 +43,18 @@ targets = data.target
 ```python
 train = data[targets < 30]
 test = data[targets >= 30]
+```
+
+```python
+# Test on a subset of people
+n_faces = 5
+rng = check_random_state(4)
+face_ids = rng.randint(test.shape[0], size=(n_faces, ))
+test = test[face_ids, :]
+
+n_pixels = data.shape[1]
+X_train = train[:, :np.ceil(0.5 * n_pixels)]  # Upper half of the faces
+y_train = train[:, np.floor(0.5 * n_pixels):]  # Lower half of the faces
+X_test = test[:, :np.ceil(0.5 * n_pixels)]
+y_test = test[:, np.floor(0.5 * n_pixels):]
 ```
