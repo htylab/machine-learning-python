@@ -13,4 +13,5 @@
    * [Ex 5: Test with permutations the significance of a classification score](Feature_Selection/ex5_test_with_permutations_the_significance_of_a__.md)
    * [Ex 6: Univariate Feature Selection](Feature_Selection/ex6_univariate_feature_selection.md)
 * [General examples](Face completion with a multi-output estimators.md)
+   * Face completion with a multi-output estimators
 
