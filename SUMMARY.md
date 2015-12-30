@@ -12,6 +12,6 @@
    * [Ex 4: Feature Selection using SelectFromModel](Feature_Selection/ex4_feature_selection_using_selectfrommodel_md.md)
    * [Ex 5: Test with permutations the significance of a classification score](Feature_Selection/ex5_test_with_permutations_the_significance_of_a__.md)
    * [Ex 6: Univariate Feature Selection](Feature_Selection/ex6_univariate_feature_selection.md)
-* [通用範例 General examples](General examples.md)
+* [通用範例 General examples](general_examplesmd.md)
    * [Ex 7: Face completion with a multi-output estimators](Ex 7: face_completion_with_a_multi-output_estimators.md)
 
