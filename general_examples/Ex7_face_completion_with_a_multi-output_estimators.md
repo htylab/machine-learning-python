@@ -35,11 +35,18 @@ from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import RidgeCV
 
 ```
+使用 datasets.load_digits() 將資料存入， data 為一個dict型別資料，我們看一下資料的內容。
 
+```python
+
+data = fetch_olivetti_faces()
+targets = data.target
+
+```
 
 | 顯示 | 說明 |
 | -- | -- |
-| ('images', (400, 64, 64))| 共有40個人，每個人在不同的十個角度各有一張影像，共有 400 張影像，影像大小為 64x64 |
+| ('images', (400, 64, 64))| 共有40個人，每個人各有10張影像，共有 400 張影像，影像大小為 64x64 |
 | ('data', ((400, 4096))) | data 則是將64x64的矩陣攤平成4096個元素之一維向量 |
 | ('targets', (400,)) | 說明400張圖與40個人之分類對應 0-39，記錄每張影像是哪一個人 |
 | DESCR | 資料之描述 |
