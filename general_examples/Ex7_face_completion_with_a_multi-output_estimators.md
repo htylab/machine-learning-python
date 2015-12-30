@@ -66,7 +66,13 @@ y_test = test[:, np.floor(0.5 * n_pixels):]
 ```
 
 ## (二)資料訓練
-分別用extremely randomized trees, k nearest neighbors, linear regression 和 ridge regression 演算法來完成人臉估測
+分別用以下四種演算法來完成人臉下半部估測
+
+1. extremely randomized trees (絕對隨機森林算法)
+2. k nearest neighbors
+3. linear regression
+4. ridge regression
+
 
 ```python
 ESTIMATORS = {
