@@ -45,5 +45,8 @@ from sklearn.linear_model import RidgeCV
 | DESCR | 資料之描述 |
 
 
-
-
+前面30個人當訓練資料，之後當測試資料
+```python
+train = data[targets < 30]
+test = data[targets >= 30]
+```
