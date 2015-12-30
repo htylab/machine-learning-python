@@ -7,7 +7,7 @@ http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.ht
 
 
 
-## (一)引入函式庫及內建手寫數字資料庫
+## (一)引入函式庫及內建影像資料庫
 
 引入之函式庫如下
 
