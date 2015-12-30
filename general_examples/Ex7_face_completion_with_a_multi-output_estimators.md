@@ -14,11 +14,11 @@ http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.ht
 1. numpy
 2. matplotlib.pyplot: 用來繪製影像
 2. sklearn.datasets: 用來繪入內建之影像資料庫
-3. sklearn.utils.validation import check_random_state
-4. from sklearn.ensemble import ExtraTreesRegresso
-5. from sklearn.neighbors import KNeighborsRegressor
-6. from sklearn.linear_model import LinearRegression
-7. from sklearn.linear_model import RidgeCV
+3. sklearn.utils.validation: 用來取亂數
+4. sklearn.ensemble 
+5. sklearn.neighbors 
+6. sklearn.linear_model 
+
 
 
 
