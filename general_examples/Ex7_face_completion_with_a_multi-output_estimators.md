@@ -86,5 +86,47 @@ y_test_predict = dict()
 for name, estimator in ESTIMATORS.items():
     estimator.fit(X_train, y_train)
     y_test_predict[name] = estimator.predict(X_test)
+```
 
+用`matplotlib.pyplot`畫出結果
+
+每張影像都是64*64，總共有5位測試者，每位測試者分別有1張原圖，加上使用4種演算法得到的估測結果。
+
+```python
+image_shape = (64, 64)
+n_cols = 1 + len(ESTIMATORS)
+plt.figure(figsize=(2. * n_cols, 2.26 * n_faces))
+plt.suptitle("Face completion with multi-output estimators", size=16)
+
+for i in range(n_faces):
+    true_face = np.hstack((X_test[i], y_test[i]))
+
+    if i:
+        sub = plt.subplot(n_faces, n_cols, i * n_cols + 1)
+    else:
+        sub = plt.subplot(n_faces, n_cols, i * n_cols + 1,
+                          title="true faces")
+
+
+    sub.axis("off")
+    sub.imshow(true_face.reshape(image_shape),
+               cmap=plt.cm.gray,
+               interpolation="nearest")
+
+    for j, est in enumerate(sorted(ESTIMATORS)):
+        completed_face = np.hstack((X_test[i], y_test_predict[est][i]))
+
+        if i:
+            sub = plt.subplot(n_faces, n_cols, i * n_cols + 2 + j)
+
+        else:
+            sub = plt.subplot(n_faces, n_cols, i * n_cols + 2 + j,
+                              title=est)
+
+        sub.axis("off")
+        sub.imshow(completed_face.reshape(image_shape),
+                   cmap=plt.cm.gray,
+                   interpolation="nearest")
+
+plt.show()
 ```
