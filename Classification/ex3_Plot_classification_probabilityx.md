@@ -1,11 +1,6 @@
 
 ## EX 3: Plot classification probability
 
-這個範例的主要目的
-* 使用iris 鳶尾花資料集
-* 測試不同分類器對於涵蓋特定範圍之資料集，分類為那一種鳶尾花的機率
-* 例如：sepal length 為 4cm 而 sepal width 為 3cm時被分類為 versicolor的機率
-
 ## (一)資料匯入及描述
 * 首先先匯入iris 鳶尾花資料集，使用`iris = datasets.load_iris()`將資料存入
 * 準備X (特徵資料) 以及 y (目標資料)，僅使用兩個特徵方便視覺呈現
@@ -71,11 +66,7 @@ classifiers = {'L1 logistic': LogisticRegression(C=C, penalty='l1'),
 n_classifiers = len(classifiers)
 ```
 
-而接下來為了產生一個包含絕大部份可能的測試矩陣，我們會用到以下指令。
-1. `np.linspace(起始, 終止, 數量)` 目的為產生等間隔之數據，例如`print(np.linspace(1,3,3))` 的結果為 `[ 1.  2.  3.]`，而`print(np.linspace(1,3,5))`的結果為 `[ 1.   1.5  2.   2.5  3. ]`
-2. `np.meshgrid(xx,yy)`則用來產生網格狀座標。
-3. `numpy.c_` 為numpy特殊物件，能協助將numpy 陣列連接起來，將程式簡化後，我們用以下範例展示相關函式用法。
-
+`np.linspace(起始, 終止, 數量)` 目的為產生等間隔之數據，例如`print(np.linspace(1,3,3))` 的結果為 `[ 1.  2.  3.]`，而`print(np.linspace(1,3,5))`的結果為 `[ 1.   1.5  2.   2.5  3. ]`，而`np.meshgrid(xx,yy)`則用來產生網格狀座標。而`numpy.c_` 為numpy特殊物件，能協助將numpy 陣列連接起來，將程式簡化後，我們用以下範例展示相關函式用法。
 ```python
 xx, yy = np.meshgrid(np.linspace(1,3,3), np.linspace(4,6,3).T)
 Xfull = np.c_[xx.ravel(), yy.ravel()]
@@ -166,6 +157,7 @@ plt.colorbar(imshow_handle, cax=ax, orientation='horizontal')
 
 plt.show()
 ```
+分類結果顯示如下
 
     classif_rate for L2 logistic (OvR) : 76.666667 
     classif_rate for L1 logistic : 79.333333 
@@ -251,9 +243,4 @@ plt.title("Probability")
 plt.colorbar(imshow_handle, cax=ax, orientation='horizontal')
 
 plt.show()
-```
-
-
-```python
-
 ```
