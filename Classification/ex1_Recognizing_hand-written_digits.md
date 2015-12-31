@@ -57,7 +57,7 @@ for index, (image, label) in enumerate(images_and_labels[:4]):
     plt.title('Training: %i' % label)
 ```
 
-![](output_7_0.png)
+![](images/ex1_output_7_0.png)
 
 ##(二)訓練以及分類
 接下來的步驟則是使用`reshape`指令將8x8的影像資料攤平成64x1的矩陣。
@@ -127,7 +127,7 @@ def plot_confusion_matrix(cm, title='Confusion matrix', cmap=plt.cm.Blues):
 plt.figure()
 plot_confusion_matrix(metrics.confusion_matrix(expected, predicted))
 ```
-![](p_ex1_plot_confusion_matrix.png)
+![](images/ex1_plot_confusion_matrix.png)
 
 以手寫影像3為例，我們可以用四個數字來探討判斷的精準度。
 
@@ -181,7 +181,7 @@ for index, (image, prediction) in enumerate(images_and_predictions[:4]):
 
 plt.show()
 ```
-![](p_ex1_plotpredition.png)
+![](images/ex1_plotpredition.png)
 
 
 ##(四)完整程式碼
