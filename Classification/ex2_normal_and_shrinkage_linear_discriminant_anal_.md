@@ -108,7 +108,7 @@ plt.show()
 ```
 
 
-![png](output_8_0.png)
+![png](images/ex2_output_8_0.png)
 
 
 ## (四)完整程式碼
