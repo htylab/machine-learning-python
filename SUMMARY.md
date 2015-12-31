@@ -15,5 +15,5 @@
    * [Ex 6: Univariate Feature Selection](Feature_Selection/ex6_univariate_feature_selection.md)
 * [通用範例 General examples](general_examples/general_examplesmd.md)
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
-   * [Ex 1: Plotting Cross-Validated Predictions](general_examples/ex_1_plotting_cross-validated_predictions.md)
+   * [Ex 1: Plotting Cross-Validated Predictions](general_examples/Ex1_plotting_cross-validated_predictions.md)
 
