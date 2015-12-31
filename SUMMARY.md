@@ -5,6 +5,7 @@
    * [Ex 1: Recognizing hand-written digits](Classification/ex1_Recognizing_hand-written_digits.md)
    * [EX 2: Normal and Shrinkage Linear Discriminant Analysis for classification](Classification/ex2_normal_and_shrinkage_linear_discriminant_anal_.md)
    * [EX 3: Plot classification probability](Classification/ex3_Plot_classification_probability.md)
+   * [EX 4: Classifier Comparison](Classification/ex4_Classifier_comparison.md)
 * [特徵選擇 Feature Selection](Feature_Selection/intro.md)
    * [Ex 1: Pipeline Anova SVM](Feature_Selection/ex1_pipeline_anova_svm.md)
    * [Ex 2: Recursive Feature Elimination](Feature_Selection/ex2_Recursive_feature_elimination.md)

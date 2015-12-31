@@ -174,7 +174,7 @@ plt.show()
     
 
 
-![png](images/output_9_1.png)
+![png](images/ex3_output_9_1.png)
 
 
 ## (四)完整程式碼
