@@ -2,69 +2,133 @@
 ##範例五: [Test with permutations the significance of a classification score](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_permutation_test_for_classification.html)
 
 
-此範例主要是介紹當我們建立好機器學習模型後，重複隨機替換資料並給予分類機計算，以得出準確度與顯著性。`permutation_test_score`提供一個評分的功能，他會依照給定的次數來置換不同的資料組合，用以計算交叉驗證的顯著性。計算過後可取得該分類機器的真實分數與經過數次組合後取得的分數。
+此範例主要是介紹當我們做機器學習分類機時，分類標籤是否影響分類的計算。因此會重複隨機替換分類標籤並給予建立好的分類機做計算，並以交叉驗證的分數統計出不同訓練資料組合所得到的準確度與標籤的顯著性。
+`permutation_test_score`提供了對分類標籤做隨機置換的功能，並依照給定的置換次數來計算不同的資料組合配上置換過標籤的組合，用交叉驗證來計算準確性分佈，並統計顯著性。計算過後可取得該分類機器的真實分數與經過數次組合後取得的分數。
 
 
-1. 若資料的標籤非常明確，但樣本只是隨機、順序的改變，使得同樣的樣本數目變多。
-2. 因此在本範例中，介紹如何以交叉驗證算出資料的score與p-value
+1. 計算支持向量機的分數
+2. 評估同一組訓練資料在隨機組合中所表現的準確度與分佈情形
 
 
 
-Python source code: [plot_select_from_model_boston.py](http://scikit-learn.org/stable/_downloads/plot_select_from_model_boston.py)
+Python source code: [plot_select_from_model_boston.py](http://scikit-learn.org/stable/_downloads/plot_permutation_test_for_classification.py)
 
 ```Python
-# Author: Manoj Kumar <mks542@nyu.edu>
+# Author:  Alexandre Gramfort <alexandre.gramfort@inria.fr>
 # License: BSD 3 clause
 
 print(__doc__)
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 
-from sklearn.datasets import load_boston
-from sklearn.feature_selection import SelectFromModel
-from sklearn.linear_model import LassoCV
+from sklearn.svm import SVC
+from sklearn.cross_validation import StratifiedKFold, permutation_test_score
+from sklearn import datasets
 
-# Load the boston dataset.
-boston = load_boston()
-X, y = boston['data'], boston['target']
 
-# We use the base estimator LassoCV since the L1 norm promotes sparsity of features.
-clf = LassoCV()
+##############################################################################
+# Loading a dataset
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+n_classes = np.unique(y).size
 
-# Set a minimum threshold of 0.25
-sfm = SelectFromModel(clf, threshold=0.25)
-sfm.fit(X, y)
-n_features = sfm.transform(X).shape[1]
+# Some noisy data not correlated
+random = np.random.RandomState(seed=0)
+E = random.normal(size=(len(X), 2200))
 
-# Reset the threshold till the number of features equals two.
-# Note that the attribute can be set directly instead of repeatedly
-# fitting the metatransformer.
-while n_features > 2:
-    sfm.threshold += 0.1
-    X_transform = sfm.transform(X)
-    n_features = X_transform.shape[1]
+# Add noisy data to the informative features for make the task harder
+X = np.c_[X, E]
 
-# Plot the selected two features from X.
-plt.title(
-    "Features selected from Boston using SelectFromModel with "
-    "threshold %0.3f." % sfm.threshold)
-feature1 = X_transform[:, 0]
-feature2 = X_transform[:, 1] 
-plt.plot(feature1, feature2, 'r.')
-plt.xlabel("Feature number 1")
-plt.ylabel("Feature number 2")
-plt.ylim([np.min(feature2), np.max(feature2)])
+svm = SVC(kernel='linear')
+cv = StratifiedKFold(y, 2)
+
+score, permutation_scores, pvalue = permutation_test_score(
+    svm, X, y, scoring="accuracy", cv=cv, n_permutations=100, n_jobs=1)
+
+print("Classification score %s (pvalue : %s)" % (score, pvalue))
+
+###############################################################################
+# View histogram of permutation scores
+plt.hist(permutation_scores, 20, label='Permutation scores')
+ylim = plt.ylim()
+# BUG: vlines(..., linestyle='--') fails on older versions of matplotlib
+#plt.vlines(score, ylim[0], ylim[1], linestyle='--',
+#          color='g', linewidth=3, label='Classification Score'
+#          ' (pvalue %s)' % pvalue)
+#plt.vlines(1.0 / n_classes, ylim[0], ylim[1], linestyle='--',
+#          color='k', linewidth=3, label='Luck')
+plt.plot(2 * [score], ylim, '--g', linewidth=3,
+         label='Classification Score'
+         ' (pvalue %s)' % pvalue)
+plt.plot(2 * [1. / n_classes], ylim, '--k', linewidth=3, label='Luck')
+
+plt.ylim(ylim)
+plt.legend()
+plt.xlabel('Score')
 plt.show()
 ```
-### (一)取得波士頓房產資料
+### (一)取得鳶尾花資料
+
+本範例使用`datasets.load_iris()`讀取具有4個資訊影響力特徵與150個樣本的鳶尾花資料，該資料被分類為三個類型。並且額外增加2200筆150長度的雜訊做為不具資訊影響力的特徵，來增加辨認複雜度。
+```
+# Loading a dataset
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+n_classes = np.unique(y).size
+
+# Some noisy data not correlated
+random = np.random.RandomState(seed=0)
+E = random.normal(size=(len(X), 2200))
+
+# Add noisy data to the informative features for make the task harder
+X = np.c_[X, E]
+```
 
 ### (二)使用LassoCV功能來篩選具有影響力的特徵
-由於資料的類型為連續數字，選用LassoCV來做最具有代表性的特徵選取。
-當設定好門檻值，並做訓練後，可以用transform(X)取得計算過後，被認為是具有影響力的特徵以及對應的樣本，可以由其列的數目知道總影響力特徵有幾個。
-後面使用了增加門檻值來達到限制最後特徵數目的
-使用門檻值來決定後來選取的參數，其說明在下一個標題。
-### (三)設定選取參數的門檻值
+使用`SVC`建立最基本的支持向量分類機。並設定訓練交叉驗證的摺疊系數為2。
+
+```
+svm = SVC(kernel='linear')
+cv = StratifiedKFold(y, 2)
+```
+
+### (三)重複隨機變換訓練資料並統計準確率
+當整理好訓練資料，以及支持向量分類機的設定後，我們以`permutation_test_score`功能來測試不同的隨機訓練資料組合，以及對應的分類機分數。除了需要輸入訓練資料、訓練目標、支持向量機物件，還需要指定對分類結果評分的功能物件、交叉驗證形式。其他參數像是置換次數與使用CPU的數目若不輸入也有預設值，亦可由使用者變更。
+
+```
+score, permutation_scores, pvalue = permutation_test_score(
+    svm, X, y, scoring="accuracy", cv=cv, n_permutations=100, n_jobs=1)
+
+print("Classification score %s (pvalue : %s)" % (score, pvalue))
+```
+
+經過計算的結果，會給予實際的分類機分數、每次隨機置換的分數以及p-value。
 
 
+### (四)統計隨機置換資料算出來的分類機分數圖表
 
+最後一個部分，就是把`permutation_test_score`算出來的結果以圖表的方式呈現。
+```
+###############################################################################
+# View histogram of permutation scores
+plt.hist(permutation_scores, 20, label='Permutation scores')
+ylim = plt.ylim()
+# BUG: vlines(..., linestyle='--') fails on older versions of matplotlib
+#plt.vlines(score, ylim[0], ylim[1], linestyle='--',
+#          color='g', linewidth=3, label='Classification Score'
+#          ' (pvalue %s)' % pvalue)
+#plt.vlines(1.0 / n_classes, ylim[0], ylim[1], linestyle='--',
+#          color='k', linewidth=3, label='Luck')
+plt.plot(2 * [score], ylim, '--g', linewidth=3,
+         label='Classification Score'
+         ' (pvalue %s)' % pvalue)
+plt.plot(2 * [1. / n_classes], ylim, '--k', linewidth=3, label='Luck')
+
+plt.ylim(ylim)
+plt.legend()
+plt.xlabel('Score')
+plt.show()
+```
