@@ -2,12 +2,12 @@
 ##範例五: [Test with permutations the significance of a classification score](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_permutation_test_for_classification.html)
 
 
-此範例主要是介紹當我們做機器學習分類機時，分類標籤是否影響分類的計算。因此會重複隨機替換分類標籤並給予建立好的分類機做計算，並以交叉驗證的分數統計出不同訓練資料組合所得到的準確度與標籤的顯著性。
+此範例主要是介紹當我們做機器學習分類時，分類標籤的數值是否影響分類的計算。因此隨機置換分類標籤以及隨機的訓練測試資料組(交叉驗證)來輸入分類機，針對不同類型的分類做對應的評分，統計出不同的資料與標籤組合所得到的準確度與標籤的顯著性。
 `permutation_test_score`提供了對分類標籤做隨機置換的功能，並依照給定的置換次數來計算不同的資料組合配上置換過標籤的組合，用交叉驗證來計算準確性分佈，並統計顯著性。計算過後可取得該分類機器的真實分數與經過數次組合後取得的分數。
 
 
-1. 計算支持向量機的分數
-2. 評估同一組訓練資料在隨機組合中所表現的準確度與分佈情形
+1. 隨機置換分類資料的標籤
+2. 評估同一組訓練資料在不同的資料與標籤組合中，所表現的準確度與分佈情形
 
 
 
@@ -132,3 +132,4 @@ plt.legend()
 plt.xlabel('Score')
 plt.show()
 ```
+![](http://scikit-learn.org/stable/_images/plot_permutation_test_for_classification_001.png)
