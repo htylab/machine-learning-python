@@ -1,5 +1,11 @@
 {   "plugins": ["mathjax"],
     "pdf": {"fontSize": 8},
     "styles": {
-        "pdf": "styles/pdf.css"}
-     }
+        "pdf": "styles/pdf.css"},    
+    "plugins": ["ga"],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-7819893-6"
+        }
+    }
+}
