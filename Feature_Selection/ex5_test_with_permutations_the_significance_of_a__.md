@@ -2,7 +2,7 @@
 ##範例五: [Test with permutations the significance of a classification score](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_permutation_test_for_classification.html)
 
 
-此範例主要是解釋當我們建立好機器學習模型後，怎樣驗證的資料替換對分類的分類準確度與顯著性。`permutation_test_score`提供一個評分的功能，他會依照給定的次數來置換不同的資料組合，用以計算交叉驗證的顯著性。計算過後可取得該分類機器的真實分數與經過數次組合後取得的分數。
+此範例主要是介紹當我們建立好機器學習模型後，重複隨機替換資料並給予分類機計算，以得出準確度與顯著性。`permutation_test_score`提供一個評分的功能，他會依照給定的次數來置換不同的資料組合，用以計算交叉驗證的顯著性。計算過後可取得該分類機器的真實分數與經過數次組合後取得的分數。
 
 
 1. 若資料的標籤非常明確，但樣本只是隨機、順序的改變，使得同樣的樣本數目變多。
