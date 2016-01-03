@@ -82,20 +82,18 @@ plt.show()
 ![](http://scikit-learn.org/stable/_images/plot_rfe_digits_001.png)
 
 
----
-參數    
-* estimator:
-* n_features_to_select:
-* step:
-* estimator_params:
-* verbose:
 
-回傳值
-* n_features_:
-* support_:
-* ranking_: 特徵的影響力程度
-* estimator_:
+##本章介紹到函式用法
 
-當我們以RFE指令建立好功能物件後，就可以用該功能物件做訓練，並以該物件中的ranking_物件取得特徵的影響力程度。
+
+
+###[`load_digits()`](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits) 的參數
+
+
+
+```Python
+sklearn.datasets.load_digits(n_class=10)
+```
+
 
 
