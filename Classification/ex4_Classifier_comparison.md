@@ -171,7 +171,7 @@ plt.show()
 ```
 
 
-![png](output_5_0.png)
+![png](images/ex4_output_5_0.png)
 
 
 ## (四) 原始碼列表
