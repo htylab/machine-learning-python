@@ -89,6 +89,12 @@ class sklearn.cross_validation.StratifiedKFold(y, n_folds=3, shuffle=False, rand
 
 
 
+
+##本章介紹到函式用法
+
+###[`RFECV()`](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html#sklearn.feature_selection.RFECV) 的參數
+
+
 ```Python
 class sklearn.feature_selection.RFECV(estimator, step=1, cv=None, scoring=None, estimator_params=None, verbose=0)[source]
 ```
