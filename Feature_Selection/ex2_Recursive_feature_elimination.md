@@ -1,7 +1,7 @@
 # 特徵選擇 Feature Selection 
 ##範例二: [Recursive feature elimination](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_digits.html)
 
-1. 取得內建的數字辨識資料
+1. 以`load_digits`取得內建的數字辨識資料
 2. 以疊代方式計算模型
 
 
