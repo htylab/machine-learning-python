@@ -58,6 +58,7 @@ y = digits.target
 
 `RFE`以排除最不具目標影響力的特徵，做特徵的影響力排序。並且將訓練用的特徵挑選至`n_features_to_select`所給定的特徵數。因為要看每一個特徵的影響力排序，所以我們將`n_features_to_select`設定為1，一般會根據你所知道的具有影響力特徵數目來設定該參數。而`step`代表每次刪除較不具影響力的特徵數目，因為本範例要觀察每個特徵的影響力排序，所以也是設定為1。若在實際應用時，特徵的數目較大，可以考慮將`step`的參數設高一點。
 
+
 ```Python
 # Create the RFE object and rank each pixel
 svc = SVC(kernel="linear", C=1)
