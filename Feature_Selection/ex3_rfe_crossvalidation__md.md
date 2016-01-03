@@ -3,8 +3,7 @@
 
 [待整理資料] REFCV比REF多一個交叉比對的分數(grid_scores_)，代表選擇多少特徵後的準確率。但REFCV不用像REF要給定選擇多少特徵，而是會依照交叉比對的分數而自動選擇訓練的特徵數。
 
-
-交叉驗證可以幫助我們避免訓練時造成**過度訓練(overfitting)**的現象，也就是當我們從某一組資料中挑出一筆訓練資料，能夠對剩下的測試資料預測出準確度最好的分類，卻發現這個分類機狀態無法準確的辨識新進資料的結果。因為這個最佳狀態只適用在這個特定的組合情況。
+本範例示範`RFE`的進階版，當我們在使用`RFE`指令時，需要輸入訓練特徵數目，讓訓練機能排除到其他較不具有影響力的特徵，也就是要有預期的訓練特徵數目。在`RFECV`指令提供了使用交叉驗證來選擇有最好準確率的訓練特徵數目。而交叉驗證也可以幫助我們避免訓練時造成**過度訓練(overfitting)**的現象，也就是當我們從某一組資料中挑出一筆訓練資料，能夠對剩下的測試資料預測出準確度最好的分類，卻發現這個分類機狀態無法準確的辨識新進資料的結果，因為這個最佳狀態只適用在特定的組合情況。因此使用`RFECV`後，我們可以從結果看出，使用多少特徵做分類判斷可以得到的準確率高低。
 
 1. 以疊代方式計算模型
 2. 以交叉驗證來取得影響力特徵
@@ -87,3 +86,24 @@ class sklearn.cross_validation.StratifiedKFold(y, n_folds=3, shuffle=False, rand
 ![](http://scikit-learn.org/stable/_images/plot_rfe_with_cross_validation_001.png)
 
 可以看到選擇三個最具有影響力的特徵時，交叉驗證的準確率高達81.8%。與建立模擬資料的n_informative=3是相對應的。
+
+
+
+```Python
+class sklearn.feature_selection.RFECV(estimator, step=1, cv=None, scoring=None, estimator_params=None, verbose=0)[source]
+```
+
+參數
+* estimator
+* step
+* cv: 若無輸入，預設為3-fold的交叉驗證。輸入整數i，則做i-fold交叉驗證。若為物件，則以該物件做為交叉驗證產生器。
+* scoring
+* estimator_params
+* verbose
+
+輸出
+* n\_features_: 預測有影響力的特徵的總數目
+* support_: 有影響力的特徵遮罩，可以用來挑出哪些特徵
+* ranking_: 各特徵的影響力程度
+* grid_scores_: 從最有影響力的特徵開始加入，計算使用多少個特徵對應得到的準確率。
+* estimator_
