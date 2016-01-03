@@ -144,7 +144,7 @@ plt.show()
 ```
 
 
-![png](images/output_6_0.png)
+![png](images/ex5_output_6_0.png)
 
 
 Python source code: plot_lda_qda.py
