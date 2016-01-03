@@ -57,7 +57,9 @@ X, y = make_classification(n_samples=1000, n_features=25, n_informative=3,
 
 在使用`RFECV`指令前，需要建立支持向量機物件，以及交叉驗證的形式。本範例仍使用`SVC`以及線性核函數來作為主要的分類機。
 
-在交叉驗證的部分，我們使用`StratifiedKFold`指令來做2
+在交叉驗證的部分，我們使用`StratifiedKFold`指令來做K 堆疊(Fold)的交叉驗證。也就是將資料分為K堆，一堆作為預測用，剩下的(K-1)堆則用來訓練，經過計算後，再以另外一堆作為預測，重複K次。
+
+而`scoring`參數則是依照分類資料的形式，輸入對應的評分方式。以本例子為超過兩類型的分類，因此使用'accuracy'來對多重分類的評分方式。詳細可參考[scoring](http://scikit-learn.org/stable/modules/model_evaluation.html)
 
 ```Python
 # Create the RFE object and compute a cross-validated score.
