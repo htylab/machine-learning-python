@@ -1,9 +1,18 @@
 
 ## Linear and Quadratic Discriminant Analysis with confidence ellipsoid
+## 線性判別對比上二次判別
+
 http://scikit-learn.org/stable/auto_examples/classification/plot_lda_qda.html
 
 
+
 ## (一)資料產生function
+
+這個範例引入的套件，主要特點在：
+1. `scipy.linalg`:線性代數相關函式，這裏主要使用到linalg.eigh 特徵值相關問題
+2. `matplotlib.colors`: 用來處理繪圖時的色彩分佈
+3. `LinearDiscriminantAnalysis`:線性判別演算法
+4. `QuadraticDiscriminantAnalysis`:二次判別演算法
 
 
 ```python
@@ -15,16 +24,53 @@ import matplotlib as mpl
 from matplotlib import colors
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+```
 
-# colormap
+接下來是設定一個線性變化的colormap，`LinearSegmentedColormap(name, segmentdata)` 預設會傳回一個256個值的數值顏色對應關係。用一個具備有三個項目的dict變數`segmentdata`來設定。以`'red': [(0, 1, 1), (1, 0.7, 0.7)]`來解釋，就是我們希望數值由0到1的過程，紅色通道將由1線性變化至0.7。
+
+
+```python
 cmap = colors.LinearSegmentedColormap(
     'red_blue_classes',
     {'red': [(0, 1, 1), (1, 0.7, 0.7)],
      'green': [(0, 0.7, 0.7), (1, 0.7, 0.7)],
      'blue': [(0, 0.7, 0.7), (1, 1, 1)]})
 plt.cm.register_cmap(cmap=cmap)
+```
 
-# generate datasets
+我們可以用以下程式碼來觀察。當輸入數值為`np.arange(0,1.1,0.1)`也就是0,0.1...,1.0 時RGB數值的變化情形。
+
+
+```python
+values = np.arange(0,1.1,0.1)
+cmap_values = mpl.cm.get_cmap('red_blue_classes')(values)
+import pandas as pd
+pd.set_option('precision',2)
+df=pd.DataFrame(np.hstack((values.reshape(11,1),cmap_values)))
+df.columns = ['Value', 'R', 'G', 'B', 'Alpha']
+print(df)
+```
+
+        Value     R    G     B  Alpha
+    0     0.0  1.00  0.7  0.70      1
+    1     0.1  0.97  0.7  0.73      1
+    2     0.2  0.94  0.7  0.76      1
+    3     0.3  0.91  0.7  0.79      1
+    4     0.4  0.88  0.7  0.82      1
+    5     0.5  0.85  0.7  0.85      1
+    6     0.6  0.82  0.7  0.88      1
+    7     0.7  0.79  0.7  0.91      1
+    8     0.8  0.76  0.7  0.94      1
+    9     0.9  0.73  0.7  0.97      1
+    10    1.0  0.70  0.7  1.00      1
+    
+
+接著我們產生兩組資料, 每組資料有 600筆資料，2個特徵 `X: 600x2`：
+1. 具備有相同共變數(covariance)
+2. 具備有不同之共變數
+
+
+```python
 def dataset_fixed_cov():
     '''Generate 2 Gaussians samples with the same covariance matrix'''
     n, dim = 300, 2
@@ -45,6 +91,29 @@ def dataset_cov():
     y = np.hstack((np.zeros(n), np.ones(n)))
     return X, y
 ```
+
+
+```python
+n, dim = 300, 2
+np.random.seed(0)
+C = np.array([[0., -0.23], [0.83, .23]])
+X = np.r_[np.dot(np.random.randn(n, dim), C),
+              np.dot(np.random.randn(n, dim), C) + np.array([1, 1])]
+y = np.hstack((np.zeros(n), np.ones(n)))
+
+```
+
+
+```python
+
+```
+
+
+
+
+    (300L, 2L)
+
+
 
 ## (二)繪圖函式
 
@@ -144,7 +213,7 @@ plt.show()
 ```
 
 
-![png](images/ex5_output_6_0.png)
+![png](images/ex5_output_14_0.png)
 
 
 Python source code: plot_lda_qda.py
