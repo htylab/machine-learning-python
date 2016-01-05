@@ -59,7 +59,7 @@ ax.set_ylabel('Predicted')
 plt.show()
 ```
 
-
+## (五)完整程式碼
 ```python
 from sklearn import datasets
 from sklearn.cross_validation import cross_val_predict
