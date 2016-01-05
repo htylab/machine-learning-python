@@ -44,9 +44,23 @@ cv為疊代次數
 predicted = cross_val_predict(lr, boston.data, y, cv=10)
 ```
 
+## (四)繪出預測結果與實際目標差異圖
+X軸為回歸目標
 
+Y軸為預測結果
 
+並劃出一條斜率=1的理想曲線(用虛線標示)
+```python
+fig, ax = plt.subplots()
+ax.scatter(y, predicted)
+ax.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=4)
+ax.set_xlabel('Measured')
+ax.set_ylabel('Predicted')
+plt.show()
 ```
+
+
+```python
 from sklearn import datasets
 from sklearn.cross_validation import cross_val_predict
 from sklearn import linear_model
