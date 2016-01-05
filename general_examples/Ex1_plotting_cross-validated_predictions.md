@@ -35,7 +35,7 @@ y = boston.target
 
 ## (三)用`sklearn.cross_validation.cross_val_predict`產生估計值
 
-sklearn.cross_validation.cross_val_predict(estimator, X, y=None, cv=None, n_jobs=1, verbose=0, fit_params=None, pre_dispatch='2*n_jobs')[source]
+`sklearn.cross_validation.cross_val_predict`(estimator, X, y=None, cv=None, n_jobs=1, verbose=0, fit_params=None, pre_dispatch='2*n_jobs')[source]
 
 X為機器學習數據，
 y為回歸目標，
@@ -57,7 +57,12 @@ ax.set_ylabel('Predicted')
 plt.show()
 ```
 ![](cv_predict_figure_1.png)
+
+
 ## (五)完整程式碼
+Python source code: plot_cv_predict.py
+
+http://scikit-learn.org/stable/auto_examples/plot_cv_predict.html
 ```python
 from sklearn import datasets
 from sklearn.cross_validation import cross_val_predict
