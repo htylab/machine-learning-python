@@ -136,3 +136,5 @@ for i in range(n_faces):
 
 plt.show()
 ```
+
+![](multioutput_face_completion_figure_1.png)
