@@ -58,7 +58,7 @@ ax.set_xlabel('Measured')
 ax.set_ylabel('Predicted')
 plt.show()
 ```
-
+![](cv_predict_figure_1.png)
 ## (五)完整程式碼
 ```python
 from sklearn import datasets
