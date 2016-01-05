@@ -39,7 +39,7 @@ sklearn.cross_validation.cross_val_predict(estimator, X, y=None, cv=None, n_jobs
 
 X為機器學習數據，
 y為回歸目標，
-cv為疊代次數
+cv為疊代次數。
 ```python
 predicted = cross_val_predict(lr, boston.data, y, cv=10)
 ```
