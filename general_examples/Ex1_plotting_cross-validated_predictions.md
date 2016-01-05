@@ -37,17 +37,15 @@ y = boston.target
 
 sklearn.cross_validation.cross_val_predict(estimator, X, y=None, cv=None, n_jobs=1, verbose=0, fit_params=None, pre_dispatch='2*n_jobs')[source]
 
-X為機器學習數據
-y為回歸目標
+X為機器學習數據，
+y為回歸目標，
 cv為疊代次數
 ```python
 predicted = cross_val_predict(lr, boston.data, y, cv=10)
 ```
 
 ## (四)繪出預測結果與實際目標差異圖
-X軸為回歸目標
-
-Y軸為預測結果
+X軸為回歸目標，Y軸為預測結果。
 
 並劃出一條斜率=1的理想曲線(用虛線標示)
 ```python
