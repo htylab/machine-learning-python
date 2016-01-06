@@ -1,5 +1,6 @@
-# 特徵選擇 Feature Selection 
-##範例五: [Test with permutations the significance of a classification score](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_permutation_test_for_classification.html)
+##特徵選擇/範例五: Test with permutations the significance of a classification score
+
+http://scikit-learn.org/stable/auto_examples/feature_selection/plot_permutation_test_for_classification.html
 
 
 此範例主要是介紹當我們做機器學習分類時，分類標籤的數值是否影響分類的計算。因此隨機置換分類標籤以及隨機的訓練測試資料組(交叉驗證)來輸入分類機，針對不同類型的分類做對應的評分，統計出不同的資料與標籤組合所得到的準確度與標籤的顯著性。

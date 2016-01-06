@@ -4,16 +4,16 @@
 
 
 範例一
-![](EX1.png)
+![](images/EX1.png)
 
 範例二
-![](EX2.png)
+![](images/EX2.png)
 
 範例三
-![](EX3.png)
+![](images/EX3.png)
 
 範例四
-![](EX4.png)
+![](images/EX4.png)
 
 範例五
-![](EX5.png)
+![](images/EX5.png)

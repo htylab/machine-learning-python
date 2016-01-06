@@ -1,5 +1,6 @@
-# 特徵選擇 Feature Selection 
-##範例一: [Pipeline Anova SVM](http://scikit-learn.org/stable/auto_examples/feature_selection/feature_selection_pipeline.html)
+# 特徵選擇/範例一: Pipeline Anova SVM
+
+http://scikit-learn.org/stable/auto_examples/feature_selection/feature_selection_pipeline.html
 
 此範例示範佇列的使用，依照順序執行ANOVA挑選主要特徵，並且使用C-SVM來計算特徵的權重與預測。
 
@@ -51,7 +52,7 @@ X, y = samples_generator.make_classification(
 
 
 ### (二)選擇最好的特徵
- 
+
 在機器學習的訓練之前，可以藉由統計或指定評分函數，算出特徵與目標之間的關係，並挑選出最具有關係的特徵作為訓練的素材，而不直接使用所有特徵做為訓練的素材。
 
 其中一種方法是統計特徵與目標之間的F-score做為評估分數，再挑選F-score最高的幾個特徵作為訓練素材。我們可以用 `SelectKBest()` 來建立該功能的運算物件。
@@ -79,7 +80,7 @@ anova_svm.predict(X)
 ```
 當我們以佇列建立好的運算物件，就可以直接給定所有的特徵資料與目標資料做訓練與預測。在訓練過程中，會依照給定的特徵素材數目從特徵資料中挑出特徵素材。預測時，也會從預測資料中挑出對應特徵素材的資料來做預測判斷。
 
-若是將`SelectKBest()`與 `SVC()`物件分開來執行，當 `SVC()`物件在做學習時給定的特徵即為被選出來的特徵素材數目。那預測的時候也必須從預測資料中，挑出被`SelectKBest()`選出來的特徵來給`SVC()`做預測。 
+若是將`SelectKBest()`與 `SVC()`物件分開來執行，當 `SVC()`物件在做學習時給定的特徵即為被選出來的特徵素材數目。那預測的時候也必須從預測資料中，挑出被`SelectKBest()`選出來的特徵來給`SVC()`做預測。
 
 ---
 
@@ -92,20 +93,20 @@ anova_svm.predict(X)
 
 
 ```Python
-sklearn.datasets.make_classification(   n_samples=100, 
+sklearn.datasets.make_classification(   n_samples=100,
                                         n_features=20,
-                                        n_informative=2, 
-                                        n_redundant=2, 
-                                        n_repeated=0, 
+                                        n_informative=2,
+                                        n_redundant=2,
+                                        n_repeated=0,
                                         n_classes=2,
                                         n_clusters_per_class=2,    
-                                        weights=None, 
-                                        flip_y=0.01, 
+                                        weights=None,
+                                        flip_y=0.01,
                                         class_sep=1.0,
-                                        hypercube=True, 
-                                        shift=0.0, 
-                                        scale=1.0, 
-                                        shuffle=True, 
+                                        hypercube=True,
+                                        shift=0.0,
+                                        scale=1.0,
+                                        shuffle=True,
                                         random_state=None)
 ```
 
@@ -114,7 +115,7 @@ sklearn.datasets.make_classification(   n_samples=100,
 * n_fratures : 總特徵數目
 * n_informative: 有意義的特徵數目
 * n_redundant : 產生有意義特徵的隨機線性組合
-* n_repeated 
+* n_repeated
 * n_classes: 共分類為幾類
 * n_clusters_per_class: 一個類群有幾個群組分布
 * weights :
@@ -129,10 +130,10 @@ sklearn.datasets.make_classification(   n_samples=100,
 輸出:
 * X : 特徵矩陣資料
 * Y : 對應目標資料
- 
+
 類似的功能:
 
-[make_blobs](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs) 
+[make_blobs](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs)
 
 [make_gaussian_quantiles](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_gaussian_quantiles.html#sklearn.datasets.make_gaussian_quantiles)
 

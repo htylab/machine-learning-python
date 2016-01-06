@@ -1,5 +1,5 @@
 
-## EX 4: Classifier comparison
+## 分類法/範例四: Classifier comparison
 
 這個範例的主要目的
 * 比較各種分類器

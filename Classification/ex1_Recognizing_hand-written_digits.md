@@ -1,4 +1,5 @@
-##範例一: Recognizing hand-written digits
+##分類法/範例一: Recognizing hand-written digits
+
 http://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html
 
 這個範例用來展示scikit-learn 如何用SVM演算法來達成手寫的數字辨識
@@ -91,8 +92,8 @@ predicted = classifier.predict(data[n_samples / 2:])
 ##(三)分類準確度統計
 那在判斷準確度方面，我們可以使用一個名為「混淆矩陣」(Confusion matrix)的方式來統計。
 
-```python 
-print("Confusion matrix:\n%s" 
+```python
+print("Confusion matrix:\n%s"
     % metrics.confusion_matrix(expected, predicted))
 ```
 使用sklearn中之metrics物件，`metrics.confusion_matrix(真實資料:899, 預測資料:899)`可以列出下面矩陣。此矩陣對角線左上方第一個數字 87，代表實際為0且預測為0的總數有87個，同一列(row)第五個元素則代表，實際為0但判斷為4的資料個數為1個。
@@ -123,7 +124,7 @@ def plot_confusion_matrix(cm, title='Confusion matrix', cmap=plt.cm.Blues):
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-    
+
 plt.figure()
 plot_confusion_matrix(metrics.confusion_matrix(expected, predicted))
 ```
@@ -138,7 +139,7 @@ plot_confusion_matrix(metrics.confusion_matrix(expected, predicted))
 
 而在機器學習理論中，我們通常用以下precision, recall, f1-score來探討精確度。以手寫影像3為例。
 
-* precision = TP/(TP+FP) = 79/81 = 0.98 
+* precision = TP/(TP+FP) = 79/81 = 0.98
 * 判斷為3且實際為3的比例為0.98
 * recall = TP/(TP+FN) = 79/91 = 0.87
 * 實際為3且判斷為3的比例為0.87
@@ -170,7 +171,7 @@ avg / total       0.97      0.97      0.97       899
 ```
 最後，用以下的程式碼可以觀察測試影像以及預測(分類)結果得對應關係。
 
-```python 
+```python
 images_and_predictions = list(
                         zip(digits.images[n_samples / 2:], predicted))
 for index, (image, prediction) in enumerate(images_and_predictions[:4]):
@@ -204,7 +205,7 @@ from sklearn import datasets, svm, metrics
 # The digits dataset
 digits = datasets.load_digits()
 
-# The data that we are interested in is made of 8x8 images of 
+# The data that we are interested in is made of 8x8 images of
 # digits, let's # have a look at the first 3 images, stored in
 # the `images` attribute of the # dataset.  If we were working
 # from image files, we could load them using # pylab.imread.
@@ -235,7 +236,7 @@ predicted = classifier.predict(data[n_samples / 2:])
 
 print("Classification report for classifier %s:\n%s\n"
     % (classifier, metrics.classification_report(expected, predicted)))
-print("Confusion matrix:\n%s" 
+print("Confusion matrix:\n%s"
     % metrics.confusion_matrix(expected, predicted))
 
 images_and_predictions = list(

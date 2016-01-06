@@ -1,5 +1,5 @@
 
-## Linear and Quadratic Discriminant Analysis with confidence ellipsoid
+##分類法/範例五：Linear and Quadratic Discriminant Analysis with confidence ellipsoid
 ## 線性判別以及二次判別的比較
 
 http://scikit-learn.org/stable/auto_examples/classification/plot_lda_qda.html

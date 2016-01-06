@@ -1,5 +1,6 @@
-# 特徵選擇 Feature Selection 
-##範例二: [Recursive feature elimination](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_digits.html)
+## 特徵選擇/範例二: Recursive feature elimination
+
+http://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_digits.html
 
 本範例是示範以不斷減少影響判斷最小的特徵，來篩選特徵數目至指定數目，來作為訓練主要影響特徵。
 
@@ -47,9 +48,9 @@ y = digits.target
 
 輸出的資料包含
 1. ‘data’, 特徵資料(1797*64)
-2. ‘images’, 影像資料(1797\*8*8) 
-3. ‘target’, 資料標籤(1797) 
-4. ‘target_names’, 選取出的標籤列表(與n_class給定的長度一樣) 
+2. ‘images’, 影像資料(1797\*8*8)
+3. ‘target’, 資料標籤(1797)
+4. ‘target_names’, 選取出的標籤列表(與n_class給定的長度一樣)
 5. ‘DESCR’, 此資料庫的描述
 
 可以參考Classification的Ex1
@@ -94,6 +95,3 @@ plt.show()
 ```Python
 sklearn.datasets.load_digits(n_class=10)
 ```
-
-
-

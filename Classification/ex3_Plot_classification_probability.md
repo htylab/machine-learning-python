@@ -1,5 +1,5 @@
 
-## EX 3: Plot classification probability
+## 分類法/範例三: Plot classification probability
 
 這個範例的主要目的
 * 使用iris 鳶尾花資料集
@@ -86,19 +86,19 @@ print('Xfull= \n%s' % Xfull)
 ```
 結果顯示如下，我們可以看出Xfull模擬出了一個類似特徵矩陣X, 具備有9筆資料，這九筆資料重現了xx (3種數值變化)及yy(3種數值變化)的所有排列組合。
 ```
-xx= 
+xx=
 [[ 1.  2.  3.]
  [ 1.  2.  3.]
  [ 1.  2.  3.]]
 
-yy= 
+yy=
 [[ 4.  4.  4.]
  [ 5.  5.  5.]
  [ 6.  6.  6.]]
 
 xx.ravel()= [ 1.  2.  3.  1.  2.  3.  1.  2.  3.]
 
-Xfull= 
+Xfull=
 [[ 1.  4.]
  [ 2.  4.]
  [ 3.  4.]
@@ -133,7 +133,7 @@ Xfull = np.c_[xx.ravel(), yy.ravel()]
 #若在ipython notebook (Jupyter) 裏執行，則可以將下列這行的井號移除
 %matplotlib inline
 #原範例沒有下列這行，這是為了讓圖形顯示更漂亮而新增的
-fig = plt.figure(figsize=(12,12), dpi=300) 
+fig = plt.figure(figsize=(12,12), dpi=300)
 
 for index, (name, classifier) in enumerate(classifiers.items()):
     #訓練並計算分類成功率
@@ -167,11 +167,11 @@ plt.colorbar(imshow_handle, cax=ax, orientation='horizontal')
 plt.show()
 ```
 
-    classif_rate for L2 logistic (OvR) : 76.666667 
-    classif_rate for L1 logistic : 79.333333 
-    classif_rate for Linear SVC : 82.000000 
-    classif_rate for L2 logistic (Multinomial) : 82.000000 
-    
+    classif_rate for L2 logistic (OvR) : 76.666667
+    classif_rate for L1 logistic : 79.333333
+    classif_rate for Linear SVC : 82.000000
+    classif_rate for L2 logistic (Multinomial) : 82.000000
+
 
 
 ![png](images/ex3_output_9_1.png)

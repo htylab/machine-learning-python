@@ -1,5 +1,6 @@
 
-##範例二: Normal and Shrinkage Linear Discriminant Analysis for classification
+##分類法/範例二: Normal and Shrinkage Linear Discriminant Analysis for classification
+
 http://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html
 
 這個範例用來展示scikit-learn 如何使用Linear Discriminant Analysis (LDA) 線性判別分析來達成資料分類的目的

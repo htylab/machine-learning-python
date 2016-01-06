@@ -1,5 +1,6 @@
-# 特徵選擇 Feature Selection 
-##範例四: [Feature selection using SelectFromModel and LassoCV](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_select_from_model_boston.html#example-feature-selection-plot-select-from-model-boston-py)
+##特徵選擇/範例四: Feature selection using SelectFromModel and LassoCV
+
+http://scikit-learn.org/stable/auto_examples/feature_selection/plot_select_from_model_boston.html#example-feature-selection-plot-select-from-model-boston-py
 
 此範例是示範以`LassoCV`來挑選特徵，Lasso是一種用來計算稀疏矩陣的線性模形。在某些情況下是非常有用的，因為在此演算過程中會以較少數的特徵來找最佳解，基於參數有相依性的情況下，使變數的數目有效的縮減。因此，Lasso法以及它的變形式可算是壓縮參數關係基本方法。
 在某些情況下，此方法可以準確的偵測非零權重的值。([請參考此說明範例](http://scikit-learn.org/stable/auto_examples/applications/plot_tomography_l1_reconstruction.html#example-applications-plot-tomography-l1-reconstruction-py))
@@ -54,7 +55,7 @@ plt.title(
     "Features selected from Boston using SelectFromModel with "
     "threshold %0.3f." % sfm.threshold)
 feature1 = X_transform[:, 0]
-feature2 = X_transform[:, 1] 
+feature2 = X_transform[:, 1]
 plt.plot(feature1, feature2, 'r.')
 plt.xlabel("Feature number 1")
 plt.ylabel("Feature number 2")
@@ -70,7 +71,3 @@ plt.show()
 使用門檻值來決定後來選取的參數，其說明在下一個標題。
 需要用後設轉換
 ### (三)設定選取參數的門檻值
-
-
-
-

@@ -1,4 +1,5 @@
-##範例一: Plotting Cross-Validated Predictions
+##通用範例/範例一: Plotting Cross-Validated Predictions
+
 http://scikit-learn.org/stable/auto_examples/plot_cv_predict.html
 
 這個範例可以看出用`cross_val_predict`的預測誤差。
@@ -9,8 +10,8 @@ http://scikit-learn.org/stable/auto_examples/plot_cv_predict.html
 
 1. `matplotlib.pyplot`: 用來繪製影像
 2. `sklearn.datasets`: 用來繪入內建測試資料庫
-3. `sklearn.cross_validation import cross_val_predict` 
-4. `sklearn.linear_model` 
+3. `sklearn.cross_validation import cross_val_predict`
+4. `sklearn.linear_model`
 
 
 
@@ -56,7 +57,7 @@ ax.set_xlabel('Measured')
 ax.set_ylabel('Predicted')
 plt.show()
 ```
-![](cv_predict_figure_1.png)
+![](images/cv_predict_figure_1.png)
 
 
 ## (五)完整程式碼

@@ -1,26 +1,19 @@
-##範例七: Face completion with a multi-output estimators
+##通用範例/範例七: Face completion with a multi-output estimators
+
 http://scikit-learn.org/stable/auto_examples/plot_multioutput_face_completion.html
 
 這個範例用來展示scikit-learn如何用 `extremely randomized trees`, `k nearest neighbors`, `linear regression` 和 `ridge regression` 演算法來完成人臉估測。
-
-
-
 
 
 ## (一)引入函式庫及內建影像資料庫
 
 引入之函式庫如下
 
-1. `numpy`
-2. `matplotlib.pyplot`: 用來繪製影像
-2. `sklearn.datasets`: 用來繪入內建之影像資料庫
-3. `sklearn.utils.validation`: 用來取亂數
-4. `sklearn.ensemble` 
-5. `sklearn.neighbors` 
-6. `sklearn.linear_model` 
-
-
-
+1. `sklearn.datasets`: 用來繪入內建之影像資料庫
+2. `sklearn.utils.validation`: 用來取亂數
+3. `sklearn.ensemble`
+4. `sklearn.neighbors`
+5. `sklearn.linear_model`
 
 使用 `datasets.load_digits()` 將資料存入， `data` 為一個dict型別資料，我們看一下資料的內容。
 
@@ -137,4 +130,4 @@ for i in range(n_faces):
 plt.show()
 ```
 
-![](multioutput_face_completion_figure_1.png)
+![](images/multioutput_face_completion_figure_1.png)

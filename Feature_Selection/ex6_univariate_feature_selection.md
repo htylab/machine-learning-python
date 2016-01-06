@@ -1,5 +1,6 @@
-# 特徵選擇 Feature Selection 
-##範例六: [Univariate Feature Selection](http://scikit-learn.org/stable/auto_examples/feature_selection/plot_feature_selection.html)
+##特徵選擇/範例六: Univariate Feature Selection
+
+http://scikit-learn.org/stable/auto_examples/feature_selection/plot_feature_selection.html
 
 
 此範例示範主要影響力特徵的選擇。鳶尾花資料中會加入數個雜訊(不具影響力的特徵資訊)並且選擇主要影響力的特徵。選擇過程會畫出每個特徵的 p-value 與其在支持向量機中的權重。可以從圖表中看出主要影響力特徵的選擇會選出具有主要影響力的特徵，並且這些特徵會在支持向量機有相當大的權重。在所有的特徵裡面，只有最前面的四個特徵是對目標有意義的。我們可以看到在主要影響力特徵的選擇中，這些特徵的評分會相當高。而支持向量機會認定其中一個特徵有很大的權重，但也會用一些不具有影響力的特徵來做選擇判斷。在支持向量機增加權重之前就確定那些特徵較具有影響力，從而增加辨識率。
@@ -82,5 +83,3 @@ plt.show()
 ### (二)使用f-value作為判斷的基準來找主要影響力特徵
 函式 SelectPercentile
 ### (三)設定選取參數的門檻值
-
-
