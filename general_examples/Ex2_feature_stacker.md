@@ -29,8 +29,8 @@ iris = load_iris()
 X, y = iris.data, iris.target
 ```
 
-測試資料：
-* `iris`為一個dict型別資料。
+測試資料：<br />
+`iris`為一個dict型別資料。
 
 | 顯示 | 說明 |
 | -- | -- |
