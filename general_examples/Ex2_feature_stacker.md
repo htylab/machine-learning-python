@@ -101,6 +101,7 @@ grid_search.fit(X, y)
 print(grid_search.best_estimator_)
 ```
 
+<<<<<<< HEAD
     Fitting 3 folds for each of 18 candidates, totalling 54 fits
     [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
     [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.960784 -   0.0s
@@ -242,3 +243,5 @@ print(grid_search.best_estimator_)
 ```python
 
 ```
+=======
+>>>>>>> origin/master
