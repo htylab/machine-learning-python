@@ -41,14 +41,9 @@ X, y = iris.data, iris.target
 | feature_names| 四個特徵代表的意義 |
 
 # (二)PCA與SelectKBest
-* Principal Component Analysis(PCA)主成份分析，是最常用的線性降維方法，它的目標是通過某種線性投影，將高維的數據映射到低維的空間中表示，並期望在所投影的維度上數據的方差最大，以此使用較少的數據維度，同時保留住較多的原數據點的特性。<br />
- class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False)
+* `PCA(n_components = 主要成份數量)`:Principal Component Analysis(PCA)主成份分析，是一個常用的將資料維度減少的方法。它的原理是找出一個新的座標軸，將資料投影到該軸時，數據的變異量會最大。利用這個方式減少資料維度，又希望能保留住原數據點的特性。
 
-
-
-* 使用 `SelectKBest` 設定要用哪種目標函式，以挑出可提供信息的特徵。<br />
- class sklearn.feature_selection.SelectKBest(score_func=<function f_classif at 0x7f49246ca048>, k=10)
-
+* `SelectKBest(score_func , k )`: `score_func`是選擇特徵值所依據的函式，而`K`值則是設定要選出多少特徵。
 
 
 ```python
@@ -100,7 +95,8 @@ grid_search = GridSearchCV(pipeline, param_grid=param_grid, verbose=10)
 grid_search.fit(X, y)
 print(grid_search.best_estimator_)
 ```
-Fitting 3 folds for each of 18 candidates, totalling 54 fits
-[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1
-[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.960784 -   0.0s
-[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1
+結果顯示
+``` Fitting 3 folds for each of 18 candidates, totalling 54 fits
+    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1
+    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.960784 -   0.0s
+```
