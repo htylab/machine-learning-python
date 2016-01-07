@@ -101,147 +101,16 @@ grid_search.fit(X, y)
 print(grid_search.best_estimator_)
 ```
 
-<<<<<<< HEAD
-    Fitting 3 folds for each of 18 candidates, totalling 54 fits
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.960784 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.901961 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=1, score=0.941176 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=1, score=0.921569 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=10, score=0.960784 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=10, score=0.921569 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=10, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=0.1, score=0.960784 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=0.1, score=0.921569 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=0.1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=1, score=0.960784 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=1, score=0.921569 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=1, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=10 
 
-    [Parallel(n_jobs=1)]: Done   1 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done   2 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done   5 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done   8 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done  13 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done  18 jobs       | elapsed:    0.0s
-    
+Fitting 3 folds for each of 18 candidates, totalling 54 fits
+[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
+[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.960784 -   0.0s
+[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
+[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.901961 -   0.0s
+[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
+[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.979167 -   0.0s
+[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=1 
+[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=1, score=0.941176 -   0.0s
+[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=1 
+[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=1, score=0.921569 -   0.0s
 
-    
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=10, score=0.980392 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=10, score=0.901961 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=1, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=1, svm__C=10, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=0.1, score=0.960784 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=0.1, score=0.901961 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=0.1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=1, score=0.980392 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=1, score=0.941176 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=10, score=0.980392 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=10, score=0.941176 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=2, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=2, svm__C=10, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=0.1, score=0.980392 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=0.1, score=0.941176 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=0.1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=1, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=1, score=0.960784 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=10, score=0.980392 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=10, score=0.921569 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=2, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=2, svm__C=10, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=0.1, score=0.980392 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=0.1, score=0.941176 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=0.1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=0.1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=1, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=1, score=0.941176 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=1 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=10, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=10, score=0.921569 -   0.0s
-    [CV] features__univ_select__k=1, features__pca__n_components=3, svm__C=10 
-    [CV]  features__univ_select__k=1, features__pca__n_components=3, svm__C=10, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=0.1, score=0.980392 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=0.1, score=0.941176 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=0.1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=0.1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=1, score=1.000000 -   0.0s
-
-    [Parallel(n_jobs=1)]: Done  25 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done  32 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done  41 jobs       | elapsed:    0.0s
-    [Parallel(n_jobs=1)]: Done  50 jobs       | elapsed:    0.1s
-    
-
-    
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=1, score=0.960784 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=1 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=1, score=0.979167 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=10, score=1.000000 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=10, score=0.921569 -   0.0s
-    [CV] features__univ_select__k=2, features__pca__n_components=3, svm__C=10 
-    [CV]  features__univ_select__k=2, features__pca__n_components=3, svm__C=10, score=1.000000 -   0.0s
-    Pipeline(steps=[('features', FeatureUnion(n_jobs=1,
-           transformer_list=[('pca', PCA(copy=True, n_components=2, whiten=False)), ('univ_select', SelectKBest(k=2, score_func=<function f_classif at 0x0000000007243488>))],
-           transformer_weights=None)), ('svm', SVC(C=1, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0,
-      kernel='linear', max_iter=-1, probability=False, random_state=None,
-      shrinking=True, tol=0.001, verbose=False))])
-    
-
-    [Parallel(n_jobs=1)]: Done  54 out of  54 | elapsed:    0.1s finished
-    
-
-
-```python
-
-```
-=======
->>>>>>> origin/master
