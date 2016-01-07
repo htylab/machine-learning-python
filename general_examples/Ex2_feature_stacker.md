@@ -7,7 +7,7 @@ http://scikit-learn.org/stable/auto_examples/feature_stacker.html
 
 這個範例的主要目的：
 * 使用iris 鳶尾花資料集
-* 使用`FeatureUnion` 
+* 使用`FeatureUnion`
 
 
 # (一)資料匯入及描述
@@ -43,8 +43,8 @@ X, y = iris.data, iris.target
 # (二)PCA與SelectKBest
 * Principal Component Analysis(PCA)主成份分析，是最常用的線性降維方法，它的目標是通過某種線性投影，將高維的數據映射到低維的空間中表示，並期望在所投影的維度上數據的方差最大，以此使用較少的數據維度，同時保留住較多的原數據點的特性。<br />
  class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False)
- 
- 
+
+
 
 * 使用 `SelectKBest` 設定要用哪種目標函式，以挑出可提供信息的特徵。<br />
  class sklearn.feature_selection.SelectKBest(score_func=<function f_classif at 0x7f49246ca048>, k=10)
@@ -78,7 +78,7 @@ X_features = combined_features.fit(X, y).transform(X)
 * Scikit-lenarn的支持向量機分類涵式庫提供使用簡單易懂的指令，可以用 SVC() 建立運算物件，之後並可以用運算物件內的方法 .fit() 與 .predict() 來做訓練與預測。
 
 * 使用`GridSearchCV`交叉驗證，得到由參數網格計算出的分數網格，並找到分數網格中最優的點。
-    
+
     最後印出這個點所代表的參數
 
 
@@ -100,17 +100,7 @@ grid_search = GridSearchCV(pipeline, param_grid=param_grid, verbose=10)
 grid_search.fit(X, y)
 print(grid_search.best_estimator_)
 ```
-
-
 Fitting 3 folds for each of 18 candidates, totalling 54 fits
-[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
+[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1
 [CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.960784 -   0.0s
-[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
-[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.901961 -   0.0s
-[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1 
-[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1, score=0.979167 -   0.0s
-[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=1 
-[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=1, score=0.941176 -   0.0s
-[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=1 
-[CV]  features__univ_select__k=1, features__pca__n_components=1, svm__C=1, score=0.921569 -   0.0s
-
+[CV] features__univ_select__k=1, features__pca__n_components=1, svm__C=0.1
