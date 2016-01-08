@@ -2,7 +2,7 @@
 
 http://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html
 
-這個範例用來展示scikit-learn 如何用SVM演算法來達成手寫的數字辨識
+這個範例用來展示scikit-learn 機器學習套件，如何用SVM演算法來達成手寫的數字辨識
 
 1. 利用 `make_classification` 建立模擬資料
 2. 利用 `sklearn.datasets.load_digits()` 來讀取內建資料庫
