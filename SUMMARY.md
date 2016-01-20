@@ -19,4 +19,5 @@
    * [Ex 1: Plotting Cross-Validated Predictions](general_examples/Ex1_plotting_cross-validated_predictions.md)
    * [Ex 2: Concatenating multiple feature extraction methods](general_examples/Ex2_feature_stacker.md)
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
+* Clustering
 
