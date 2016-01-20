@@ -9,7 +9,7 @@ http://scikit-learn.org/stable/auto_examples/cluster/plot_segmentation_toy.html
 3. 用```spectral_clustering```區分出各個不同區域特徵
 
 
-# (一)引入函式庫
+## (一)引入函式庫
 引入函式庫如下：
 1. ```numpy```:產生陣列數值
 2. ```matplotlib.pyplot```:用來繪製影像
@@ -17,7 +17,7 @@ http://scikit-learn.org/stable/auto_examples/cluster/plot_segmentation_toy.html
 4. ```sklearn.cluster import spectral_clustering```:將影像正規化切割
 
 
-```
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -25,12 +25,12 @@ from sklearn.feature_extraction import image
 from sklearn.cluster import spectral_clustering```
 
 
-# (二)建立要被區分的重疊圓圈影像
+## (二)建立要被區分的重疊圓圈影像
 
 * 產生一個大小為輸入值得矩陣(此範例為100x100)，其內部值為沿著座標方向遞增(如:0,1,...)的值。
 
 
-```
+```python
 l = 100
 x, y = np.indices((l, l))```
 
@@ -38,7 +38,7 @@ x, y = np.indices((l, l))```
 * 給定四個圓圈的半徑長度
 * 將圓心座標與半徑結合產生四個圓圈圖像
 
-```
+```python
 center1 = (28, 24)
 center2 = (40, 50)
 center3 = (67, 58)
@@ -57,7 +57,7 @@ circle4 = (x - center4[0]) ** 2 + (y - center4[1]) ** 2 < radius4 ** 2
 * 用亂數產生的方法將整張影像作亂數處理
 
 
-```
+```python
 # 4 circles
 img = circle1 + circle2 + circle3 + circle4
 mask = img.astype(bool)
@@ -72,7 +72,7 @@ img += 1 + 0.2 * np.random.randn(*img.shape)```
 * ```image.img_to_graph``` 用來處理邊緣的權重與每個像速間的梯度關聯有關
 * 用類似Voronoi Diagram演算法的概念來處理影像
 
-```
+```python
 graph = image.img_to_graph(img, mask=mask)
 
 graph.data = np.exp(-graph.data / graph.data.std())
@@ -84,7 +84,7 @@ graph.data = np.exp(-graph.data / graph.data.std())
 
 開一張新影像```label_im```用來展示```spectral_clustering```切開後的分類結果
 
-```
+```python
 labels = spectral_clustering(graph, n_clusters=4, eigen_solver='arpack')
 label_im = -np.ones(mask.shape)
 label_im[mask] = labels
@@ -96,13 +96,13 @@ plt.matshow(label_im)
 ![](http://scikit-learn.org/stable/_images/plot_segmentation_toy_002.png)
 
 
-#(三)完整程式碼
+## (三)完整程式碼
 Python source code:plot_segmentation_toy.py
 
 http://scikit-learn.org/stable/_downloads/plot_segmentation_toy.py
 
 
-```
+```python
 print(__doc__)
 
 # Authors:  Emmanuelle Gouillart <emmanuelle.gouillart@normalesup.org>
