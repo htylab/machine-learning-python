@@ -18,7 +18,7 @@
 * [通用範例 General Examples](general_examples/general_examplesmd.md)
    * [Ex 1: Plotting Cross-Validated Predictions](general_examples/Ex1_plotting_cross-validated_predictions.md)
    * [Ex 2: Concatenating multiple feature extraction methods](general_examples/Ex2_feature_stacker.md)
-       * Ex 3: Isotonic Regression
+   * Ex 3: Isotonic Regression
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
 * Clustering
    * [EX 12:Spectral clustering for image segmentation](ex_12spectral_clustering_for_image_segmentation.md)
