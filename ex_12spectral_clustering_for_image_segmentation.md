@@ -65,7 +65,7 @@ img = img.astype(float)
 
 img += 1 + 0.2 * np.random.randn(*img.shape)```
 
-![左圖為mask影像右圖為img影像](下載.png)
+
 
 接著將產生好的影像化為可使用```spectral_clustering```的影像
 
@@ -92,7 +92,8 @@ label_im[mask] = labels
 plt.matshow(img)
 plt.matshow(label_im)
 ```
-![](下載 (2).png)
+![](http://scikit-learn.org/stable/_images/plot_segmentation_toy_001.png)
+![](http://scikit-learn.org/stable/_images/plot_segmentation_toy_002.png)
 
 
 #(三)完整程式碼
