@@ -26,6 +26,8 @@ http://scikit-learn.org/stable/auto_examples/plot_isotonic_regression.html
 # (三) Isotonic Regression「保序迴歸」
 具有分段迴歸的效果。迴歸函數採用遞增函數。
 
+`class sklearn.isotonic.IsotonicRegression`
+
 採用平方誤差，時間複雜度 O(N) 。
 
 ![](images/Isotonic Regression_figure_2.png)
