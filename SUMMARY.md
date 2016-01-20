@@ -1,6 +1,7 @@
 # Summary
 
 * [機器學習：使用Python](README.md)
+   * Clustering
 * [分類法 Classification](Classification/Classification.md)
    * [Ex 1: Recognizing hand-written digits](Classification/ex1_Recognizing_hand-written_digits.md)
    * [EX 2: Normal and Shrinkage Linear Discriminant Analysis for classification](Classification/ex2_normal_and_shrinkage_linear_discriminant_anal_.md)
@@ -19,3 +20,4 @@
    * [Ex 1: Plotting Cross-Validated Predictions](general_examples/Ex1_plotting_cross-validated_predictions.md)
    * [Ex 2: Concatenating multiple feature extraction methods](general_examples/Ex2_feature_stacker.md)
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
+
