@@ -1,7 +1,6 @@
 # Summary
 
 * [機器學習：使用Python](README.md)
-   * Clustering
 * [分類法 Classification](Classification/Classification.md)
    * [Ex 1: Recognizing hand-written digits](Classification/ex1_Recognizing_hand-written_digits.md)
    * [EX 2: Normal and Shrinkage Linear Discriminant Analysis for classification](Classification/ex2_normal_and_shrinkage_linear_discriminant_anal_.md)
