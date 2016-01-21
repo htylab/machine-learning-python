@@ -20,7 +20,7 @@
    * [Ex 2: Concatenating multiple feature extraction methods](general_examples/Ex2_feature_stacker.md)
    * [Ex 3: Isotonic Regression](general_examples/ex_3_isotonic_regression.md)
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
-   * Imputing missing values before building an estimator
+   * [Imputing missing values before building an estimator](general_examples/Ex 4: imputing_missing_values_before_building_an_estimat.md)
 * Clustering
    * [EX 12:Spectral clustering for image segmentation](ex_12spectral_clustering_for_image_segmentation.md)
 
