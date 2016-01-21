@@ -35,9 +35,34 @@ n_features = X_full.shape[1]
 
 
 ## (三)估計整個數據集的得分
-全部的資料使用隨機森林回歸函數進行交叉驗證，得到一個分數。
+全部的資料使用隨機森林回歸函數進行交叉驗證，得到一個分數。<br />
+
+Score with the entire dataset = 0.56
 ```python
 estimator = RandomForestRegressor(random_state=0, n_estimators=100)
 score = cross_val_score(estimator, X_full, y_full).mean()
 print("Score with the entire dataset = %.2f" % score)
+```
+
+## (四)設定損失比例並估計得分
+損失比例75%，損失樣本數為379筆，剩餘樣本為127筆。<br />
+將127筆資料進行隨機森林回歸函數進行交叉驗證，並得到一個分數。<br />
+
+Score without the samples containing missing values = 0.49
+```python
+missing_rate = 0.75
+n_missing_samples = np.floor(n_samples * missing_rate)
+missing_samples = np.hstack((np.zeros(n_samples - n_missing_samples,
+                                      dtype=np.bool),
+                             np.ones(n_missing_samples,
+                                     dtype=np.bool)))
+rng.shuffle(missing_samples)
+missing_features = rng.randint(0, n_features, n_missing_samples)
+
+# Estimate the score without the lines containing missing values
+X_filtered = X_full[~missing_samples, :]
+y_filtered = y_full[~missing_samples]
+estimator = RandomForestRegressor(random_state=0, n_estimators=100)
+score = cross_val_score(estimator, X_filtered, y_filtered).mean()
+print("Score without the samples containing missing values = %.2f" % score)
 ```
