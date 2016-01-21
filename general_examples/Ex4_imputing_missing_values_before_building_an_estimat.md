@@ -76,7 +76,7 @@ class sklearn.preprocessing.Imputer(missing_values='NaN', strategy='mean', axis=
 填充後進行隨機森林回歸函數進行交叉驗證，獲得填充後分數。
 
 Score before imputation of the missing values = 0.52<br />
-Score after imputation of the missing values = 0.55
+Score after imputation of the missing values = 0.57
 
 ```python
 X_missing = X_full.copy()
