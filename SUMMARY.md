@@ -23,4 +23,4 @@
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
 
 * [群聚法 Clustering](clustering/clustering.md)
-   * [EX 12:Spectral clustering for image segmentation](clusering/ex_12spectral_clustering_for_image_segmentation.md)
+   * [EX 12:Spectral clustering for image segmentation](Clusering/ex_12spectral_clustering_for_image_segmentation.md)
