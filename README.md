@@ -16,4 +16,10 @@ Scikit-learn (http://scikit-learn.org/) 是一個機器學習領域的開源套�
 
 ![](sklearn_intro.PNG)
 
-## Scikit-learn 套件的安裝
+### Scikit-learn 套件的安裝
+目前Scikit-learn同時支援Python 2及 3，安裝的方式也非常多種。對於初學者，最建議的方式是直接下載 Anaconda Python (https://www.continuum.io/downloads)。同時支援 Windows / OSX/ Linux 等作業系統。相關數據分析套件如Scipy, Numpy, 及圖形繪製庫 matplotlib, bokeh 會同時安裝。
+
+### 開發介面及環境
+筆者目前最常用的開發介面為IPython Notebook (3.0版後已改名為Jupyter Notebook) 以及 Atom.io 文字編輯器。在安裝Anaconda啟用IPython Notebook介面後，本文件連結之程式碼皆能夠以複製貼上的方式執行測試。目前部份章節也附有notebook格式文件 `.ipynb`檔可借下載。
+
+![](ipython.PNG)
