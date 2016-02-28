@@ -2,7 +2,7 @@
 
 http://scikit-learn.org/stable/auto_examples/feature_selection/feature_selection_pipeline.html
 
-此範例示範佇列的使用，依照順序執行ANOVA挑選主要特徵，並且使用C-SVM來計算特徵的權重與預測。
+此機器學習範例示範佇列的使用，依照順序執行ANOVA挑選主要特徵，並且使用C-SVM來計算特徵的權重與預測。
 
 1. 使用 `make_classification` 建立模擬資料
 2. 使用 `SelectKBest` 設定要用哪種目標函式，以挑出可提供信息的特徵
@@ -10,34 +10,9 @@ http://scikit-learn.org/stable/auto_examples/feature_selection/feature_selection
 4. 用 `make_pipeline` 合併 SelectKBest物件 與 SVC物件
 5. 用 `fit` 做訓練，並且以 `predict` 來做預測
 
-Python source code: [feature_selection_pipeline.py](http://scikit-learn.org/stable/_downloads/feature_selection_pipeline.py)
 
-```python
-from sklearn import svm
-from sklearn.datasets import samples_generator
-from sklearn.feature_selection import SelectKBest, f_regression
-from sklearn.pipeline import make_pipeline
-
-# import some data to play with
-X, y = samples_generator.make_classification(
-    n_features=20, n_informative=3, n_redundant=0, n_classes=4,
-    n_clusters_per_class=2)
-
-# ANOVA SVM-C
-# 1) anova filter, take 3 best ranked features
-anova_filter = SelectKBest(f_regression, k=3)
-# 2) svm
-clf = svm.SVC(kernel='linear')
-
-anova_svm = make_pipeline(anova_filter, clf)
-anova_svm.fit(X, y)
-anova_svm.predict(X)
-```
 ---
 ### (一)建立模擬資料
-
-
-
 
 在選擇特徵之前需要有整理好的特徵與目標資料。在此範例中，將以`make_classification`功能建立特徵與目標。該功能可以依照使用者想模擬的情況，建立含有不同特性的模擬資料，像是總特徵數目，其中有幾項特徵含有目標資訊性、目標聚集的程度、目標分為幾類等等的特性。
 
@@ -84,10 +59,33 @@ anova_svm.predict(X)
 
 ---
 
-##本章介紹到函式用法
+## (四)原始碼
 
+### Python source code: [feature_selection_pipeline.py](http://scikit-learn.org/stable/_downloads/feature_selection_pipeline.py)
 
+```python
+from sklearn import svm
+from sklearn.datasets import samples_generator
+from sklearn.feature_selection import SelectKBest, f_regression
+from sklearn.pipeline import make_pipeline
 
+# import some data to play with
+X, y = samples_generator.make_classification(
+    n_features=20, n_informative=3, n_redundant=0, n_classes=4,
+    n_clusters_per_class=2)
+
+# ANOVA SVM-C
+# 1) anova filter, take 3 best ranked features
+anova_filter = SelectKBest(f_regression, k=3)
+# 2) svm
+clf = svm.SVC(kernel='linear')
+
+anova_svm = make_pipeline(anova_filter, clf)
+anova_svm.fit(X, y)
+anova_svm.predict(X)
+```
+
+## (五)函式用法
 ###[`make_classification()`](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html) 的參數
 
 

@@ -2,74 +2,12 @@
 
 http://scikit-learn.org/stable/auto_examples/feature_selection/plot_permutation_test_for_classification.html
 
-
 此範例主要是介紹當我們做機器學習分類時，分類標籤的數值是否影響分類的計算。因此隨機置換分類標籤以及隨機的訓練測試資料組(交叉驗證)來輸入分類機，針對不同類型的分類做對應的評分，統計出不同的資料與標籤組合所得到的準確度與標籤的顯著性。
 `permutation_test_score`提供了對分類標籤做隨機置換的功能，並依照給定的置換次數來計算不同的資料組合配上置換過標籤的組合，用交叉驗證來計算準確性分佈，並統計顯著性。計算過後可取得該分類機器的真實分數與經過數次組合後取得的分數。
-
 
 1. 隨機置換分類資料的標籤
 2. 評估同一組訓練資料在不同的資料與標籤組合中，所表現的準確度與分佈情形
 
-
-
-Python source code: [plot_select_from_model_boston.py](http://scikit-learn.org/stable/_downloads/plot_permutation_test_for_classification.py)
-
-```Python
-# Author:  Alexandre Gramfort <alexandre.gramfort@inria.fr>
-# License: BSD 3 clause
-
-print(__doc__)
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-from sklearn.svm import SVC
-from sklearn.cross_validation import StratifiedKFold, permutation_test_score
-from sklearn import datasets
-
-
-##############################################################################
-# Loading a dataset
-iris = datasets.load_iris()
-X = iris.data
-y = iris.target
-n_classes = np.unique(y).size
-
-# Some noisy data not correlated
-random = np.random.RandomState(seed=0)
-E = random.normal(size=(len(X), 2200))
-
-# Add noisy data to the informative features for make the task harder
-X = np.c_[X, E]
-
-svm = SVC(kernel='linear')
-cv = StratifiedKFold(y, 2)
-
-score, permutation_scores, pvalue = permutation_test_score(
-    svm, X, y, scoring="accuracy", cv=cv, n_permutations=100, n_jobs=1)
-
-print("Classification score %s (pvalue : %s)" % (score, pvalue))
-
-###############################################################################
-# View histogram of permutation scores
-plt.hist(permutation_scores, 20, label='Permutation scores')
-ylim = plt.ylim()
-# BUG: vlines(..., linestyle='--') fails on older versions of matplotlib
-#plt.vlines(score, ylim[0], ylim[1], linestyle='--',
-#          color='g', linewidth=3, label='Classification Score'
-#          ' (pvalue %s)' % pvalue)
-#plt.vlines(1.0 / n_classes, ylim[0], ylim[1], linestyle='--',
-#          color='k', linewidth=3, label='Luck')
-plt.plot(2 * [score], ylim, '--g', linewidth=3,
-         label='Classification Score'
-         ' (pvalue %s)' % pvalue)
-plt.plot(2 * [1. / n_classes], ylim, '--k', linewidth=3, label='Luck')
-
-plt.ylim(ylim)
-plt.legend()
-plt.xlabel('Score')
-plt.show()
-```
 ### (一)取得鳶尾花資料
 
 本範例使用`datasets.load_iris()`讀取具有4個資訊影響力特徵與150個樣本的鳶尾花資料，該資料被分類為三個類型。並且額外增加2200筆150長度的雜訊做為不具資訊影響力的特徵，來增加辨認複雜度。
@@ -134,3 +72,65 @@ plt.xlabel('Score')
 plt.show()
 ```
 ![](http://scikit-learn.org/stable/_images/plot_permutation_test_for_classification_001.png)
+
+
+### 原始碼出處
+
+Python source code: [plot_select_from_model_boston.py](http://scikit-learn.org/stable/_downloads/plot_permutation_test_for_classification.py)
+
+```Python
+# Author:  Alexandre Gramfort <alexandre.gramfort@inria.fr>
+# License: BSD 3 clause
+
+print(__doc__)
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+from sklearn.svm import SVC
+from sklearn.cross_validation import StratifiedKFold, permutation_test_score
+from sklearn import datasets
+
+
+##############################################################################
+# Loading a dataset
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+n_classes = np.unique(y).size
+
+# Some noisy data not correlated
+random = np.random.RandomState(seed=0)
+E = random.normal(size=(len(X), 2200))
+
+# Add noisy data to the informative features for make the task harder
+X = np.c_[X, E]
+
+svm = SVC(kernel='linear')
+cv = StratifiedKFold(y, 2)
+
+score, permutation_scores, pvalue = permutation_test_score(
+    svm, X, y, scoring="accuracy", cv=cv, n_permutations=100, n_jobs=1)
+
+print("Classification score %s (pvalue : %s)" % (score, pvalue))
+
+###############################################################################
+# View histogram of permutation scores
+plt.hist(permutation_scores, 20, label='Permutation scores')
+ylim = plt.ylim()
+# BUG: vlines(..., linestyle='--') fails on older versions of matplotlib
+#plt.vlines(score, ylim[0], ylim[1], linestyle='--',
+#          color='g', linewidth=3, label='Classification Score'
+#          ' (pvalue %s)' % pvalue)
+#plt.vlines(1.0 / n_classes, ylim[0], ylim[1], linestyle='--',
+#          color='k', linewidth=3, label='Luck')
+plt.plot(2 * [score], ylim, '--g', linewidth=3,
+         label='Classification Score'
+         ' (pvalue %s)' % pvalue)
+plt.plot(2 * [1. / n_classes], ylim, '--k', linewidth=3, label='Luck')
+
+plt.ylim(ylim)
+plt.legend()
+plt.xlabel('Score')
+plt.show()
+```

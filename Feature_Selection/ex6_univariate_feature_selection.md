@@ -9,8 +9,14 @@ http://scikit-learn.org/stable/auto_examples/feature_selection/plot_feature_sele
 1. 若資料的標籤非常明確，但樣本只是隨機、順序的改變，使得同樣的樣本數目變多。
 2. 因此在本範例中，介紹如何以交叉驗證算出資料的score與p-value
 
+### (一)修改原本的鳶尾花資料
+
+### (二)使用f-value作為判斷的基準來找主要影響力特徵
+函式 SelectPercentile
+### (三)設定選取參數的門檻值
 
 
+### (四)原始碼出處
 Python source code: [plot_feature_selection.py](http://scikit-learn.org/stable/_downloads/plot_feature_selection.py)
 
 ```Python
@@ -78,8 +84,3 @@ plt.axis('tight')
 plt.legend(loc='upper right')
 plt.show()
 ```
-### (一)修改原本的鳶尾花資料
-
-### (二)使用f-value作為判斷的基準來找主要影響力特徵
-函式 SelectPercentile
-### (三)設定選取參數的門檻值

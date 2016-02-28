@@ -1,48 +1,14 @@
 ##特徵選擇/範例三: Recursive feature elimination with cross-validation
 
-http://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_with_cross_validation.html#example-feature-selection-plot-rfe-with-cross-validation-py
+http://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_with_cross_validation.html
 
-[待整理資料] REFCV比REF多一個交叉比對的分數(grid_scores_)，代表選擇多少特徵後的準確率。但REFCV不用像REF要給定選擇多少特徵，而是會依照交叉比對的分數而自動選擇訓練的特徵數。
+REFCV比REF多一個交叉比對的分數(grid_scores_)，代表選擇多少特徵後的準確率。但REFCV不用像REF要給定選擇多少特徵，而是會依照交叉比對的分數而自動選擇訓練的特徵數。
 
-本範例示範`RFE`的進階版，當我們在使用`RFE`指令時，需要輸入訓練特徵數目，讓訓練機能排除到其他較不具有影響力的特徵，也就是要有預期的訓練特徵數目。在`RFECV`指令提供了使用交叉驗證來選擇有最好準確率的訓練特徵數目。而交叉驗證也可以幫助我們避免訓練時造成**過度訓練(overfitting)**的現象，也就是當我們從某一組資料中挑出一筆訓練資料，能夠對剩下的測試資料預測出準確度最好的分類，卻發現這個分類機狀態無法準確的辨識新進資料的結果，因為這個最佳狀態只適用在特定的組合情況。因此使用`RFECV`後，我們可以從結果看出，使用多少特徵做分類判斷可以得到的準確率高低。
+本範例示範`RFE`的進階版，當我們在使用`RFE`指令時，需要輸入訓練特徵數目，讓訓練機能排除到其他較不具有影響力的特徵，也就是要有預期的訓練特徵數目。在`RFECV`指令提供了使用交叉驗證來選擇有最好準確率的訓練特徵數目。而交叉驗證也可以幫助我們避免訓練時造成過度訓練(overfitting)的現象，也就是當我們從某一組資料中挑出一筆訓練資料，能夠對剩下的測試資料預測出準確度最好的分類，卻發現這個分類機狀態無法準確的辨識新進資料的結果，因為這個最佳狀態只適用在特定的組合情況。因此使用`RFECV`後，我們可以從結果看出，使用多少特徵做分類判斷可以得到的準確率高低。
 
 1. 以疊代方式計算模型
 2. 以交叉驗證來取得影響力特徵
 
-
-Python source code: [plot_rfe_digits.py](http://scikit-learn.org/stable/_downloads/plot_rfe_with_cross_validation.py)
-
-```Python
-print(__doc__)
-
-import matplotlib.pyplot as plt
-from sklearn.svm import SVC
-from sklearn.cross_validation import StratifiedKFold
-from sklearn.feature_selection import RFECV
-from sklearn.datasets import make_classification
-
-# Build a classification task using 3 informative features
-X, y = make_classification(n_samples=1000, n_features=25, n_informative=3,
-                           n_redundant=2, n_repeated=0, n_classes=8,
-                           n_clusters_per_class=1, random_state=0)
-
-# Create the RFE object and compute a cross-validated score.
-svc = SVC(kernel="linear")
-# The "accuracy" scoring is proportional to the number of correct
-# classifications
-rfecv = RFECV(estimator=svc, step=1, cv=StratifiedKFold(y, 2),
-              scoring='accuracy')
-rfecv.fit(X, y)
-
-print("Optimal number of features : %d" % rfecv.n_features_)
-
-# Plot number of features VS. cross-validation scores
-plt.figure()
-plt.xlabel("Number of features selected")
-plt.ylabel("Cross validation score (nb of correct classifications)")
-plt.plot(range(1, len(rfecv.grid_scores_) + 1), rfecv.grid_scores_)
-plt.show()
-```
 
 ### (一)建立模擬資料
 
@@ -88,6 +54,40 @@ print("Optimal number of features : %d" % rfecv.n_features_)
 可以看到選擇三個最具有影響力的特徵時，交叉驗證的準確率高達81.8%。與建立模擬資料的n_informative=3是相對應的。
 
 
+### (四) 原始碼出處
+Python source code: [plot_rfe_digits.py](http://scikit-learn.org/stable/_downloads/plot_rfe_with_cross_validation.py)
+
+```Python
+print(__doc__)
+
+import matplotlib.pyplot as plt
+from sklearn.svm import SVC
+from sklearn.cross_validation import StratifiedKFold
+from sklearn.feature_selection import RFECV
+from sklearn.datasets import make_classification
+
+# Build a classification task using 3 informative features
+X, y = make_classification(n_samples=1000, n_features=25, n_informative=3,
+                           n_redundant=2, n_repeated=0, n_classes=8,
+                           n_clusters_per_class=1, random_state=0)
+
+# Create the RFE object and compute a cross-validated score.
+svc = SVC(kernel="linear")
+# The "accuracy" scoring is proportional to the number of correct
+# classifications
+rfecv = RFECV(estimator=svc, step=1, cv=StratifiedKFold(y, 2),
+              scoring='accuracy')
+rfecv.fit(X, y)
+
+print("Optimal number of features : %d" % rfecv.n_features_)
+
+# Plot number of features VS. cross-validation scores
+plt.figure()
+plt.xlabel("Number of features selected")
+plt.ylabel("Cross validation score (nb of correct classifications)")
+plt.plot(range(1, len(rfecv.grid_scores_) + 1), rfecv.grid_scores_)
+plt.show()
+```
 
 
 ##本章介紹到函式用法

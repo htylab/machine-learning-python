@@ -2,40 +2,12 @@
 
 http://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_digits.html
 
-本範例是示範以不斷減少影響判斷最小的特徵，來篩選特徵數目至指定數目，來作為訓練主要影響特徵。
+本範例主要目的是減少特徵數量來提升機器學習之預測準確度。
+主要方法是去不斷去剔除與資料分類關係轉少之特徵，來篩選特徵數目至指定數目。
 
 1. 以`load_digits`取得內建的數字辨識資料
 2. 以`RFE`疊代方式刪去相對不具有目標影響力的特徵
 
-
-Python source code: [plot_rfe_digits.py](http://scikit-learn.org/stable/_downloads/plot_rfe_digits.py)
-
-```Python
-print(__doc__)
-
-from sklearn.svm import SVC
-from sklearn.datasets import load_digits
-from sklearn.feature_selection import RFE
-import matplotlib.pyplot as plt
-
-# Load the digits dataset
-digits = load_digits()
-X = digits.images.reshape((len(digits.images), -1))
-y = digits.target
-
-# Create the RFE object and rank each pixel
-svc = SVC(kernel="linear", C=1)
-rfe = RFE(estimator=svc, n_features_to_select=1, step=1)
-rfe.fit(X, y)
-ranking = rfe.ranking_.reshape(digits.images[0].shape)
-
-# Plot pixel ranking
-plt.matshow(ranking)
-plt.colorbar()
-plt.title("Ranking of pixels with RFE")
-plt.show()
-```
----
 ### (一)產生內建的數字辨識資料
 
 ```Python
@@ -71,7 +43,7 @@ ranking = rfe.ranking_.reshape(digits.images[0].shape)
 
 ### (三)畫出每個像素所對應的權重順序
 
-取得每個像素位置對於判斷數字的權重順序後，我們把權重順序依照顏色畫在對應的位置。
+取得每個像素位置對於判斷數字的權重順序後，我們把權重順序依照顏色畫在對應的位置，數值愈大代表該像素是較不重要之特徵。由結果來看，不重要之特徵多半位於影像之外圍部份。而所有的訓練影像中，外圍像素多半為空白，因此較不重要。
 ```
 # Plot pixel ranking
 plt.matshow(ranking)
@@ -83,15 +55,31 @@ plt.show()
 ![](http://scikit-learn.org/stable/_images/plot_rfe_digits_001.png)
 
 
-
-##本章介紹到函式用法
-
-
-
-###[`load_digits()`](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits) 的參數
-
-
+### (四)原始碼
+Python source code: [plot_rfe_digits.py](http://scikit-learn.org/stable/_downloads/plot_rfe_digits.py)
 
 ```Python
-sklearn.datasets.load_digits(n_class=10)
+print(__doc__)
+
+from sklearn.svm import SVC
+from sklearn.datasets import load_digits
+from sklearn.feature_selection import RFE
+import matplotlib.pyplot as plt
+
+# Load the digits dataset
+digits = load_digits()
+X = digits.images.reshape((len(digits.images), -1))
+y = digits.target
+
+# Create the RFE object and rank each pixel
+svc = SVC(kernel="linear", C=1)
+rfe = RFE(estimator=svc, n_features_to_select=1, step=1)
+rfe.fit(X, y)
+ranking = rfe.ranking_.reshape(digits.images[0].shape)
+
+# Plot pixel ranking
+plt.matshow(ranking)
+plt.colorbar()
+plt.title("Ranking of pixels with RFE")
+plt.show()
 ```

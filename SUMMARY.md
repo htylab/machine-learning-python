@@ -21,7 +21,6 @@
    * [Ex 3: Isotonic Regression](general_examples/Ex3_isotonic_regression.md)
    * [Ex 4: Imputing missing values before building an estimator](general_examples/Ex4_imputing_missing_values_before_building_an_estimat.md)
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
-   
-* Clustering
-   * [EX 12:Spectral clustering for image segmentation](ex_12spectral_clustering_for_image_segmentation.md)
 
+* [群聚法 Clustering](clustering/clustering.md)
+   * [EX 12:Spectral clustering for image segmentation](clusering/ex_12spectral_clustering_for_image_segmentation.md)
