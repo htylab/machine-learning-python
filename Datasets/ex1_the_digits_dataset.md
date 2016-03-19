@@ -72,7 +72,7 @@ for index, (image, label) in enumerate(images_and_labels[:4]):
 ```
 
 
-![png](ex2_fig1.png)
+![png](ex1_fig2.png)
 
 
 
