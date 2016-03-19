@@ -24,3 +24,6 @@
 
 * [群聚法 Clustering](Clustering/clustering.md)
    * [EX 12:Spectral clustering for image segmentation](Clustering/EX12_spectral_clustering_for_image_segmentation.md)
+
+* [機器學習資料集 Datasets](Datasets/datasets.md)
+   * [Ex 1: The digits](Datasets/ex1_the_digits_dataset.md)
