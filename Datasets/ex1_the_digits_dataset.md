@@ -135,11 +135,11 @@ Bogazici University, Istanbul Turkey ` 建立的。數字的筆跡總共來自43
 ## (三)應用範例介紹
 在整個scikit-learn應用範例中，有以下幾個範例是利用了這組手寫辨識資料集。這個資料集的使用最適合機器學習初學者來理解分類法的原理以及其進階應用
 
- * [分類法 Classification](Classification/Classification.md)
-   * [Ex 1: Recognizing hand-written digits](Classification/ex1_Recognizing_hand-written_digits.md)
- * [特徵選擇 Feature Selection](Feature_Selection/intro.md)
-   * [Ex 2: Recursive Feature Elimination](Feature_Selection/ex2_Recursive_feature_elimination.md)
-   * [Ex 3: Recursive Feature Elimination with Cross-Validation](Feature_Selection/ex3_rfe_crossvalidation__md.md)
+ * [分類法 Classification](../Classification/Classification.md)
+   * [Ex 1: Recognizing hand-written digits](../Classification/ex1_Recognizing_hand-written_digits.md)
+ * [特徵選擇 Feature Selection](../Feature_Selection/intro.md)
+   * [Ex 2: Recursive Feature Elimination](../Feature_Selection/ex2_Recursive_feature_elimination.md)
+   * [Ex 3: Recursive Feature Elimination with Cross-Validation](../Feature_Selection/ex3_rfe_crossvalidation__md.md)
 
 
 ```python
