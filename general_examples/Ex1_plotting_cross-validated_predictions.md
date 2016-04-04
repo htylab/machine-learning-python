@@ -2,7 +2,12 @@
 
 http://scikit-learn.org/stable/auto_examples/plot_cv_predict.html
 
-這個範例可以看出用`cross_val_predict`的預測誤差。
+1. 資料集：波士頓房產
+2. 特徵：房地產客觀數據，如年份、平面大小
+3. 預測目標：房地產價格
+4. 機器學習方法：線性迴歸
+5. 探討重點：10 等分的交叉驗証(10-fold Cross-Validation)來實際測試資料以及預測值的關係
+6. 關鍵函式： `sklearn.cross_validation.cross_val_predict`
 
 ## (一)引入函式庫及內建測試資料庫
 
@@ -10,8 +15,8 @@ http://scikit-learn.org/stable/auto_examples/plot_cv_predict.html
 
 1. `matplotlib.pyplot`: 用來繪製影像
 2. `sklearn.datasets`: 用來繪入內建測試資料庫
-3. `sklearn.cross_validation import cross_val_predict`
-4. `sklearn.linear_model`
+3. `sklearn.cross_validation import cross_val_predict`：利用交叉驗證的方式來預測
+4. `sklearn.linear_model`：使用線性迴歸
 
 
 
