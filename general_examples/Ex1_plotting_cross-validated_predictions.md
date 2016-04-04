@@ -32,20 +32,20 @@ y = boston.target
 
 | 顯示 | 說明 |
 | -- | -- |
-| ('data', (506, 13))| 機器學習數據 |
-| ('feature_names', (13,)) |  |
+| ('data', (506, 13))| 房地產的資料集，共506筆房產13個特徵 |
+| ('feature_names', (13,)) | 房地產的特徵名 |
 | ('target', (506,)) | 回歸目標 |
 | DESCR | 資料之描述 |
 
 
 
-## (三)用`sklearn.cross_validation.cross_val_predict`產生估計值
+## (三)`cross_val_predict`的使用
 
-`sklearn.cross_validation.cross_val_predict`(estimator, X, y=None, cv=None, n_jobs=1, verbose=0, fit_params=None, pre_dispatch='2*n_jobs')[source]
+`sklearn.cross_validation.cross_val_predict`(estimator, X, y=None, cv=None, n_jobs=1, verbose=0, fit_params=None, pre_dispatch='2*n_jobs')
 
 X為機器學習數據，
 y為回歸目標，
-cv為疊代次數。
+cv為交叉驗証時資料切分的依據，範例為10則將資料切分為10等分，以其中9等分為訓練集，另外一等分則為測試集。
 ```python
 predicted = cross_val_predict(lr, boston.data, y, cv=10)
 ```
