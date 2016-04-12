@@ -28,3 +28,4 @@
 
 * [機器學習資料集 Datasets](Datasets/datasets.md)
    * [Ex 1: The digits](Datasets/ex1_the_digits_dataset.md)
+   * [Ex 3: The iris](Datasets/ex3_the_iris_dataset.md)

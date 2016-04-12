@@ -51,7 +51,7 @@ plt.yticks(())
 
 
 
-![png](ex2_fig1.png)
+![png](ex3_fig1.png)
 
 
 ## (二)資料集介紹
@@ -104,7 +104,7 @@ plt.show()
 ```
 
 
-![png](ex2_fig2.png)
+![png](ex3_fig2.png)
 
 
 
