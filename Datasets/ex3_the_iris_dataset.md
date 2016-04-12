@@ -43,14 +43,6 @@ plt.yticks(())
 
 ```
 
-
-
-
-    ([], <a list of 0 Text yticklabel objects>)
-
-
-
-
 ![png](ex3_fig1.png)
 
 
