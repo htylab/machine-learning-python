@@ -8,14 +8,11 @@ http://scikit-learn.org/stable/auto_examples/feature_selection/plot_feature_sele
 
 1. 資料集：鳶尾花
 2. 特徵：萼片(sepal)之長與寬以及花瓣(petal)之長與寬
-3. 預測目標：房地產價格
-4. 機器學習方法：線性迴歸
-5. 探討重點：10 等分的交叉驗証(10-fold Cross-Validation)來實際測試資料以及預測值的關係
-6. 關鍵函式： `sklearn.cross_validation.cross_val_predict`
+3. 預測目標：共有三種鳶尾花 setosa, versicolor, virginica
+4. 機器學習方法：線性分類
+5. 探討重點：使用單變量選擇挑出資料，與直接做支持向量分類的比較
+6. 關鍵函式： `sklearn.feature_selection.SelectPercentile`
 
-
-1. 若資料的標籤非常明確，但樣本只是隨機、順序的改變，使得同樣的樣本數目變多。
-2. 因此在本範例中，介紹如何以交叉驗證算出資料的score與p-value
 
 ### (一)修改原本的鳶尾花資料
 
