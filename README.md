@@ -9,6 +9,11 @@
 * 0.0: 2015/12/21
     * 開始本文件「機器學習：使用Python」的撰寫
     * 初期以scikit-learn套件的範例介紹為主軸
+* 0.1: 2016/4/15
+    * 「機器學習：使用Python」文件
+    *  Contributor: 陳巧寧、曾裕勝、黃騰毅 、蔡奕甫
+    *  新增章節: Classification, Clustering, cross_decomposition, Datasets, feature_selection, general_examples
+    *  新增 introduction: 說明簡易的Anaconda安裝，以及利用數字辨識範例來入門機器學習的方法
 
 
 ##  Scikit-learn 套件
