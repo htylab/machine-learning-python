@@ -10,7 +10,7 @@ http://scikit-learn.org/stable/auto_examples/feature_selection/plot_feature_sele
 2. 特徵：萼片(sepal)之長與寬以及花瓣(petal)之長與寬
 3. 預測目標：共有三種鳶尾花 setosa, versicolor, virginica
 4. 機器學習方法：線性分類
-5. 探討重點：使用單變量選擇挑出資料，與直接做支持向量分類的比較
+5. 探討重點：使用單變量選擇(`SelectPercentile`)挑出資料，與直接做支持向量分類的比較
 6. 關鍵函式： `sklearn.feature_selection.SelectPercentile`
 
 
