@@ -5,8 +5,17 @@ http://scikit-learn.org/stable/auto_examples/feature_selection/plot_permutation_
 此範例主要是用於當我們做機器學習分類時，資料標籤為無大小關係的分類，也就是第一類與第二類並無前後大小關係的分類。由於輸入分類器的標籤仍為數值，但數值的大小可能影響分類結果，因此隨機置換分類標籤以及隨機的訓練測試資料組(交叉驗證)來輸入分類機，針對不同類型的分類做對應的評分，統計出不同的資料與標籤組合所得到的準確度與標籤的顯著性。
 `permutation_test_score`提供了對分類標籤做隨機置換的功能，並依照給定的置換次數來計算不同的資料組合配上置換過標籤的組合，用交叉驗證來計算準確性分佈，並統計顯著性。計算過後可取得該分類機器的真實分數與經過數次組合後取得的分數。
 
-1. `permutation_test_score`隨機置換分類資料的標籤
-2. 評估同一組訓練資料在不同的資料與標籤組合中，所表現的準確度與分佈情形
+![](permutations.png)
+
+1. 資料集：鳶尾花
+2. 特徵：萼片(sepal)之長與寬以及花瓣(petal)之長與寬
+3. 預測目標：共有三種鳶尾花 setosa, versicolor, virginica
+4. 機器學習方法：線性分類
+5. 探討重點：變換訓練資料分類的目標標籤，減少標籤數值對分類的影響
+6. 關鍵函式： `sklearn.cross_validation.permutation_test_score`
+
+
+【1】Ojala and Garriga. Permutation Tests for Studying Classifier Performance. The Journal of Machine Learning Research (2010) vol. 11
 
 ### (一)取得鳶尾花資料
 
@@ -26,7 +35,7 @@ E = random.normal(size=(len(X), 2200))
 X = np.c_[X, E]
 ```
 
-### (二)使用LassoCV功能來篩選具有影響力的特徵
+### (二)建立基本的支持向量分類機
 使用`SVC`建立最基本的支持向量分類機。並設定訓練交叉驗證的摺疊系數為2。
 
 ```
