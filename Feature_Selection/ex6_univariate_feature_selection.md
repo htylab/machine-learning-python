@@ -33,7 +33,7 @@ y = iris.target
 
 ### (二)使用f-value作為判斷的基準來找主要影響力特徵
 
-以`SelectPercentile`作單變量特徵的計算，以F-test來做為選擇的統計方式，選出最具有影響力特徵中的百分之十。並將計算出來的單便量特徵分數結果做正規化，以便比較每特徵在使用單便量計算與未使用單便量計算的差別。
+以`SelectPercentile`作單變量特徵的計算，以F-test(`f_classif`)來做為選擇的統計方式，挑選函式輸出結果大於百分之十的特徵。並將計算出來的單便量特徵分數結果做正規化，以便比較每特徵在使用單變量計算與未使用單變量計算的差別。
 ```
 ###############################################################################
 # Univariate feature selection with F-test for feature scoring
@@ -61,7 +61,7 @@ plt.bar(X_indices - .25, svm_weights, width=.2, label='SVM weight', color='r')
 ```
 ### (四)找出以單變量特徵選出的分類權重
 
-以單變量特徵選擇選出的特徵，做為分類的訓練特徵，並找出對應的特徵權重。
+以單變量特徵選擇選出的特徵，做為分類的訓練特徵，差別在於訓練的特徵資料是使用`selector.transform(X)`將`SelectPercentile`選擇的結果讀取出來，並算出以單變量特徵選擇做預先選擇後，該分類器的判斷權重。
 ```
 clf_selected = svm.SVC(kernel='linear')
 clf_selected.fit(selector.transform(X), y)
