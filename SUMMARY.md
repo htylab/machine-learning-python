@@ -29,3 +29,6 @@
 * [機器學習資料集 Datasets](Datasets/datasets.md)
    * [Ex 1: The digits 手寫數字辨識](Datasets/ex1_the_digits_dataset.md)
    * [Ex 3: The iris 鳶尾花資料集](Datasets/ex3_the_iris_dataset.md)
+ * [應用範例 Application](application/application.md)
+    * [波士頓房地產雲端評估(一)](application/Property_Value/linear_regression.md)
+    * [波士頓房地產雲端評估(二)](application/Property_Value/SVR.md)
