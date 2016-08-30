@@ -16,6 +16,9 @@
     *  新增 introduction: 說明簡易的Anaconda安裝，以及利用數字辨識範例來入門機器學習的方法
     *  第 10,000個 pageview 達成
 ![](images/pg10000.PNG)
+* 0.2: 2016/8/30
+    *  新增應用章節，Contributor: 吳尚真
+    *  增修章節: Classification, Datasets, feature_selection, general_examples
 
 ##  Scikit-learn 套件
 
