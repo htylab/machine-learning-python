@@ -59,8 +59,7 @@ plt.show()
 ```
 
 
-![png](output_5_0.png)
-
+![png](images/ex2_fig.png)
 
 ### (四)原始碼
 Python source code: [plot_rfe_digits.py](http://scikit-learn.org/stable/_downloads/plot_rfe_digits.py)
