@@ -49,7 +49,7 @@ print("Optimal number of features : %d" % rfecv.n_features_)
 
 下圖的曲線表示選擇多少個特徵來做訓練，會得到多少的準確率。
 
-![](http://scikit-learn.org/stable/_images/plot_rfe_with_cross_validation_001.png)
+![](images/ex3_fig.png)
 
 可以看到選擇三個最具有影響力的特徵時，交叉驗證的準確率高達81.8%。與建立模擬資料的n_informative=3是相對應的。
 
