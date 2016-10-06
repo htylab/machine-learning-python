@@ -7,7 +7,7 @@ http://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_digits.h
 主要方法是去不斷去剔除與資料分類關係轉少之特徵，來篩選特徵數目至指定數目。
 
 1. 以`load_digits`取得內建的數字辨識資料
-2. 以`RFE`疊代方式刪去相對不具有目標影響力的特徵
+2. 以`RFE`疊代方式刪去相對不具有目標影響力的特徵.
 
 ### (一)產生內建的數字辨識資料
 
