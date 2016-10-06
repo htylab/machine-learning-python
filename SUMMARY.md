@@ -15,7 +15,7 @@
    * [Ex 4: Feature Selection using SelectFromModel](Feature_Selection/ex4_feature_selection_using_selectfrommodel_md.md)
    * [Ex 5: Test with permutations the significance of a classification score](Feature_Selection/ex5_test_with_permutations_the_significance_of_a__.md)
    * [Ex 6: Univariate Feature Selection](Feature_Selection/ex6_univariate_feature_selection.md)
-   * [Ex 7:Comparison of F-test and mutual information](Feature_Selection/ex_7comparison_of_f-test_and_mutual_information.md)
+   * [Ex 7: Comparison of F-test and mutual information](Feature_Selection/ex_7comparison_of_f-test_and_mutual_information.md)
 * [互分解 Cross Decomposition](cross_decomposition/ex1_Compare_cross_decomposition_methods.md)
 * [通用範例 General Examples](general_examples/general_examplesmd.md)
    * [Ex 1: Plotting Cross-Validated Predictions](general_examples/Ex1_plotting_cross-validated_predictions.md)
