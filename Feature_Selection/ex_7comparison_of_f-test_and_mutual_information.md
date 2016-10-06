@@ -13,7 +13,7 @@ F-test 的結果只會關注線性相關的變數影響，該方法選擇X1作�
 
 ![](sphx_glr_plot_f_test_vs_mi_001.png)
 
-'''print(__doc__)
+```print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -38,4 +38,5 @@ for i in range(3):
         plt.ylabel("$y$", fontsize=14)
     plt.title("F-test={:.2f}, MI={:.2f}".format(f_test[i], mi[i]),
               fontsize=16)
-plt.show()'''
+plt.show()
+```
