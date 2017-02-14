@@ -1,7 +1,7 @@
 # Summary
 
 * [機器學習：使用Python](README.md)
-  * [簡介Scikit-learn 機器學習](Introduction/intro.md)
+   * [簡介Scikit-learn 機器學習](Introduction/intro.md)
 * [分類法 Classification](Classification/Classification.md)
    * [Ex 1: Recognizing hand-written digits](Classification/ex1_Recognizing_hand-written_digits.md)
    * [EX 2: Normal and Shrinkage Linear Discriminant Analysis for classification](Classification/ex2_normal_and_shrinkage_linear_discriminant_anal_.md)
@@ -15,6 +15,7 @@
    * [Ex 4: Feature Selection using SelectFromModel](Feature_Selection/ex4_feature_selection_using_selectfrommodel_md.md)
    * [Ex 5: Test with permutations the significance of a classification score](Feature_Selection/ex5_test_with_permutations_the_significance_of_a__.md)
    * [Ex 6: Univariate Feature Selection](Feature_Selection/ex6_univariate_feature_selection.md)
+   * [Ex 7: Comparison of F-test and mutual information](Feature_Selection/ex_7comparison_of_f-test_and_mutual_information.md)
 * [互分解 Cross Decomposition](cross_decomposition/ex1_Compare_cross_decomposition_methods.md)
 * [通用範例 General Examples](general_examples/general_examplesmd.md)
    * [Ex 1: Plotting Cross-Validated Predictions](general_examples/Ex1_plotting_cross-validated_predictions.md)
@@ -22,14 +23,12 @@
    * [Ex 3: Isotonic Regression](general_examples/Ex3_isotonic_regression.md)
    * [Ex 4: Imputing missing values before building an estimator](general_examples/Ex4_imputing_missing_values_before_building_an_estimat.md)
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
-
 * [群聚法 Clustering](Clustering/clustering.md)
    * [EX 12:Spectral clustering for image segmentation](Clustering/EX12_spectral_clustering_for_image_segmentation.md)
-
 * [機器學習資料集 Datasets](Datasets/datasets.md)
    * [Ex 1: The digits 手寫數字辨識](Datasets/ex1_the_digits_dataset.md)
    * [Ex 3: The iris 鳶尾花資料集](Datasets/ex3_the_iris_dataset.md)
-
 * [應用範例 Application](application/application.md)
-    * [波士頓房地產雲端評估(一)](application/Property_Value/linear_regression.md)
-    * [波士頓房地產雲端評估(二)](application/Property_Value/SVR.md)
+   * [波士頓房地產雲端評估(一)](application/Property_Value/linear_regression.md)
+   * [波士頓房地產雲端評估(二)](application/Property_Value/SVR.md)
+
