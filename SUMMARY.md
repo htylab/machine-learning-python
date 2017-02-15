@@ -36,3 +36,8 @@
   * [Ex 2: Restricted Boltzmann Machine features for digit classification](Neural_Networks/plot_rbm_logistic_classification.md)
   * [Ex 3: Compare Stochastic learning strategies for MLPClassifier](Neural_Networks/plot_mlp_training_curves.md)
   * [Ex 4: Varying regularization in Multi-layer Perceptron](Neural_Networks/plot_mlp_alpha.md)
+* [決策樹](Decision_trees/Decision_trees.md)
+  * [Ex 1: Decision Tree Regression](Decision_trees/ex1_Decision_tree_regression.md)
+  * [Ex 2: Multi-output Decision Tree Regression](Decision_trees/ex2_Multi-output_Decision_Tree_Regression.md)
+  * [Ex 3: Plot the decision surface of a decision tree on the iris dataset](Decision_trees/ex3_Plot_the_decision_surface_of_a_decision_tree_on_the_iris_dataset.md)
+  * [Ex 4: Understanding the decision tree structure](Decision_trees/ex4_Understanding_the_decision_tree_structure.md)
