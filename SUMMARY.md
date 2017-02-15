@@ -31,4 +31,8 @@
 * [應用範例 Application](application/application.md)
    * [波士頓房地產雲端評估(一)](application/Property_Value/linear_regression.md)
    * [波士頓房地產雲端評估(二)](application/Property_Value/SVR.md)
-
+* [類神經網路](Neural_Networks/Neural_network_models_supervised.md)
+  * [Ex 1: Visualization of MLP weights on MNIST](Neural_Networks/plot_mnist_filters.md)
+  * [Ex 2: Restricted Boltzmann Machine features for digit classification](Neural_Networks/plot_rbm_logistic_classification.md)
+  * [Ex 3: Compare Stochastic learning strategies for MLPClassifier](Neural_Networks/plot_mlp_training_curves.md)
+  * [Ex 4: Varying regularization in Multi-layer Perceptron](Neural_Networks/plot_mlp_alpha.md)
