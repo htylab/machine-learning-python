@@ -125,8 +125,13 @@ print("Logistic regression using raw pixel features:\n%s\n" % (
         Y_test,
         logistic_classifier.predict(X_test))))
 ```
-<img src="./images/Logistic_regression_using_RBM_features.png" width="50%" height="50%"> $$圖1:使用RBM演算法後準確率為0.95$$
-<img src="./images/Logistic_regression_using_raw_pixel_features.png" width="50%" height="50%"> $$圖2:不使用任何特徵選取方法做的做的邏輯回歸準確率0.77$$
+![](images/Logistic_regression_using_RBM_features.png)
+<center>圖1:使用RBM演算法後準確率為0.95</center>
+
+![](images/Logistic_regression_using_raw_pixel_features.png)
+<center>圖2:不使用任何特徵選取方法做的做的邏輯回歸準確率0.77</center>
+
+
 
 
 ### (五)畫出100個RBM萃取出的特徵
@@ -145,7 +150,10 @@ plt.subplots_adjust(0.08, 0.02, 0.92, 0.85, 0.08, 0.23)
 
 plt.show()
 ```
-<img src="./images/RBM_100_feature.png" width="50%" height="50%"> $$圖3:使用RBM演算法，萃取出來的特徵$$
+![](images/RBM_100_feature.png)
+<center>圖3:使用RBM演算法，尋找出來的特徵</center>
+
+
 
 
 ### (六)完整程式碼
@@ -266,9 +274,4 @@ plt.suptitle('100 components extracted by RBM', fontsize=16)
 plt.subplots_adjust(0.08, 0.02, 0.92, 0.85, 0.08, 0.23)
 
 plt.show()
-```
-
-
-```python
-
 ```

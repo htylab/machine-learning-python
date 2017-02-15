@@ -47,10 +47,11 @@ for coef, ax in zip(mlp.coefs_[0].T, axes.ravel()):
 
 plt.show()
 ```
-<img src="./images/weight_matrix_28_28.png" width="50%" height="50%"> $$圖1:16個神經元對於影像的權重圖$$
+![](images/weight_matrix_28_28.png)
+<center>圖1:16個神經元對於影像的權重圖</center>
+![](images/MLP_visualization_loss.png)
+<center>圖2:疊代計算時loss下降</center>
 
-
-<img src="./images/MLP_visualization_loss.png" width="50%" height="50%"> $$圖2:疊代計算時loss下降$$
 
 ### (四)完整程式碼
 ```python
@@ -85,9 +86,4 @@ for coef, ax in zip(mlp.coefs_[0].T, axes.ravel()):
     ax.set_yticks(())
 
 plt.show()
-```
-
-
-```python
-
 ```

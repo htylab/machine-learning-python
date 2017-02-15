@@ -6,7 +6,8 @@ Multi-layer Perceptron (MLP):MLP為一種監督式學習的演算法，藉由 $f
 
 
 
-<img src="./images/multilayerperceptron_network.png" width="50%" height="50%"> $$圖1:包含一層隱藏層的MLP$$
+![](images/multilayerperceptron_network.png)
+<center>圖1:包含一層隱藏層的MLP</center> 
 
 最左邊那層稱作輸入層，為一個神經元集合$ \{x_i|x_1,x_2,...,x_m\}$代表輸入的特徵。每個神經元在隱藏層會根據前一層的輸出的結果，做為此層的輸入$ w_1x_1+w_2x_2+...+w_mx_m$在將總和使用非線性的活化函數做 $f(⋅):R→R$轉換，例如:[hyperbolic tan function](https://en.wikipedia.org/wiki/Hyperbolic_function#/media/File:Sinh_cosh_tanh.svg)、[Sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function)，最右邊那層為輸出層，會接收最後的隱藏層的輸出在轉換一次成輸出值。
 
@@ -60,8 +61,3 @@ clf.predict([[2., 2., 2.], [-1., -2.,0.],[1., 1.,0.]])
 ```
 
 
-
-
-```python
-
-```
