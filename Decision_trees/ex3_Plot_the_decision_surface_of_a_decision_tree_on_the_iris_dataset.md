@@ -32,7 +32,7 @@ for pairidx, pair in enumerate([[0, 1], [0, 2], [0, 3],
     y = iris.target
 ```
 
-### (二)建立`Decision Tree`分類器
+### (二)建立Decision Tree分類器
 #### 建立模型及分類器訓練
 * `DecisionTreeClassifier()`:決策樹分類器。<br />
 * `fit(特徵資料, 目標資料)`：利用特徵資料及目標資料對分類器進行訓練。<br />
@@ -137,9 +137,4 @@ for pairidx, pair in enumerate([[0, 1], [0, 2], [0, 3],
 plt.suptitle("Decision surface of a decision tree using paired features")
 plt.legend()
 plt.show()
-```
-
-
-```python
-
 ```
