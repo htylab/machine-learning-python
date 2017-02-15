@@ -44,7 +44,7 @@ plt.show()
 ![](images/weight_matrix_28_28.png)
 <center>圖1:16個神經元對於影像的權重圖</center>
 
-![](images/MLP_visualization_loss.png)
+![](images/MLP_visualization_loss.PNG)
 <center>圖2:疊代計算時loss下降</center>
 
 
