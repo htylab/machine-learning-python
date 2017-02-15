@@ -17,11 +17,16 @@ http://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_training_c
 
 看圖1藍色點的位置，當GD類的方法陷入局部最小值時，因為gd=0將會使電腦認為此處為最小值，於是為了減少此現象，每次更新時會將上次更新權重的一部分拿來加入此次更新。如紅色箭頭所示，將有機會翻過local minimum。
 
-<img src="./images/Momentum.png" width="50%" height="50%"> $$圖1:momentum觀念示意圖$$
+![](images/Momentum.png)
+
+<br\>
+<center>圖1:momentum觀念示意圖</center>
 <br\>
 3.Nesterov Momentum為另外一種Momentum的變形體，目的也是降低陷入local minimum機率的方法，而兩種方法的差異在於下圖:
-<img src="./images/Nesterov_Momentum.png" width="100%" height="100%"> $$圖2:左圖為momentum，1.先計算 gradient、2.加上 momentum、3.更新權重$$ $$右圖為Nesterov Momentum，1.先加上momentum、2.計算gradient、3.更新權重。
-$$
+![](images/Nesterov_Momentum.png)
+圖2:左圖為momentum，1.先計算 gradient、2.加上 momentum、3.更新權重<br\>
+右圖為Nesterov Momentum，1.先加上momentum、2.計算gradient、3.更新權重。
+
 圖2圖片來源:http://cs231n.github.io/neural-networks-3/
 <br\>
 4.Adaptive Moment Estimation (Adam)為一種自己更新學習速率的方法，會根據GD計算出來的值調整每個參數的學習率(因材施教)。
@@ -111,8 +116,9 @@ for ax, data, name in zip(axes.ravel(), data_sets, ['iris', 'digits',
 fig.legend(ax.get_lines(), labels=labels, ncol=3, loc="upper center")
 plt.show()
 ```
-<img src="./images/Compare_Stochastic_learning_strategies_for_MLPClassifier.png" width="100%" height="100%"> $$圖3:四種資料對於不同學習方法的loss curves下降比較圖
-$$
+![](images/Compare_Stochastic_learning_strategies_for_MLPClassifier.png)
+
+<center>圖3:四種資料對於不同學習方法的loss curves下降比較圖</center>
 
 
 
@@ -192,9 +198,4 @@ for ax, data, name in zip(axes.ravel(), data_sets, ['iris', 'digits',
 
 fig.legend(ax.get_lines(), labels=labels, ncol=3, loc="upper center")
 plt.show()
-```
-
-
-```python
-
 ```

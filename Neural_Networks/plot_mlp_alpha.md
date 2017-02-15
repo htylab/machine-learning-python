@@ -16,7 +16,7 @@ http://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_alpha.html
 PS:正規化為一種處理無限大、發散以及一些不合理表示式的方法，透過引入一項輔助性的概念——正規子(regulator)，去限制函數使得函數不會發散
 <br\>
 此處的Alpha參數即為正規子，目的是去限制權重(Weight,W)的大小，以防萬一overfitting與underfitting的問題，增加alpha值可能可以處理overfitting，反之減小alpha可能可以解決underfitting的問題，至於權重大小，如何影響輸出請看圖1:
-<img src="./images/alpha_weight.png" width="100%" height="100%"> 圖1:比較同樣輸入，對於不同大小權重值，對於輸出的影響左圖為權重為5時，當輸入變動0.1時，輸出增加0.5，即輸出改變10%，右圖為權重為1時，當輸入變動0.1時，輸出增加0.1，即輸出改變2%，通常模型對於input較不敏感，模型表現較好
+ ![](images/alpha_weight.png)圖1:比較同樣輸入，對於不同大小權重值，對於輸出的影響左圖為權重為5時，當輸入變動0.1時，輸出增加0.5，即輸出改變10%，右圖為權重為1時，當輸入變動0.1時，輸出增加0.1，即輸出改變2%，通常模型對於input較不敏感，模型表現較好
 <br\>結果將顯示出:使用不同alpha值去限制權重產生出的決策邊界
 
 
@@ -125,7 +125,8 @@ for X, y in datasets:
 figure.subplots_adjust(left=.02, right=.98)
 plt.show()
 ```
-<img src="./images/Varying_regularization_in_Multi-layer_Perceptron.png" width="100%" height="100%"> $$圖2:不同alpha結果圖，每張子圖右下角是分辨率，alpha值很大，模型的結果明顯underfitting$$
+![](images/Varying_regularization_in_Multi-layer_Perceptron.png)
+圖2:不同alpha結果圖，每張子圖右下角是分辨率，alpha值很大，模型的結果明顯underfitting
 
 
 ```python
