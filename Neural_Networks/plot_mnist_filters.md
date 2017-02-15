@@ -1,10 +1,4 @@
 
-
-```python
-%matplotlib inline
-```
-
-
 # Visualization of MLP weights on MNIST
 
 
@@ -14,7 +8,7 @@
 2.sklearn.datasets:引入內建的手寫數字資料庫
 3.sklearn.neural_network:引入類神經網路的套件
 ```python
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 from sklearn.datasets import fetch_mldata
 from sklearn.neural_network import MLPClassifier
 mnist = fetch_mldata("MNIST original")
@@ -49,6 +43,7 @@ plt.show()
 ```
 ![](images/weight_matrix_28_28.png)
 <center>圖1:16個神經元對於影像的權重圖</center>
+
 ![](images/MLP_visualization_loss.png)
 <center>圖2:疊代計算時loss下降</center>
 
