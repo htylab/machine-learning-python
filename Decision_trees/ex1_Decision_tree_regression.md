@@ -34,7 +34,7 @@ y = np.sin(X).ravel()
 y[::5] += 3 * (0.5 - rng.rand(16)) #每5筆資料加入一個雜訊
 ```
 
-### (二)建立`Decision Tree`迴歸模型
+### (二)建立Decision Tree迴歸模型
 #### 建立模型
 * `DecisionTreeRegressor(max_depth = 最大深度)`：`DecisionTreeRegressor`建立決策樹回歸模型。`max_depth`決定樹的深度，若為None則所有節點被展開。此範例會呈現不同`max_depth`對預測結果的影響。
 
@@ -114,9 +114,4 @@ plt.ylabel("target")
 plt.title("Decision Tree Regression")
 plt.legend()
 plt.show()
-```
-
-
-```python
-
 ```

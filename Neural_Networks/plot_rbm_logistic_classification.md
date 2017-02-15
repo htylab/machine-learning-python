@@ -1,9 +1,5 @@
 
 
-```python
-%matplotlib inline
-```
-
 
 # Restricted Boltzmann Machine features for digit classification
 
@@ -94,7 +90,7 @@ classifier = Pipeline(steps=[('rbm', rbm), ('logistic', logistic)])
 
 ```python
 # 參數選擇需使用cross-validation去比較
-# 此參數是使用GridSearchCV找出來的. Here we are not performing cross-validation to save time. 
+# 此參數是使用GridSearchCV找出來的. Here we are not performing cross-validation to save time.
 #GridSratch 就是將參數設定好，跑過全部參數後去找結果最好的一組參數
 rbm.learning_rate = 0.06
 rbm.n_iter = 20
@@ -125,10 +121,10 @@ print("Logistic regression using raw pixel features:\n%s\n" % (
         Y_test,
         logistic_classifier.predict(X_test))))
 ```
-![](images/Logistic_regression_using_RBM_features.png)
+![](images/Logistic_regression_using_RBM_features.PNG)
 <center>圖1:使用RBM演算法後準確率為0.95</center>
 
-![](images/Logistic_regression_using_raw_pixel_features.png)
+![](images/Logistic_regression_using_raw_pixel_features.PNG)
 <center>圖2:不使用任何特徵選取方法做的做的邏輯回歸準確率0.77</center>
 
 
@@ -150,7 +146,7 @@ plt.subplots_adjust(0.08, 0.02, 0.92, 0.85, 0.08, 0.23)
 
 plt.show()
 ```
-![](images/RBM_100_feature.png)
+![](images/RBM_100_feature.PNG)
 <center>圖3:使用RBM演算法，尋找出來的特徵</center>
 
 

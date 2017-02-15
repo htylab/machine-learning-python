@@ -1,9 +1,5 @@
 
 
-```python
-%matplotlib inline
-```
-
 
 # Compare Stochastic learning strategies for MLPClassifier
 
@@ -17,13 +13,13 @@ http://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_training_c
 
 看圖1藍色點的位置，當GD類的方法陷入局部最小值時，因為gd=0將會使電腦認為此處為最小值，於是為了減少此現象，每次更新時會將上次更新權重的一部分拿來加入此次更新。如紅色箭頭所示，將有機會翻過local minimum。
 
-![](images/Momentum.png)
+![](images/Momentum.PNG)
 
 <br\>
 <center>圖1:momentum觀念示意圖</center>
 <br\>
 3.Nesterov Momentum為另外一種Momentum的變形體，目的也是降低陷入local minimum機率的方法，而兩種方法的差異在於下圖:
-![](images/Nesterov_Momentum.png)
+![](images/Nesterov_Momentum.PNG)
 圖2:左圖為momentum，1.先計算 gradient、2.加上 momentum、3.更新權重<br\>
 右圖為Nesterov Momentum，1.先加上momentum、2.計算gradient、3.更新權重。
 

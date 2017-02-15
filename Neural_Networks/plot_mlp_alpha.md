@@ -1,10 +1,5 @@
 
 
-```python
-%matplotlib inline
-```
-
-
 # Varying regularization in Multi-layer Perceptron
 http://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_alpha.html#sphx-glr-auto-examples-neural-networks-plot-mlp-alpha-py
 <br\>
@@ -127,8 +122,3 @@ plt.show()
 ```
 ![](images/Varying_regularization_in_Multi-layer_Perceptron.png)
 圖2:不同alpha結果圖，每張子圖右下角是分辨率，alpha值很大，模型的結果明顯underfitting
-
-
-```python
-
-```
