@@ -125,8 +125,8 @@ stack []
 
 ```
 
-<img src="./image/Understanding the decision tree structure.png\" width="50%" height="50%"> 
-決策樹示意圖
+![](./image/Understanding the decision tree structure.png)
+
 
 
 
