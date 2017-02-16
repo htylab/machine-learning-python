@@ -1,10 +1,6 @@
-
-
-
 # Compare Stochastic learning strategies for MLPClassifier
 
 http://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_training_curves.html#sphx-glr-auto-examples-neural-networks-plot-mlp-training-curves-py
-
 <br\>
 
 此範例將畫出圖表，展現不同的訓練策略(optimizer)下loss curves的變化，訓練策略包括SGD與Adam。
@@ -22,6 +18,7 @@ Momentum是為了以防GD類的方法陷入局部最小值而衍生的方法，�
 <br\>
 <center>圖1:momentum觀念示意圖</center>
 <br\>
+
 ###3.Nesterov Momentum:
 Nesterov Momentum為另外一種Momentum的變形體，目的也是降低陷入local minimum機率的方法，而兩種方法的差異在於下圖:
 
@@ -33,6 +30,7 @@ Nesterov Momentum為另外一種Momentum的變形體，目的也是降低陷入l
 
 圖2圖片來源:http://cs231n.github.io/neural-networks-3/
 <br\>
+
 ###4.Adaptive Moment Estimation (Adam):
 Adam為一種自己更新學習速率的方法，會根據GD計算出來的值調整每個參數的學習率(因材施教)。
 <br\>
@@ -122,7 +120,7 @@ for ax, data, name in zip(axes.ravel(), data_sets, ['iris', 'digits',
 fig.legend(ax.get_lines(), labels=labels, ncol=3, loc="upper center")
 plt.show()
 ```
-![](images/Compare_Stochastic_learning_strategies_for_MLPClassifier.png)
+![](images/Compare_Stochastic_learning_strategies_for_MLPClassifier.PNG)
 
 <center>圖3:四種資料對於不同學習方法的loss curves下降比較圖</center>
 
