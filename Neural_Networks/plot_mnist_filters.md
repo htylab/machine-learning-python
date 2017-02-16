@@ -1,6 +1,9 @@
 
 # Visualization of MLP weights on MNIST
 
+http://scikit-learn.org/stable/auto_examples/neural_networks/plot_mnist_filters.html#sphx-glr-auto-examples-neural-networks-plot-mnist-filters-py
+
+<br\>
 
 此範例將使用MNIST dataset的訓練資料集去訓練MLPClassifier，資料集中每張圖片都是28\*28，對於第一層的每個神經元都會有28\*28個特徵，輸出結果是將訓練資料的每個像素點對於神經元的權重畫成28*28的圖，用來表示圖片上每個像素點對於神經元的權重多寡。
 ### (一)引入函式庫與資料
