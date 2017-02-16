@@ -2,7 +2,7 @@
 # Multi-layer Perceptron(多層感知器)
 http://scikit-learn.org/stable/modules/neural_networks_supervised.html
 
-Multi-layer Perceptron (MLP):MLP為一種監督式學習的演算法，藉由 f(⋅):R^m→R^o ，m是輸入時的維度、o是輸出時的維度，藉由輸入特徵 X=x_1,x_2,.....,x_m 和目標值Y，此算法將可以使用非線性近似將資料分類或進行迴歸運算。MLP可以在輸入層與輸出層中間插入許多非線性層，如圖1所示:，這是有一層隱藏層的網路。
+Multi-layer Perceptron (MLP):MLP為一種監督式學習的演算法，藉由 f(⋅):R^m→R^o ，m是輸入時的維度、o是輸出時的維度，藉由輸入特徵 $$X=x_1,x_2,.....,x_m$$ 和目標值Y，此算法將可以使用非線性近似將資料分類或進行迴歸運算。MLP可以在輸入層與輸出層中間插入許多非線性層，如圖1所示:，這是有一層隱藏層的網路。
 
 
 

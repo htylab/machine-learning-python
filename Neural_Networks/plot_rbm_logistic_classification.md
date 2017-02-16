@@ -4,7 +4,9 @@
 # Restricted Boltzmann Machine features for digit classification
 
 http://scikit-learn.org/stable/auto_examples/neural_networks/plot_rbm_logistic_classification.html#sphx-glr-auto-examples-neural-networks-plot-rbm-logistic-classification-py
+
 <br\>
+
 此範例將使用BernoulliRBM特徵選取方法，提升手寫數字識別的精確率，伯努利限制玻爾茲曼機器模型（`BernoulliRBM
 <sklearn.neural_network.BernoulliRBM>`）將可以對數據做有效的非線性
 特徵提取的處理。<br\>
