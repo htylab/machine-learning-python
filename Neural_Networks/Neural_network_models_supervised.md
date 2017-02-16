@@ -12,7 +12,7 @@ Multi-layer Perceptron (MLP):MLP為一種監督式學習的演算法，藉由 f(
 最左邊那層稱作輸入層，為一個神經元集合 \{x_i|x_1,x_2,...,x_m\}代表輸入的特徵。每個神經元在隱藏層會根據前一層的輸出的結果，做為此層的輸入w_1x_1+w_2x_2+...+w_mx_m在將總和使用非線性的活化函數做 f(⋅):R→R轉換，例如:[hyperbolic tan function](https://en.wikipedia.org/wiki/Hyperbolic_function#/media/File:Sinh_cosh_tanh.svg)、[Sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function)，最右邊那層為輸出層，會接收最後的隱藏層的輸出在轉換一次成輸出值。
 
 intercepts_為模型訓練後，權重矩陣內包含兩個屬性:$coefs\_$和$intercepts\_$。coefs\_ 此矩陣中第i個指標表示第$i$層與$i+1$層的權重，intercepts_為偏權值(bias)矩陣，此矩陣中第i個指標表示要加在$i+1層$的偏權值。
-
+0.0
 MLP優點:<br\>
     1.有能力建立非線性的模型<br\>
     2.可以使用$partial\_fit$建立real-time模型<br\>
