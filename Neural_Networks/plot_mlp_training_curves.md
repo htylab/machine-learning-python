@@ -15,9 +15,8 @@ Momentum是為了以防GD類的方法陷入局部最小值而衍生的方法，�
 
 ![](images/Momentum.PNG)
 
-<br\>
-<center>圖1:momentum觀念示意圖</center>
-<br\>
+圖1:momentum觀念示意圖
+
 
 ###3.Nesterov Momentum:
 Nesterov Momentum為另外一種Momentum的變形體，目的也是降低陷入local minimum機率的方法，而兩種方法的差異在於下圖:
