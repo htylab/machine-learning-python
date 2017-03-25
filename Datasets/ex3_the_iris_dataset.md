@@ -47,7 +47,7 @@ plt.yticks(())
 
 
 ## (二)資料集介紹
-`digits = datasets.load_digits()` 將一個dict型別資料存入digits，我們可以用下面程式碼來觀察裏面資料
+`iris = datasets.load_iris()` 將一個dict型別資料存入iris，我們可以用下面程式碼來觀察裏面資料
 
 
 ```python
