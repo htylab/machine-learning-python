@@ -2,6 +2,11 @@
 
 * [機器學習：使用Python](README.md)
    * [簡介Scikit-learn 機器學習](Introduction/intro.md)
+* [機器學習：使用 NVIDIA Jetson TX2](nvidia_jetson_tx2/nvidia_jetson_tx2.md)
+   * [從零開始](nvidia_jetson_tx2/1_host.md)
+   * [讓 TX2 動起來](nvidia_jetson_tx2/2_init.md)
+   * [安裝OpenCV](nvidia_jetson_tx2/3_opencv.md)
+   * [安裝TensorFlow](nvidia_jetson_tx2/4_tensorflow.md)
 * [分類法 Classification](Classification/Classification.md)
    * [Ex 1: Recognizing hand-written digits](Classification/ex1_Recognizing_hand-written_digits.md)
    * [EX 2: Normal and Shrinkage Linear Discriminant Analysis for classification](Classification/ex2_normal_and_shrinkage_linear_discriminant_anal_.md)
