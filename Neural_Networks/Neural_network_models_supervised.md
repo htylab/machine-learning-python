@@ -1,4 +1,6 @@
-
++<script>
+ +MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+ +</script>
 # Multi-layer Perceptron(多層感知器)
 http://scikit-learn.org/stable/modules/neural_networks_supervised.html
 
