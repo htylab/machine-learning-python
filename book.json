@@ -1,7 +1,6 @@
 {   "pdf": {"fontSize": 8},
     "styles": {
         "pdf": "styles/pdf.css"},
-    "plugins": ["mathjax","ga"],
     "pluginsConfig": {
         "ga": {
             "token": "UA-7819893-6"
