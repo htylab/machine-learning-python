@@ -57,7 +57,7 @@
             ```
 
             輸出
-    
+
             ```
             Hello, TensorFlow on NVIDIA Jetson TX2!
             ```
@@ -77,7 +77,7 @@
             ```
 
             輸出
-    
+
             ```
             name: NVIDIA Tegra X2
             major: 6 minor: 2 memoryClockRate (GHz) 1.3005
