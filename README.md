@@ -26,6 +26,6 @@
 ![](images/2016year.PNG)
 ##  Scikit-learn 套件
 
-Scikit-learn (http://scikit-learn.org/) 是一個機器學習領域的開源套件。整個專案起始於 2007年由David Cournapeau所執行的`Google Summer of Code` 計畫。而2010年之後，則由法國國家資訊暨自動化研究院（INRIA, http://www.inria.fr） 繼續主導及後續的支援及開發。近幾年(2013-2015)則由 INRIA 支持 Olivier Grisel (http://ogrisel.com) 全職負責該套件的維護工作。以開發者的角度來觀察，會發現Scikit-learn的整套使用邏輯設計的極其簡單。往往能將繁雜的機器學習理論簡化到一個步驟完成。Python的機器學習相關套件相當多，為何Scikit-learn會是首選之一呢？其實一個開源套件的選擇，最簡易的指標就是其`contributor: 貢獻者` 、 `commits:版本數量` 以及最新的更新日期。下圖是2016/1/3 經過了美好的跨年夜後，筆者於官方開源程式碼網站(https://github.com/scikit-learn/scikit-learn) 所擷取的畫面。我們可以發現最新`commit`是四小時前，且`contributor`及`commit`數量分別為531人及 20,331個。由此可知，至少在2016年，這個專案乃然非常積極的在運作。在眾多機器學習套件中，不論是貢獻者及版本數量皆是最龐大的。也因此是本文件介紹機器學習的切入點。未來，我們希望能介紹更多的機器學習套件以及理論，也歡迎有志之士共同參與維護。
+[Scikit-learn](http://scikit-learn.org/) 是一個機器學習領域的開源套件。整個專案起始於2007年，由[David Cournapeau](https://github.com/cournape)所執行的[Google Summer of Code](https://developers.google.com/open-source/gsoc/)計畫。2010年之後，則由法國國家資訊暨自動化研究院（[INRIA]( http://www.inria.fr)繼續主導及後續的支援與開發。近幾年(2013-2015)則由INRIA支持[Olivier Grisel](http://ogrisel.com)全職負責該套件的維護工作。從開發者的角度切入，會發現Scikit-learn使用的邏輯設計極其簡單。往往能將繁雜的機器學習過程簡化到幾個步驟完成。Python上與機器學習相關的套件數量相當多。為何首選Scikit-learn進行介紹呢？其實，一個開源套件的選擇，最簡易的方法即是審視其**貢獻者(contributor)數量**、**版本(commit)數量**及最近的更新日期。下圖為2016/1/3跨年夜後，筆者於[Scikit-learn官方專案網站](https://github.com/scikit-learn/scikit-learn)所擷取的畫面。我們可以發現最新的版本更新是四小時前，且貢獻者及版本數量分別來到531人及20,331個。由此可知，截至2016年為止，這個專案仍然非常積極的在運作著。相比其他眾多機器學習套件，Scikit-learn無論是貢獻者數量或是版本數量皆是最多的。因此，本文件以此作為介紹機器學習的切入點。未來，我們希望能介紹更多的機器學習套件及背後的機器學習理論，也歡迎有志之士共同參與維護。
 
 ![](images/sklearn_intro.PNG)
