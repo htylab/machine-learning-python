@@ -4,7 +4,7 @@
     "plugins": ["scripts","mathjax"],
    "pluginsConfig": {
        "scripts": {
-           "files": [ "./googleanalysis.js"  ] }  },
+           "files": [ "./googleanalysis.js"  ] },
           "mathjax":{
             "forceSVG": true
         }
