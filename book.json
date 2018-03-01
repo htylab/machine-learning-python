@@ -1,11 +1,11 @@
 {   "pdf": {"fontSize": 8},
     "styles": {
         "pdf": "styles/pdf.css"},
-    "plugins": ["scripts","mathjax"],
-   "pluginsConfig": {
-       "scripts": {
-           "files": [ "./googleanalysis.js"  ] },
-          "mathjax":{
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-7819893-6"
+        },
+        "mathjax":{
             "forceSVG": true
         }
     }
