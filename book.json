@@ -2,9 +2,6 @@
     "styles": {
         "pdf": "styles/pdf.css"},
     "pluginsConfig": {
-        "ga": {
-            "token": "UA-7819893-6"
-        },
         "mathjax":{
             "forceSVG": true
         }
