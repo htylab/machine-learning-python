@@ -164,3 +164,6 @@ plt.yticks(())
 plt.title('Labels')
 plt.show()
 ```
+
+
+![](https://github.com/kenny024241/machine-learning-python/raw/master/Clustering/ex1.png)
