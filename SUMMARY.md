@@ -24,6 +24,7 @@
    * [Ex 4: Imputing missing values before building an estimator](general_examples/Ex4_imputing_missing_values_before_building_an_estimat.md)
    * [Ex 7: Face completion with a multi-output estimators](general_examples/Ex7_face_completion_with_a_multi-output_estimators.md)
 * [群聚法 Clustering](Clustering/clustering.md)
+   * [EX1_Feature_agglomeration.md](Clustering/EX1_Feature_agglomeration.md)
    * [EX 12:Spectral clustering for image segmentation](Clustering/EX12_spectral_clustering_for_image_segmentation.md)
 * [機器學習資料集 Datasets](Datasets/datasets.md)
    * [Ex 1: The digits 手寫數字辨識](Datasets/ex1_the_digits_dataset.md)
