@@ -1,9 +1,13 @@
 {   "pdf": {"fontSize": 8},
+    "plugins": ["ga"],
     "styles": {
         "pdf": "styles/pdf.css"},
     "pluginsConfig": {
         "mathjax":{
             "forceSVG": true
+        },
+        "ga": {
+            "token": "UA-XXXX-Y"
         }
     }
 }
