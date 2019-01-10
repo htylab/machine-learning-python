@@ -9,10 +9,12 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_digits_agglomeration.
 
 
 ## (一)引入函式庫
+
 引入函式如下:
+
 1. numpy : 產生陣列數值
 2. matplotlib.pyplot : 用來繪製影像
-3. sklearn import datasets, cluster : datasets : 用來繪入內建之手寫數字資料庫 ; cluster : 其內收集非監督clustering演算法
+3. sklearn import datasets, cluster : datasets : 用來匯入內建之手寫數字資料庫 ; cluster : 其內收集非監督clustering演算法
 4. sklearn.feature_extraction.image import grid_to_graph : 定義資料的結構
 
 
