@@ -5,15 +5,15 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_digits_agglomeration.
 此範例是用FeatureAgglomeration來做特徵聚集
 
 1. 利用 `sklearn.datasets.load_digits()` 來讀取內建資料庫
-2. 利用FeatureAgglomeration:將相似特徵聚集並降維，來減少特徵數量，避免特徵過多的問題
+2. 利用 `FeatureAgglomeration` : 將相似特徵聚集並降維，來減少特徵數量，避免特徵過多的問題
 
 
 ## (一)引入函式庫
 引入函式如下:
-1. ```numpy```:產生陣列數值
-2. ```matplotlib.pyplot```:用來繪製影像
-3. ```sklearn import datasets, cluster```:datasets:用來繪入內建之手寫數字資料庫 ; cluster:其內收集非監督clustering演算法
-4. ```sklearn.feature_extraction.image import grid_to_graph```:定義資料的結構
+1. `numpy` : 產生陣列數值
+2. `matplotlib.pyplot` : 用來繪製影像
+3. `sklearn import datasets, cluster` : datasets : 用來繪入內建之手寫數字資料庫 ; cluster : 其內收集非監督clustering演算法
+4. `sklearn.feature_extraction.image import grid_to_graph` : 定義資料的結構
 
 
 ```python
@@ -30,7 +30,7 @@ digits = datasets.load_digits()
 images = digits.images
 ```
 
-使用`datasets.load_digits()`將資料存入，`digits`為一個dict型別資料，我們可以用以下指令來看一下資料的內容。
+使用 `datasets.load_digits()` 將資料存入， `digits` 為一個dict型別資料，我們可以用以下指令來看一下資料的內容。
 
 ```python
 for key,value in digits.items() :
@@ -62,23 +62,23 @@ agglo = cluster.FeatureAgglomeration(connectivity=connectivity,
                                      
 agglo.fit(X)
 ```
-grid_to_graph:做出像素連接的矩陣
-FeatureAgglomeration:將相似特徵聚集並降維，來減少特徵數量
+grid_to_graph : 做出像素連接的矩陣
+FeatureAgglomeration : 將相似特徵聚集並降維，來減少特徵數量
 
 ```python
 X_reduced = agglo.transform(X)
 
 X_restored = agglo.inverse_transform(X_reduced)
 ```
-transform:根據上面n_clusters的值做轉換，得出[n_samples, n_features_new]新的特徵值
-inverse_transform:將其轉換回原本的特徵數(64)對應的特徵值
+transform : 根據上面 n_clusters 的值做轉換，得出[n_samples, n_features_new]新的特徵值
+inverse_transform : 將其轉換回原本的特徵數(64)對應的特徵值
 
 ```python
 images_restored = np.reshape(X_restored, images.shape)
 plt.figure(1, figsize=(4, 3.5))
 plt.clf()
 ```
-plt.clf():保留figure但是清除內容，可以讓這figure重複使用
+plt.clf() : 保留figure但是清除內容，可以讓這figure重複使用
 
 最後用下面程式碼將圖秀出來
 ```python
@@ -106,6 +106,9 @@ plt.yticks(())
 plt.title('Labels')
 plt.show()
 ```
+
+![](https://github.com/kenny024241/machine-learning-python/raw/master/Clustering/ex1.png)
+
 
 ## (三)完整程式碼
 Python source code:plot_digits_agglomeration.py
@@ -166,4 +169,3 @@ plt.show()
 ```
 
 
-![](https://github.com/kenny024241/machine-learning-python/raw/master/Clustering/ex1.png)
