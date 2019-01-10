@@ -9,19 +9,20 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_coin_segmentation.htm
 3. 最後將結果可視化
 
 ## (一)引入函式庫
+
 引入函式如下:
-1. ```time```:提供各種與時間相關函數
-2. ```numpy```:產生陣列數值
-3. ```scipy.ndimage.filters import gaussian_filter```:做gaussian filter
-4. matplotlib.pyplot```:用來繪製影像
-5. ```skimage.data import coins```:匯入龐貝城的希臘硬幣
-6. ```skimage.transform import rescale```:用來縮放圖片
-7. ```sklearn.feature_extraction import image```:將每個像素的梯度關係圖像化
-8. ```sklearn.cluster import spectral_clustering```:將影像正規化切割
+
+1. time : 提供各種與時間相關函數
+2. numpy : 產生陣列數值
+3. scipy.ndimage.filters import gaussian_filter : 做gaussian filter
+4. matplotlib.pyplot : 用來繪製影像
+5. skimage.data import coins : 匯入龐貝城的希臘硬幣
+6. skimage.transform import rescale : 用來縮放圖片
+7. sklearn.feature_extraction import image : 將每個像素的梯度關係圖像化
+8. sklearn.cluster import spectral_clustering : 將影像正規化切割
 
 ```python
 import time
-
 import numpy as np
 from scipy.ndimage.filters import gaussian_filter
 import matplotlib.pyplot as plt
@@ -36,8 +37,8 @@ orig_coins = coins()
 smoothened_coins = gaussian_filter(orig_coins, sigma=2)
 rescaled_coins = rescale(smoothened_coins, 0.2, mode="reflect")
 ```
-coins():匯入一張303x384的影像
-用rescale將圖片resize成原圖的20%(61x77)來加快處理，並根據mode選擇pad方式
+coins() : 匯入一張303x384的影像
+用 rescale 將圖片 resize 成原圖的20%(61x77)來加快處理，並根據 mode 選擇 padding 方式
 
 
 ## (二)Clustering
@@ -45,7 +46,7 @@ coins():匯入一張303x384的影像
 # Convert the image into a graph with the value of the gradient on the edges.
 graph = image.img_to_graph(rescaled_coins)
 ```
-img_to_graph:用來處理邊緣的權重與每個像速間的梯度關聯
+img_to_graph : 用來處理邊緣的權重與每個像速間的梯度關聯
 
 ```python
 beta = 10
@@ -84,6 +85,8 @@ plt.show()
 
 用plt.contour畫出等高線，同個label會被框在同個圈內
 
+
+![](https://github.com/kenny024241/machine-learning-python/blob/master/Clustering/ex6-1.png)  ![](https://github.com/kenny024241/machine-learning-python/blob/master/Clustering/ex6-2.png)
 
 
 ## (三)完整程式碼
@@ -174,4 +177,3 @@ for assign_labels in ('kmeans', 'discretize'):
 plt.show()
 ```
 
-![](https://github.com/kenny024241/machine-learning-python/blob/master/Clustering/ex6-1.png)  ![](https://github.com/kenny024241/machine-learning-python/blob/master/Clustering/ex6-2.png)
