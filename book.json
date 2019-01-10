@@ -1,13 +1,15 @@
 {   "pdf": {"fontSize": 8},
-    "plugins": ["ga"],
+      "plugins": [
+    "header"
+      ],
     "styles": {
         "pdf": "styles/pdf.css"},
     "pluginsConfig": {
         "mathjax":{
             "forceSVG": true
         },
-        "ga": {
-            "token": "UA-7819893-6"
+        "layout": {
+          "headerPath" : "header.html"
         }
     }
 }
