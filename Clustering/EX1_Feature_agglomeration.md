@@ -4,16 +4,16 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_digits_agglomeration.
 
 此範例是用FeatureAgglomeration來做特徵聚集
 
-1. 利用 `sklearn.datasets.load_digits()` 來讀取內建資料庫
-2. 利用 `FeatureAgglomeration` : 將相似特徵聚集並降維，來減少特徵數量，避免特徵過多的問題
+1. 利用 sklearn.datasets.load_digits() 來讀取內建資料庫
+2. 利用 FeatureAgglomeration : 將相似特徵聚集並降維，來減少特徵數量，避免特徵過多的問題
 
 
 ## (一)引入函式庫
 引入函式如下:
-1. `numpy` : 產生陣列數值
-2. `matplotlib.pyplot` : 用來繪製影像
-3. `sklearn import datasets, cluster` : datasets : 用來繪入內建之手寫數字資料庫 ; cluster : 其內收集非監督clustering演算法
-4. `sklearn.feature_extraction.image import grid_to_graph` : 定義資料的結構
+1. numpy : 產生陣列數值
+2. matplotlib.pyplot : 用來繪製影像
+3. sklearn import datasets, cluster : datasets : 用來繪入內建之手寫數字資料庫 ; cluster : 其內收集非監督clustering演算法
+4. sklearn.feature_extraction.image import grid_to_graph : 定義資料的結構
 
 
 ```python
@@ -30,7 +30,7 @@ digits = datasets.load_digits()
 images = digits.images
 ```
 
-使用 `datasets.load_digits()` 將資料存入， `digits` 為一個dict型別資料，我們可以用以下指令來看一下資料的內容。
+使用 datasets.load_digits() 將資料存入， digits 為一個dict型別資料，我們可以用以下指令來看一下資料的內容。
 
 ```python
 for key,value in digits.items() :
