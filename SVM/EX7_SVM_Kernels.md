@@ -97,6 +97,8 @@ plt.show()
 
 ![Linear Kernel](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/linear.PNG "Linear Kernel") ![Polynomial Kernel](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/poly.PNG "Polynomial Kernel") ![RBF Kernel](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/rbf.PNG "RBF Kernel")
 
+當然在 SVM 的 Kernel 選擇上不只能夠使用內建的 Kernel Type ，也可以自行設計 Kernel，在 *SVM with custom kernel* 中會有範例說明。
+
 ## (三)完整程式碼
 
 Python source code: plot_svm_kernels.py
