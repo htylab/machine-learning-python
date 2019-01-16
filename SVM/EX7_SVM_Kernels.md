@@ -89,9 +89,9 @@ plt.show()
 ```
 接著利用`svm.SVC`去設定 SVM 的相關參數，包括Kernel類型及Gamma值等等，其中Gamma值是只有當Kernel為'rbf','poly','sigmoid'時才需設定，設定完 SVM 後利用`fit`這個指令去訓練我們的資料和目標值。
 
-最後，利用`plt.scatter`用來畫散點圖的指令幫助我們畫出資料點及標示出 support vector 的資料點位置，在下方結果圖中，標示為雙圈的資料點就是 support vector，接著利用`plt.contour`來畫出 SVM 的 decision boundary，在結果圖中以實線表示。
+最後，利用`plt.scatter`用來畫散點圖的指令幫助我們畫出資料點及標示出 support vector 的資料點位置，在下方結果圖中，標示為雙圈的資料點就是 support vector，接著利用`plt.contour`來畫出 SVM 的 decision boundary，在結果圖中以實線表示；虛線部分則為 margin 的範圍。
 
-關於 support vector 及 decision boundary 的相關介紹可以參考另外一篇 SVM 的教學 *EX9: SVM Margins Example* 中會有說明。
+關於 support vector，margin 及 decision boundary 的相關介紹可以參考另外一篇 SVM 的教學 *EX9: SVM Margins Example* 中會有說明。
 
 下面分別為 Linear, Polynomial, RBF 三種kernel產生出來的結果圖 :
 
