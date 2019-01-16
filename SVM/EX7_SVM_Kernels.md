@@ -91,13 +91,13 @@ plt.show()
 
 最後，利用`plt.scatter`用來畫散點圖的指令幫助我們畫出資料點及標示出 support vector 的資料點位置，在下方結果圖中，標示為雙圈的資料點就是 support vector，接著利用`plt.contour`來畫出 SVM 的 decision boundary，在結果圖中以實線表示。
 
-關於 support vector 及 decision boundary 的相關介紹可以參考另外一篇 SVM 的教學 *SVM Margins Example* 中會有說明。
+關於 support vector 及 decision boundary 的相關介紹可以參考另外一篇 SVM 的教學 *EX9: SVM Margins Example* 中會有說明。
 
 下面分別為 Linear, Polynomial, RBF 三種kernel產生出來的結果圖 :
 
 ![Linear Kernel](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/linear.PNG "Linear Kernel") ![Polynomial Kernel](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/poly.PNG "Polynomial Kernel") ![RBF Kernel](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/rbf.PNG "RBF Kernel")
 
-當然在 SVM 的 Kernel 選擇上不只能夠使用內建的 Kernel Type ，也可以自行設計 Kernel，在 SVM 的教學 *SVM with custom kernel* 中會有範例說明。
+當然在 SVM 的 Kernel 選擇上不只能夠使用內建的 Kernel Type ，也可以自行設計 Kernel，在 SVM 的教學 *EX4: SVM with custom kernel* 中會有範例說明。
 
 ## (三)完整程式碼
 
