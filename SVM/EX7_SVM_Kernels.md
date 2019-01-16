@@ -12,9 +12,9 @@ https://scikit-learn.org/stable/auto_examples/svm/plot_svm_kernels.html#sphx-glr
 
 引入函式如下:
 
-1. numpy : 產生陣列數值
-2. matplotlib.pyplot : 用來繪製影像
-3. sklearn.svm : SVM 支持向量機之演算法物件
+1. `numpy` : 產生陣列數值
+2. `matplotlib.pyplot` : 用來繪製影像
+3. `sklearn.svm` : SVM 支持向量機之演算法物件
 
 ```python
 import numpy as np
@@ -91,7 +91,7 @@ plt.show()
 
 最後，利用`plt.scatter`用來畫散點圖的指令幫助我們畫出資料點及標示出 support vector 的資料點位置，在下方結果圖中，標示為雙圈的資料點就是 support vector，接著利用`plt.contour`來畫出 SVM 的 decision boundary，在結果圖中以實線表示。
 
-關於 support vector 的相關介紹可以參考另外一篇 SVM 的教學 *SVM Margins Example* 中會有說明。
+關於 support vector 及 decision boundary 的相關介紹可以參考另外一篇 SVM 的教學 *SVM Margins Example* 中會有說明。
 
 下面分別為 Linear, Polynomial, RBF 三種kernel產生出來的結果圖 :
 
