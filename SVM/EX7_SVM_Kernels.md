@@ -2,7 +2,7 @@
 
 https://scikit-learn.org/stable/auto_examples/svm/plot_svm_kernels.html#sphx-glr-auto-examples-svm-plot-svm-kernels-py
 
-此範例展示三種 SVM Kernel 所呈現的結果
+此範例展示三種不同 SVM Kernel 所呈現的結果，其中 Polynomial 及 RBF 為用來處理非線性之分類
 
 1. Linear
 2. Polynomial
