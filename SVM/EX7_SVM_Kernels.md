@@ -91,6 +91,18 @@ plt.show()
 
 最後，利用`plt.scatter`用來畫散點圖的指令幫助我們畫出資料點及標示出 support vector 的資料點位置，在下方結果圖中，標示為雙圈的資料點就是 support vector，接著利用`plt.contour`來畫出 SVM 的 decision boundary，在結果圖中以實線表示；虛線部分則為 margin 的範圍。
 
+`plt.scatter`參數設定:
+
+* s : Size 大小
+* c : Color 設定
+* zorder : 繪圖的順序，類似圖層概念，zorder 值越大代表越上層
+
+`plt.contour`參數設定:
+
+* colors : 設定等高線的顏色
+* linestyles : 設定線所要呈現的方式
+* levels : 該條等高線所代表的值
+
 關於 support vector，margin 及 decision boundary 的相關介紹可以參考另外一篇 SVM 的教學 *EX9: SVM Margins Example* 中會有說明。
 
 下面分別為 Linear, Polynomial, RBF 三種kernel產生出來的結果圖 :
