@@ -3,6 +3,7 @@
 https://scikit-learn.org/stable/auto_examples/svm/plot_svm_margin.html#sphx-glr-auto-examples-svm-plot-svm-margin-py
 
 SVM是一種監督式的學習方法，用統計風險最小化的原則來估計一個分類的超平面(hyperplane)，就是找到一個決策邊界(decision boundary)讓兩類之間的邊界(margins)最大化，使其可以完美區隔開來。
+
 此範例是在展示參數 C (penalty)對於決策邊界(decision boundary)及邊界(margins)的影響。
 
 ## (一)引入函式庫
