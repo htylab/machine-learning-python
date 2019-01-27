@@ -55,7 +55,7 @@ plt.show()
 
 下方為非線性分割之結果圖 :
 
-![Non-linear](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/nonlinear.PNG "Non-linear")
+![Non-linear](nonlinear.PNG "Non-linear")
 
 ## (三)完整程式碼
 
