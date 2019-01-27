@@ -29,6 +29,8 @@
    * [EX 6: 以群聚法切割錢幣影像.md](Clustering/EX6_Segmenting_the_picture_of_greek_coins_in_regions.md)
    * [EX 10:_K-means群聚法](Clustering/EX10_K-means_Clustering.md)
    * [EX 12: Spectral clustering for image segmentation](Clustering/EX12_spectral_clustering_for_image_segmentation.md)
+* [支持向量機](SVM/EX1_Non_linear_SVM.md)
+   * [EX 1:EX1_Non_linear_SVM.md](SVM/EX1_Non_linear_SVM.md)
 * [機器學習資料集 Datasets](Datasets/datasets.md)
    * [Ex 1: The digits 手寫數字辨識](Datasets/ex1_the_digits_dataset.md)
    * [Ex 3: The iris 鳶尾花資料集](Datasets/ex3_the_iris_dataset.md)
