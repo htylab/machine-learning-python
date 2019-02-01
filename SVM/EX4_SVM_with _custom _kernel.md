@@ -78,7 +78,7 @@ plt.show()
 
 以下為結果圖 :
 
-![](https://github.com/I-Yun/machine-learning-python/blob/master/SVM/Custom%20kernel.PNG)
+![](Custom%20kernel.PNG)
 
 ## (三)完整程式碼
 
