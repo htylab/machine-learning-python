@@ -24,7 +24,7 @@
     *  增修章節: Neural_Network, Decision tree
     *  2016年，使用者約四萬人次，頁面流量約15萬次。
 * 0.4: 2019/1/10
-    *  新增應用章節，Contributor: 吳秉宸
+    *  新增應用章節，Contributor: 吳秉宸、張譯云
     *  增修章節: Cluster
     *  網站移至新版gitbook
 ![](images/2016year.PNG)
