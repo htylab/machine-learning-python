@@ -13,9 +13,9 @@ https://scikit-learn.org/stable/auto_examples/datasets/plot_random_dataset.html
 引入函式如下:
 
 1. matplotlib.pyplot : 用來繪製影像
-2. mpl_toolkits.mplot3d import Axes3D : 繪製3D圖形
-3. sklearn.cluster import KMeans : 切割cluster
-4. sklearn import datasets : 用來匯入影像資料庫
+2. sklearn.datasets import make_classification : 隨機產生n個分類
+3. sklearn.datasets import make_blobs : 切割cluster
+4. sklearn.datasets import make_gaussian_quantiles : 用來匯入影像資料庫
 
 ```python
 import matplotlib.pyplot as plt
@@ -25,7 +25,17 @@ from sklearn.datasets import make_blobs
 from sklearn.datasets import make_gaussian_quantiles
 ```
 
+## (二)Make classification
 對`make_classification`的函數，會生成三個二進制和兩個多類分類數據集，每個類別具有不同數量的信息特徵和群聚。
+
+```python
+plt.title("One informative feature, one cluster per class", fontsize='small')
+X1, Y1 = make_classification(n_features=2, n_redundant=0, n_informative=1,
+                             n_clusters_per_class=1)
+plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
+            s=25, edgecolor='k')
+```
+![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig1.JPG)
 
 ```python
 print(__doc__)
