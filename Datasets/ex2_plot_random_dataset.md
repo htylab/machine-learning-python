@@ -23,9 +23,9 @@ plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
 
 針對不同數量的信息特徵和群聚會產生不同結果
 
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig3.JPG) 
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig4.JPG)
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig5.JPG)
+![]((https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex2_fig3.JPG) 
+![]((https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex2_fig4.JPG)
+![]((https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex2_fig5.JPG)
 
 ## (二)Make blobs
 對於`make_blobs`的函數，會產生同向心性的高斯分布群。
@@ -37,7 +37,7 @@ plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
             s=25, edgecolor='k')
 ```
 
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig2.JPG)
+![]((https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex2_fig2.JPG)
 
 ## (三)Make gaussian quantiles
 對於`make_gaussian_quantiles`的函數，用分位數生成各向同性的高斯並標記樣本。
@@ -47,7 +47,7 @@ X1, Y1 = make_gaussian_quantiles(n_features=2, n_classes=3)
 plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
             s=25, edgecolor='k')
 ```
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig6.JPG)
+![]((https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex2_fig6.JPG)
 
 ## (四)完整程式碼
 Python source code:plot_random_dataset.py
