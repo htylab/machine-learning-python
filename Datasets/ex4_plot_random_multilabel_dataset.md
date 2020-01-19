@@ -32,10 +32,10 @@ RANDOM_SEED = np.random.randint(2 ** 10)
 
 ## (一)Make multilabel classification
 使用`make_ml_clf`生成隨機的多標籤分類，其中回傳四個變數:
-X 表示產生的樣本
-Y 表示標籤的集合
-p_c 表示每個分類被選中的機率
-p_w_c 表示給定每一個分類，特徵被選中的機率
+<br />X 表示產生的樣本
+<br />Y 表示標籤的集合
+<br />p_c 表示每個分類被選中的機率
+<br />p_w_c 表示給定每一個分類，特徵被選中的機率
 
 ```python
  X, Y, p_c, p_w_c = make_ml_clf(n_samples=150, n_features=2,
