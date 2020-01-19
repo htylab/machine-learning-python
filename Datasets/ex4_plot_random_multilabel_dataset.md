@@ -1,4 +1,4 @@
-# **範例十:Plot randomly generated multilabel dataset**
+# **範例四:Plot randomly generated multilabel dataset**
 
 https://scikit-learn.org/stable/auto_examples/datasets/plot_random_multilabel_dataset.html
 
