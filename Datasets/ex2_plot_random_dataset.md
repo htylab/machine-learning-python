@@ -19,7 +19,7 @@ X1, Y1 = make_classification(n_features=2, n_redundant=0, n_informative=1,
 plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
             s=25, edgecolor='k')
 ```
-![jpg](ex2_fig1.jpg))
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex2_fig1.JPG)
 
 針對不同數量的信息特徵和群聚會產生不同結果
 
