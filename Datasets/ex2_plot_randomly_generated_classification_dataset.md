@@ -8,26 +8,9 @@ https://scikit-learn.org/stable/auto_examples/datasets/plot_random_dataset.html
 這個範例實現了 `datasets.make_classification` `datasets.make_blobs` 以及 `datasets.make_gaussian_quantiles` 的函數運用
 
 
-## (一)引入函式庫
 
-引入函式如下:
-
-1. matplotlib.pyplot : 用來繪製影像
-2. sklearn.datasets import make_classification : 隨機產生n個分類
-3. sklearn.datasets import make_blobs : 切割cluster
-4. sklearn.datasets import make_gaussian_quantiles : 用來匯入影像資料庫
-
-```python
-import matplotlib.pyplot as plt
-
-from sklearn.datasets import make_classification
-from sklearn.datasets import make_blobs
-from sklearn.datasets import make_gaussian_quantiles
-```
-
-## (二)Make classification
-對於`make_classification`的函數，會生成三個二進制和兩個多類分類數據集，每個類別具有不同數量的信息特徵和群聚。
-對於`make_classification`的函數，隨機生成n種不同的分類。
+## (一)Make classification
+對於`make_classification`的函數，隨機生成n種不同的分類數據集，每個類別具有不同數量的信息特徵和群聚。
 
 ```python
 plt.title("One informative feature, one cluster per class", fontsize='small')
@@ -38,7 +21,12 @@ plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
 ```
 ![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig1.JPG)
 
-## (三)Make blobs
+針對不同數量的信息特徵和群聚會產生不同結果
+![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig3.JPG) 
+![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig4.JPG)
+![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig5.JPG)
+
+## (二)Make blobs
 對於`make_blobs`的函數，會產生同向心性的高斯分布群。
 
 ```python
@@ -50,7 +38,7 @@ plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
 
 ![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig2.JPG)
 
-## (四)Make gaussian quantiles
+## (三)Make gaussian quantiles
 對於`make_gaussian_quantiles`的函數，用分位數生成各向同性的高斯並標記樣本。
 
 ```python
@@ -58,8 +46,9 @@ X1, Y1 = make_gaussian_quantiles(n_features=2, n_classes=3)
 plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
             s=25, edgecolor='k')
 ```
+![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig6.JPG)
 
-## (五)完整程式碼
+## (四)完整程式碼
 Python source code:plot_random_dataset.py
 
 https://scikit-learn.org/stable/_downloads/9534d593e925347a4e0eee78c7d5b226/plot_random_dataset.py
