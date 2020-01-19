@@ -8,7 +8,7 @@ https://scikit-learn.org/stable/auto_examples/datasets/plot_random_multilabel_da
 
 點的標記如下，其中Y表示類別是否存在：
 
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex4_fig1.JPG)
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex4_fig1.JPG)
 
 設定分類的顏色
 
@@ -59,9 +59,9 @@ ax.scatter(X[:, 0], X[:, 1], color=COLORS.take((Y * [1, 2, 4]
 ```
 
 ## (二)顯示圖形與結果
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex4_fig2.JPG)
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex4_fig2.JPG)
 
-![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex4_fig3.JPG)
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/Datasets/ex4_fig3.JPG)
 
 
 請注意，由於此範例過於簡化：特徵的數量通常會比“文檔長度”大得多，而此範例的文檔長度比特徵量大得多。也就是說`n_classes> n_features`，特徵要分辨特定分類的機率相對小得很多。
