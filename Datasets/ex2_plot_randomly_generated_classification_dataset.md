@@ -26,7 +26,8 @@ from sklearn.datasets import make_gaussian_quantiles
 ```
 
 ## (二)Make classification
-對`make_classification`的函數，會生成三個二進制和兩個多類分類數據集，每個類別具有不同數量的信息特徵和群聚。
+對於`make_classification`的函數，會生成三個二進制和兩個多類分類數據集，每個類別具有不同數量的信息特徵和群聚。
+對於`make_classification`的函數，隨機生成n種不同的分類。
 
 ```python
 plt.title("One informative feature, one cluster per class", fontsize='small')
@@ -37,6 +38,31 @@ plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
 ```
 ![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig1.JPG)
 
+## (三)Make blobs
+對於`make_blobs`的函數，會產生同向心性的高斯分布群。
+
+```python
+plt.title("Three blobs", fontsize='small')
+X1, Y1 = make_blobs(n_features=2, centers=3)
+plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
+            s=25, edgecolor='k')
+```
+
+![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig2.JPG)
+
+## (四)Make gaussian quantiles
+對於`make_gaussian_quantiles`的函數，用分位數生成各向同性的高斯並標記樣本。
+
+```python
+X1, Y1 = make_gaussian_quantiles(n_features=2, n_classes=3)
+plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
+            s=25, edgecolor='k')
+```
+
+## (五)完整程式碼
+Python source code:plot_random_dataset.py
+
+https://scikit-learn.org/stable/_downloads/9534d593e925347a4e0eee78c7d5b226/plot_random_dataset.py
 ```python
 print(__doc__)
 
