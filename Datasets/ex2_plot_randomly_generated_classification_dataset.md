@@ -20,8 +20,8 @@ plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
             s=25, edgecolor='k')
 ```
 ![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig1.JPG)
-
 針對不同數量的信息特徵和群聚會產生不同結果
+
 ![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig3.JPG) 
 ![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig4.JPG)
 ![](https://github.com/JENNSHIUAN/myfirstpost/blob/master/ex2_fig5.JPG)
