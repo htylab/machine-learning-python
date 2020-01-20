@@ -36,12 +36,11 @@ svc.fit(X_train, y_train)
 svc_disp = plot_roc_curve(svc, X_test, y_test)
 plt.show()
 ```
-
 ![](images/ex5_fig1.png)
 
 ## (三)訓練一個隨機森林並且繪製ROC曲線
 
-我們訓練一個隨機森林分類器並繪製出ROC曲線來比較先前用SVC繪製的ROC曲線，值得注意的是，`svc_disp`使用`plot`繪製曲線，而無需重新計算roc曲線本身的值。
+我們訓練一個隨機森林分類器並繪製出ROC曲線來比較先前用SVC繪製的ROC曲線，值得注意的是，`svc_disp`使用`plot`繪製曲線，而無需重新計算ROC曲線本身的值。
 此外，我們將alpha = 0.8傳遞給繪圖函數以調整曲線的alpha值。
 
 ```python
@@ -57,7 +56,7 @@ plt.show()
 ## (四)完整程式碼
 
 Python source code:plot_roc_curve_visualization_api.py
-https://scikit-learn.org/stable/_downloads/e2f118a17ad70541f445f35934fdbb99/plot_roc_curve_visualization_api.py
+<br />https://scikit-learn.org/stable/_downloads/e2f118a17ad70541f445f35934fdbb99/plot_roc_curve_visualization_api.py
 
 ```python
 ================================
