@@ -36,3 +36,5 @@ svc.fit(X_train, y_train)
 svc_disp = plot_roc_curve(svc, X_test, y_test)
 plt.show()
 ```
+
+![](images/ex5_fig1.png)
