@@ -54,7 +54,7 @@ plt.show()
 ```
 
 
-![png](images/ex3_output_validation_curve.png)
+![png](ex3_output_validation_curve.png)
 
 
 由上圖的validation curve可以分析出以下三種結果：
