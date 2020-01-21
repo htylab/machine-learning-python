@@ -32,7 +32,7 @@ train_scores_std = np.std(train_scores, axis=1)
 test_scores_mean = np.mean(test_scores, axis=1)
 test_scores_std = np.std(test_scores, axis=1)
 ```
-## 三、作圖：Validation Curves
+## 三、作圖：Validation Curve
 ```python
 plt.title("Validation Curve with SVM")
 plt.xlabel(r"$\gamma$")
@@ -65,6 +65,10 @@ plt.show()
 
 
 ## 四、原始碼列表
+Python source code: plot_validation_curve.py
+
+https://scikit-learn.org/stable/auto_examples/model_selection/plot_validation_curve.html
+
 ```python
 print(__doc__)
 
