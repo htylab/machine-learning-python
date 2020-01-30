@@ -33,6 +33,10 @@ test_scores_mean = np.mean(test_scores, axis=1)
 test_scores_std = np.std(test_scores, axis=1)
 ```
 ## 三、作圖：Validation Curve
+* plt.semilogx是將X軸改為對數比例
+* plt.fill_between將train/test scores的平均值與標準差之間的差距用顏色填滿
+* plt.legend為顯示每個數據相對應的圖例名稱，其中loc="best"為顯示圖例名稱的位置，best表示自動分配最佳位置
+
 ```python
 plt.title("Validation Curve with SVM")
 plt.xlabel(r"$\gamma$")
