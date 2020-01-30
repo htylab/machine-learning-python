@@ -8,5 +8,5 @@ http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz (233MB)
 
 採取資料集中最具有代表性的人做預測，以下為預測結果:
 
-![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/Faces_recognition/Faces_fig1.JPG)
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/Faces_recognition/Face_fig1.JPG)
 
