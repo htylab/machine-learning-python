@@ -69,8 +69,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 pca = PCA(n_components=n_components, svd_solver='randomized',
           whiten=True).fit(X_train)
 ```
-* ```svd_solver='randomized'```:用Halko方法運行隨機SVD
-* ```whiten=True```:將```components```向量乘以n_samples的平方根並除以奇異值，以確保具有不相關的輸出。
+* ```svd_solver='randomized'```：用Halko方法運行隨機SVD
+* ```whiten=True```：將```components```向量乘以n_samples的平方根並除以奇異值，以確保具有不相關的輸出。
 
 ```python
 n_components = 150
@@ -103,8 +103,8 @@ clf = GridSearchCV(
     SVC(kernel='rbf', class_weight='balanced'), param_grid
 )
 ```
-* ```skernel='rbf''```:使用（高斯）徑向基函數
-* ```param_grid```:給定SVM參數
+* ```skernel='rbf'```：使用（高斯）徑向基函數
+* ```param_grid```：給定SVM參數
 ```python
 clf = clf.fit(X_train_pca, y_train)
 print("done in %0.3fs" % (time() - t0))
@@ -113,6 +113,7 @@ print(clf.best_estimator_)
 ```
 ## (五)對測試集中進行預測
 
+使用```y_pred = clf.predict(X_test_pca)```，對測試集進行預測。
 ```python
 print("Predicting people's names on the test set")
 t0 = time()
