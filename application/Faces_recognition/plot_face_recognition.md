@@ -91,6 +91,9 @@ X_test_pca = pca.transform(X_test)
 print("done in %0.3fs" % (time() - t0))
 ```
 ## (四)訓練SVM分類模型
+SVM模型有兩個非常重要的參數C與gamma。
+C:懲罰係數，即對誤差的寬容度。c越高，說明越不能容忍出現誤差，容易過擬合。
+gamma:選擇RBF函數作為kernel後，該函數自帶的一個參數。隱含地決定了數據映射到新的特徵空間後的分佈。
 ```python
 print("Fitting the classifier to the training set")
 t0 = time()
@@ -99,13 +102,62 @@ param_grid = {'C': [1e3, 5e3, 1e4, 5e4, 1e5],
 clf = GridSearchCV(
     SVC(kernel='rbf', class_weight='balanced'), param_grid
 )
+```
+* ```skernel='rbf''```:使用（高斯）徑向基函數
+* ```param_grid```:給定SVM參數
+```python
 clf = clf.fit(X_train_pca, y_train)
 print("done in %0.3fs" % (time() - t0))
 print("Best estimator found by grid search:")
 print(clf.best_estimator_)
 ```
+## (五)對測試集中進行預測
 
-## (三)完整程式碼
+```python
+print("Predicting people's names on the test set")
+t0 = time()
+#用最佳發現的參數對評估器進行預測。
+y_pred = clf.predict(X_test_pca)
+print("done in %0.3fs" % (time() - t0))
+
+print(classification_report(y_test, y_pred, target_names=target_names))
+print(confusion_matrix(y_test, y_pred, labels=range(n_classes)))
+```
+
+## (六)使用matplotlib對預測進行評估
+```python
+def plot_gallery(images, titles, h, w, n_row=3, n_col=4):
+    """為了畫出人像的函數"""
+    plt.figure(figsize=(1.8 * n_col, 2.4 * n_row))
+    plt.subplots_adjust(bottom=0, left=.01, right=.99, top=.90, hspace=.35)
+    for i in range(n_row * n_col):
+        plt.subplot(n_row, n_col, i + 1)
+        plt.imshow(images[i].reshape((h, w)), cmap=plt.cm.gray)
+        plt.title(titles[i], size=12)
+        plt.xticks(())
+        plt.yticks(())
+
+
+# 在部分測試集中繪製預測結果
+def title(y_pred, y_test, target_names, i):
+    pred_name = target_names[y_pred[i]].rsplit(' ', 1)[-1]
+    true_name = target_names[y_test[i]].rsplit(' ', 1)[-1]
+    return 'predicted: %s\ntrue:      %s' % (pred_name, true_name)
+
+prediction_titles = [title(y_pred, y_test, target_names, i)
+                     for i in range(y_pred.shape[0])]
+
+plot_gallery(X_test, prediction_titles, h, w)
+
+# 繪製最有意義的特徵臉
+eigenface_titles = ["eigenface %d" % i for i in range(eigenfaces.shape[0])]
+plot_gallery(eigenfaces, eigenface_titles, h, w)
+
+plt.show()
+```
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/Faces_recognition/Face_fig2.JPG)
+
+## (七)完整程式碼
 Python source code:plot_face_recognition.py
 
 https://scikit-learn.org/stable/_downloads/fcbed4be5eadd64ee8f4961f64b1904c/plot_face_recognition.py
