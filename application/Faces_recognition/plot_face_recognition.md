@@ -25,11 +25,42 @@ http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz (233MB)
 
 ## (二)載入LFW人臉資料庫
 
-將資料存進```lfw_people```中，
+將資料以```numpy array```形式存進```lfw_people```中，
+其中```min_faces_per_person=70 ```指提取的數據集將僅保留具有至少70個不同圖片的人的圖片。
+
 ```python
+# 下載資料(如果並未下載於電腦中)
+
 lfw_people = fetch_lfw_people(min_faces_per_person=70, resize=0.4)
 ```
 
+此範例中共有1288張影像，每張影像大小為62 x 47像素
+```python
+# 查詢影像的大小(為了畫圖)
+n_samples, h, w = lfw_people.images.shape
+
+# 為了機器學習，我們直接使用這兩個資料(這個模型忽略了相對像素的位置信息)
+X = lfw_people.data
+n_features = X.shape[1]
+
+# 要預測的標籤是該人的ID
+y = lfw_people.target
+target_names = lfw_people.target_names
+n_classes = target_names.shape[0]
+
+print("Total dataset size:")
+print("n_samples: %d" % n_samples)
+print("n_features: %d" % n_features)
+print("n_classes: %d" % n_classes)
+```
+將資料集隨機分配成訓練集和測試集
+```python
+# 分成訓練集和測試集
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25, random_state=42)
+```
+
+## (三)對於人臉資料計算PCA
 
 
 ## (三)完整程式碼
