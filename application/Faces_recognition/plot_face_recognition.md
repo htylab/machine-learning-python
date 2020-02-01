@@ -157,8 +157,8 @@ plot_gallery(eigenfaces, eigenface_titles, h, w)
 plt.show()
 ```
 ![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/Faces_recognition/Face_fig2.JPG)
+## Total Output:
 
-Total Output:
 ![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/Faces_recognition/Face_fig3.JPG)
 
 ## (七)完整程式碼
