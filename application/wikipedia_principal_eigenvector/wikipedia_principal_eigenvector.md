@@ -14,7 +14,8 @@ https://en.wikipedia.org/wiki/Eigenvector_centrality
 https://en.wikipedia.org/wiki/Power_iteration
 
 在這要感謝Martinsson的隨機SVD算法，才能夠在```scikit-learn```中實現計算。
-其中圖中的數據是從```DBpedia```轉儲中獲取，```DBpedia```是Wikipedia內容的潛在結構化數據的提取。
+此範例的數據是從```DBpedia```轉儲中獲取，```DBpedia``` 是一項從維基百科裡萃取結構化內容的專案計畫，
+這些計畫所得的結構化資訊，也將放在網際網路中公開讓人取閱。
 
 ## (一)引入函式庫
 引入函式庫如下：
@@ -28,7 +29,9 @@ https://en.wikipedia.org/wiki/Power_iteration
 8. ```sklearn.decomposition import randomized_svd```:計算分解的隨機SVD
 9. ```urllib.request import urlopen```:開啟URL網址
 
-## (二)載入LFW人臉資料庫
+## (二)載入資料
+
+
 
 ```python
 redirects_url = "http://downloads.dbpedia.org/3.5.1/en/redirects_en.nt.bz2"
