@@ -92,8 +92,8 @@ print("done in %0.3fs" % (time() - t0))
 ```
 ## (四)訓練SVM分類模型
 SVM模型有兩個非常重要的參數C與gamma。
-C:懲罰係數，即對誤差的寬容度。c越高，說明越不能容忍出現誤差，容易過擬合。
-gamma:選擇RBF函數作為kernel後，該函數自帶的一個參數。隱含地決定了數據映射到新的特徵空間後的分佈。
+<br />C:懲罰係數，即對誤差的寬容度。c越高，說明越不能容忍出現誤差，容易過擬合。
+<br />gamma:選擇RBF函數作為kernel後，該函數自帶的一個參數。隱含地決定了數據映射到新的特徵空間後的分佈。
 ```python
 print("Fitting the classifier to the training set")
 t0 = time()
