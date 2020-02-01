@@ -158,6 +158,8 @@ plt.show()
 ```
 ![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/Faces_recognition/Face_fig2.JPG)
 
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/Faces_recognition/Face_fig3.JPG)
+
 ## (七)完整程式碼
 Python source code:plot_face_recognition.py
 
