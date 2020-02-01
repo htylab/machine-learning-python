@@ -69,8 +69,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 pca = PCA(n_components=n_components, svd_solver='randomized',
           whiten=True).fit(X_train)
 ```
-*```svd_solver='randomized'```為用Halko方法運行隨機SVD
-*```whiten=True```將components_向量乘以n_samples的平方根，然後除以奇異值，以確保具有單位分量方差的不相關輸出。
+* ```svd_solver='randomized'```:用Halko方法運行隨機SVD
+* ```whiten=True```:將```components```向量乘以n_samples的平方根並除以奇異值，以確保具有不相關的輸出。
 
 ```python
 n_components = 150
@@ -85,9 +85,24 @@ eigenfaces = pca.components_.reshape((n_components, h, w))
 
 print("Projecting the input data on the eigenfaces orthonormal basis")
 t0 = time()
+#進行降維
 X_train_pca = pca.transform(X_train)
 X_test_pca = pca.transform(X_test)
 print("done in %0.3fs" % (time() - t0))
+```
+## (四)訓練SVM分類模型
+```python
+print("Fitting the classifier to the training set")
+t0 = time()
+param_grid = {'C': [1e3, 5e3, 1e4, 5e4, 1e5],
+              'gamma': [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1], }
+clf = GridSearchCV(
+    SVC(kernel='rbf', class_weight='balanced'), param_grid
+)
+clf = clf.fit(X_train_pca, y_train)
+print("done in %0.3fs" % (time() - t0))
+print("Best estimator found by grid search:")
+print(clf.best_estimator_)
 ```
 
 ## (三)完整程式碼
