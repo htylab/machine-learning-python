@@ -62,6 +62,33 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 ## (三)對於人臉資料計算PCA
 
+計算人臉資料集中的PCA(特徵臉)，視為未標籤的資料:使用非監督式提取降維。
+
+
+```python
+pca = PCA(n_components=n_components, svd_solver='randomized',
+          whiten=True).fit(X_train)
+```
+*```svd_solver='randomized'```為用Halko方法運行隨機SVD
+*```whiten=True```將components_向量乘以n_samples的平方根，然後除以奇異值，以確保具有單位分量方差的不相關輸出。
+
+```python
+n_components = 150
+print("Extracting the top %d eigenfaces from %d faces"
+      % (n_components, X_train.shape[0]))
+t0 = time() #計時
+pca = PCA(n_components=n_components, svd_solver='randomized',
+          whiten=True).fit(X_train)
+print("done in %0.3fs" % (time() - t0))
+
+eigenfaces = pca.components_.reshape((n_components, h, w))
+
+print("Projecting the input data on the eigenfaces orthonormal basis")
+t0 = time()
+X_train_pca = pca.transform(X_train)
+X_test_pca = pca.transform(X_test)
+print("done in %0.3fs" % (time() - t0))
+```
 
 ## (三)完整程式碼
 Python source code:plot_face_recognition.py
