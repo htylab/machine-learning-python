@@ -12,17 +12,23 @@ http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz (233MB)
 
 ## (一)引入函式庫
 引入函式庫如下：
-1. ```time```:
-2. ```logging```:
+1. ```time```:計算時間
+2. ```logging```:具有除錯功能
 3. ```matplotlib.pyplot```:用來繪製影像
-4. ```sklearn.model_selection import train_test_split```:
-5. ```sklearn.model_selection import GridSearchCV```:
-6. ```sklearn.datasets import fetch_lfw_people```:
-7. ```sklearn.metrics import classification_report```:
-8. ```sklearn.metrics import confusion_matrix```:
-9. ```sklearn.decomposition import PCA```:
-10. ```sklearn.svm import SVC```:
+4. ```sklearn.model_selection import train_test_split```:將資料集隨機分配成訓練集和測試集
+5. ```sklearn.model_selection import GridSearchCV```:搜索指定參數的估計值
+6. ```sklearn.datasets import fetch_lfw_people```:載入LFW人臉資料庫
+7. ```sklearn.metrics import classification_report```:建立文字報告，顯示主要的分類矩陣
+8. ```sklearn.metrics import confusion_matrix```:計算混淆矩陣以評估分類的準確性
+9. ```sklearn.decomposition import PCA```:進行主成分分析
+10. ```sklearn.svm import SVC```:載入用於分類的向量支持模型
 
+## (二)載入LFW人臉資料庫
+
+將資料存進```lfw_people```中，
+```python
+lfw_people = fetch_lfw_people(min_faces_per_person=70, resize=0.4)
+```
 
 
 
