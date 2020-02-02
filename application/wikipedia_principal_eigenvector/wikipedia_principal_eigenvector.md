@@ -29,9 +29,11 @@ https://en.wikipedia.org/wiki/Power_iteration
 8. ```sklearn.decomposition import randomized_svd```:計算分解的隨機SVD
 9. ```urllib.request import urlopen```:開啟URL網址
 
-## (二)載入資料
+## (二)載入壓縮檔
 
-
+```os.path.exists```將會判斷是否存在以下兩個壓縮檔(bzip2格式):
+* ```redirects_en.nt.bz2```
+* ```page_links_en.nt.bz2```
 
 ```python
 redirects_url = "http://downloads.dbpedia.org/3.5.1/en/redirects_en.nt.bz2"
@@ -52,10 +54,10 @@ for url, filename in resources:
         open(filename, 'wb').write(opener.read())
         print()
 ```
+## (三)載入資料
 
 
-
-## (三)完整程式碼
+## ()完整程式碼
 Python source code:wikipedia_principal_eigenvector.py
 
 https://scikit-learn.org/stable/_downloads/637afdd681404c733540858401aadf5c/wikipedia_principal_eigenvector.py
