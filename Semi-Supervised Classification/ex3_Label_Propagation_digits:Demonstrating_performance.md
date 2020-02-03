@@ -1,4 +1,4 @@
-## 半監督式之分類/範例3 : Label Propagation digits: Demonstrating performance
+## 半監督式分類法/範例3 : Label Propagation digits: Demonstrating performance
 
 本範例目的：
 * 利用少量標籤的手寫數字資料集進行模型訓練，展現半監督式學習的能力
