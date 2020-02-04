@@ -1,8 +1,7 @@
 ## 廣義線性模型/範例3 : SGD: Maximum margin separating hyperplane
 
 本範例之目的：
-* 透過用SGD方法進行訓練的線性分類器：SGDClassifier，在兩種類別的數據集中，繪出有最大邊界的超平面使兩種分類被區隔開來
-
+* 透過用SGD方法進行訓練的線性分類器：SGDClassifier，在兩種類別的數據集中，繪出每個類別中的最大邊界與超平面使兩種分類被區隔開來
 ## 一、SGD Classifier
 SGD Classifier為一個利用梯度下降法SGD (Stochastic gradient descent)進行訓練的線性分類器(默認為SVM)，模型每次迭代過後會計算樣本loss function梯度，並依據梯度值進行learning rate的更新，learning rate亦會經過迭代次數越多，更新的幅度會越少
 
