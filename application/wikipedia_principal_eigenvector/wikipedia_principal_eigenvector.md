@@ -54,7 +54,59 @@ for url, filename in resources:
         open(filename, 'wb').write(opener.read())
         print()
 ```
-## (三)載入資料
+## (三)重定向檔案
+
+```Transitive Closure```中文譯作遞移閉包，用來紀錄由一點能不能走到另一點的關係，如果能走到，則兩點之間以邊相連。
+
+```python
+memory = Memory(cachedir=".")
+
+def index(redirects, index_map, k):
+    """重定向之後，找到文章名稱的索引"""
+    k = redirects.get(k, k)
+    return index_map.setdefault(k, len(index_map))
+
+DBPEDIA_RESOURCE_PREFIX_LEN = len("http://dbpedia.org/resource/")
+SHORTNAME_SLICE = slice(DBPEDIA_RESOURCE_PREFIX_LEN + 1, -1)
+
+
+def short_name(nt_uri):
+    ""移除 < and > URI 記號以及普遍 URI 開頭"""
+    return nt_uri[SHORTNAME_SLICE]
+
+
+def get_redirects(redirects_filename):
+    """分析重定向後，建立出遞移閉包的圖"""
+    redirects = {}
+    print("Parsing the NT redirect file")
+    for l, line in enumerate(BZ2File(redirects_filename)):
+        split = line.split()
+        if len(split) != 4:
+            print("ignoring malformed line: " + line)
+            continue
+        redirects[short_name(split[0])] = short_name(split[2])
+        if l % 1000000 == 0:
+            print("[%s] line: %08d" % (datetime.now().isoformat(), l))
+
+    # 計算遞移閉包
+    print("Computing the transitive closure of the redirect relation")
+    for l, source in enumerate(redirects.keys()):
+        transitive_target = None
+        target = redirects[source]
+        seen = {source}
+        while True:
+            transitive_target = target
+            target = redirects.get(target)
+            if target is None or target in seen:
+                break
+            seen.add(target)
+        redirects[source] = transitive_target
+        if l % 1000000 == 0:
+            print("[%s] line: %08d" % (datetime.now().isoformat(), l))
+
+    return redirects
+```
+
 
 
 ## ()完整程式碼
