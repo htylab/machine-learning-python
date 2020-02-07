@@ -5,7 +5,11 @@ https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_label_propaga
 
 Label Propagation屬於一種Semi-supervised learning(半監督學習)
 
+
 顯示了即使只有少部分被標籤的數據，Label Propagation也能很好的學習產生decision boundary
+
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi%20Supervised%20Classification/plot_label_propagation_versus_svm_iris_001.png)
+
 
 
 ## (一)引入函式庫
