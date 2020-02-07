@@ -55,8 +55,11 @@ y_30[rng.rand(len(y)) < 0.3] = -1
 y_50 = np.copy(y)
 y_50[rng.rand(len(y)) < 0.5] = -1
 ```
-111111111111
+使用LabelSpreading().fit()來進行標籤傳播法並擬合數據集
 
+使用svm.SVC().fit()來進行SVC(support vectors classification)並擬合數據集
+
+分別用不同比例已被標籤的數據和未被標籤的數據進行標籤傳播，並與SVM的結果進行對比
 ```python
 # we create an instance of SVM and fit out data. We do not scale our
 # data since we want to plot the support vectors
@@ -65,9 +68,13 @@ ls50 = (LabelSpreading().fit(X, y_50), y_50)
 ls100 = (LabelSpreading().fit(X, y), y)
 rbf_svc = (svm.SVC(kernel='rbf', gamma=.5).fit(X, y), y)
 ```
+## (三)繪製比較圖
 
-## (三)繪製圖片
+使用min()及max()來決定x與y的範圍
 
+np.meshgrid可以從給定的座標向量回傳座標矩陣
+
+這裡分別是已x,y的最大、最小值加減1並已h=0.02的間隔來繪製
 ```python
 x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
 y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
