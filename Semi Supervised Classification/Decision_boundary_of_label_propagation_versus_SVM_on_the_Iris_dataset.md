@@ -8,7 +8,6 @@ Label Propagation屬於一種Semi-supervised learning(半監督學習)
 顯示了即使只有少部分被標籤的數據，Label Propagation也能很好的學習產生decision boundary
 
 ![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi%20Supervised%20Classification/plot_label_propagation_versus_svm_iris_001.png)
-
 ## (一)引入函式庫
 
 1. numpy : 產生陣列數值
@@ -25,7 +24,6 @@ from sklearn import datasets
 from sklearn import svm
 from sklearn.semi_supervised import LabelSpreading
 ```
-
 ## (二)讀取資料集
 
 使用numpy.random.RandomState(seed=None)產生隨機數
