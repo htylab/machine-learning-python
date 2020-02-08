@@ -1,7 +1,7 @@
 # **IsolationForest example**
 https://scikit-learn.org/stable/auto_examples/ensemble/plot_isolation_forest.html#sphx-glr-auto-examples-ensemble-plot-isolation-forest-py
 
-此範例介紹IsolationForest(隔離森林或是孤立森林)的使用方式及其效果，使用IsolationForest會回傳每個樣本的異常分數
+此範例介紹IsolationForest(隔離森林、孤立森林)的使用方式及其效果，使用IsolationForest會回傳每個樣本的異常分數
 
 IsolationForest通常是用於異常檢測的unsupervised learning(無監督學習算)法，適合用於大規模連續數據(網路資安和向異常、金融機構)，其工作原理是隔離異常(可以理解為分布稀疏且離密度高的群體較遠的點)
 
@@ -38,12 +38,23 @@ X_outliers = rng.uniform(low=-4, high=4, size=(20, 2)) # 生成20筆新的異常
 ```
 ## (三)IsolationForest model
 
-1. IsolationForest() : 使用隔離森林算法
+1. IsolationForest(n_estimators=100, max_samples='auto', contamination='auto', max_features=1.0, bootstrap=False, n_jobs=None, behaviour='deprecated', random_state=None, verbose=0, warm_start=False)
+
+n_estimators : 森林中樹的棵樹
+  
+max_samples : 每棵樹中的樣本數量
+  
+contamination : 設置樣本中異常
+  
+max_features : 每顆樹特徵各樹或比例
+  
+random_state : 隨機數與random_seed作用是相同
+  
 2. fit() : 擬和資料
 3. predict() : 預測資料
 ```python
 # fit the Model
-clf = IsolationForest(max_samples=100, random_state=rng) #max_sample定義每棵樹中的樣本數量
+clf = IsolationForest(max_samples=100, random_state=rng)
 clf.fit(X_train) 
 y_pred_train = clf.predict(X_train) 
 y_pred_test = clf.predict(X_test)
