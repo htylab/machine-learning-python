@@ -56,6 +56,7 @@ for url, filename in resources:
 ```
 ## (三)重定向檔案
 
+
 ```Transitive Closure```中文譯作遞移閉包，用來紀錄由一點能不能走到另一點的關係，如果能走到，則兩點之間以邊相連。
 
 ```python
@@ -73,7 +74,6 @@ SHORTNAME_SLICE = slice(DBPEDIA_RESOURCE_PREFIX_LEN + 1, -1)
 def short_name(nt_uri):
     ""移除 < and > URI 記號以及普遍 URI 開頭"""
     return nt_uri[SHORTNAME_SLICE]
-
 
 def get_redirects(redirects_filename):
     """分析重定向後，建立出遞移閉包的圖"""
@@ -106,10 +106,128 @@ def get_redirects(redirects_filename):
 
     return redirects
 ```
+## (四)稀疏矩陣
+首先，先介紹何謂```稀疏矩陣```，對於一個矩陣而言，
+若數值為零的元素遠遠多於非零元素的個數，且非零元素分佈沒有規律時，這樣的矩陣被稱作稀疏矩陣。
+此函數提取鄰接的圖作為稀疏矩陣(sparse matrix)。
+
+```python
+def get_adjacency_matrix(redirects_filename, page_links_filename, limit=None):
+    """Extract the adjacency graph as a scipy sparse matrix
+
+    Redirects are resolved first.
+
+    Returns X, the scipy sparse adjacency matrix, redirects as python
+    dict from article names to article names and index_map a python dict
+    from article names to python int (article indexes).
+    """
+
+    print("Computing the redirect map")
+    redirects = get_redirects(redirects_filename)
+
+    print("Computing the integer index map")
+    index_map = dict()
+    links = list()
+    for l, line in enumerate(BZ2File(page_links_filename)):
+        split = line.split()
+        if len(split) != 4:
+            print("ignoring malformed line: " + line)
+            continue
+        i = index(redirects, index_map, short_name(split[0]))
+        j = index(redirects, index_map, short_name(split[2]))
+        links.append((i, j))
+        if l % 1000000 == 0:
+            print("[%s] line: %08d" % (datetime.now().isoformat(), l))
+
+        if limit is not None and l >= limit - 1:
+            break
+
+    print("Computing the adjacency matrix")
+    X = sparse.lil_matrix((len(index_map), len(index_map)), dtype=np.float32)
+    for i, j in links:
+        X[i, j] = 1.0
+    del links
+    print("Converting to CSR representation")
+    X = X.tocsr()
+    print("CSR conversion done")
+    return X, redirects, index_map
+```
+其中回傳三個值:
+* X：計算出來的稀疏矩陣。
+* redirects：python 的字典型態，存取文章名稱。
+* index_map：python 的字典型態，存取文章名稱及索引。
+
+為了能夠在RAM中工作，5M個連結後停止。
+
+```python
+X, redirects, index_map = get_adjacency_matrix(
+    redirects_filename, page_links_filename, limit=5000000)
+names = {i: name for name, i in index_map.items()}
+```
+## (五)計算奇異向量
 
 
 
-## ()完整程式碼
+print("Computing the principal singular vectors using randomized_svd")
+t0 = time()
+U, s, V = randomized_svd(X, 5, n_iter=3)
+print("done in %0.3fs" % (time() - t0))
+
+# print the names of the wikipedia related strongest components of the
+# principal singular vector which should be similar to the highest eigenvector
+print("Top wikipedia pages according to principal singular vectors")
+pprint([names[i] for i in np.abs(U.T[0]).argsort()[-10:]])
+pprint([names[i] for i in np.abs(V[0]).argsort()[-10:]])
+
+
+## (六)計算主要特徵向量之分數
+
+def centrality_scores(X, alpha=0.85, max_iter=100, tol=1e-10):
+    """Power iteration computation of the principal eigenvector
+
+    This method is also known as Google PageRank and the implementation
+    is based on the one from the NetworkX project (BSD licensed too)
+    with copyrights by:
+
+      Aric Hagberg <hagberg@lanl.gov>
+      Dan Schult <dschult@colgate.edu>
+      Pieter Swart <swart@lanl.gov>
+    """
+    n = X.shape[0]
+    X = X.copy()
+    incoming_counts = np.asarray(X.sum(axis=1)).ravel()
+
+    print("Normalizing the graph")
+    for i in incoming_counts.nonzero()[0]:
+        X.data[X.indptr[i]:X.indptr[i + 1]] *= 1.0 / incoming_counts[i]
+    dangle = np.asarray(np.where(np.isclose(X.sum(axis=1), 0),
+                                 1.0 / n, 0)).ravel()
+
+    scores = np.full(n, 1. / n, dtype=np.float32)  # initial guess
+    for i in range(max_iter):
+        print("power iteration #%d" % i)
+        prev_scores = scores
+        scores = (alpha * (scores * X + np.dot(dangle, prev_scores))
+                  + (1 - alpha) * prev_scores.sum() / n)
+        # check convergence: normalized l_inf norm
+        scores_max = np.abs(scores).max()
+        if scores_max == 0.0:
+            scores_max = 1.0
+        err = np.abs(scores - prev_scores).max() / scores_max
+        print("error: %0.6f" % err)
+        if err < n * tol:
+            return scores
+
+    return scores
+
+print("Computing principal eigenvector score using a power iteration method")
+t0 = time()
+scores = centrality_scores(X, max_iter=100)
+print("done in %0.3fs" % (time() - t0))
+pprint([names[i] for i in np.abs(scores).argsort()[-10:]])
+
+
+## (七)完整程式碼
 Python source code:wikipedia_principal_eigenvector.py
 
 https://scikit-learn.org/stable/_downloads/637afdd681404c733540858401aadf5c/wikipedia_principal_eigenvector.py
