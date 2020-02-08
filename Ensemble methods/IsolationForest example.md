@@ -5,9 +5,9 @@ https://scikit-learn.org/stable/auto_examples/ensemble/plot_isolation_forest.htm
 
 IsolationForest通常是用於異常檢測的unsupervised learning(無監督學習算)法，適合用於大規模連續數據(網路資安和向異常、金融機構)，其工作原理是隔離異常(可以理解為分布稀疏且離密度高的群體較遠的點)
 
-和RandomForest(隨機森林)類似，但在建立iTree時，每次選擇劃分條件及劃分點時都是隨機的，而不是根據樣本的內容或是相關資訊
+和RandomForest(隨機森林)類似，但在建立iTree時，每次選擇劃分條件及劃分點時都是隨機的，而不是根據樣本的內容或是樣本相關資訊
 
-在建立iTree的過程中，如果一些樣本很快就到達了leaf節點(即leaf到root的距離d很短)，那就很有可能是異常點。因為那些路徑d比較短的樣本，都是距離主要的樣本中心比較遠的點。因此，可以透過計算樣本在所有樹中的平均路徑長度來尋找異常點
+在建立iTree的過程中，如果一些樣本很快就到達了leaf節點(即leaf到root的距離d很短)，那就很有可能是異常點。因為那些路徑d比較短的樣本，都是距離主要的樣本中心比較遠的點。因此可以透過計算樣本在所有樹中的平均路徑長度來尋找異常點
 
 ## (一)引入函式庫
 
@@ -43,7 +43,7 @@ X_outliers = rng.uniform(low=-4, high=4, size=(20, 2)) # 生成20筆新的異常
 3. predict() : 預測資料
 ```python
 # fit the Model
-clf = IsolationForest(max_samples=100, random_state=rng) #max_sample定義每棵樹中的樣本數量、random_state產生隨機數的方式
+clf = IsolationForest(max_samples=100, random_state=rng) #max_sample定義每棵樹中的樣本數量
 clf.fit(X_train) 
 y_pred_train = clf.predict(X_train) 
 y_pred_test = clf.predict(X_test)
@@ -80,6 +80,7 @@ plt.legend([b1, b2, c],
            loc="upper left")
 plt.show()
 ```
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Ensemble%20methods/sphx_glr_plot_isolation_forest_001.png)
 ## (五)完整程式碼
 
 https://scikit-learn.org/stable/_downloads/a48f0894575e256740089d572cff3acd/plot_isolation_forest.py
