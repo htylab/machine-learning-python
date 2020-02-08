@@ -3,9 +3,9 @@ https://scikit-learn.org/stable/auto_examples/ensemble/plot_isolation_forest.htm
 
 此範例介紹IsolationForest(隔離森林、孤立森林)的使用方式及其效果，使用IsolationForest會回傳每個樣本的異常分數
 
-IsolationForest通常是用於異常檢測的unsupervised learning(無監督學習算)法，適合用於大規模連續數據(網路資安和向異常、金融機構)，其工作原理是隔離異常(可以理解為分布稀疏且離密度高的群體較遠的點)
+IsolationForest是用於異常檢測的unsupervised learning(無監督學習)算法，適合用於大規模連續數據(網路資安和流量異常、金融機構)，其工作原理是隔離異常樣本(可以理解為分布稀疏且離密度高的群體較遠的點)
 
-和RandomForest(隨機森林)類似，但在建立iTree時，每次選擇劃分條件及劃分點時都是隨機的，而不是根據樣本的內容或是樣本相關資訊
+和RandomForest(隨機森林)類似，但在建立iTree時，每次選擇劃分條件及劃分點時都是隨機的，而不是根據樣本內容或是樣本相關資訊
 
 在建立iTree的過程中，如果一些樣本很快就到達了leaf節點(即leaf到root的距離d很短)，那就很有可能是異常點。因為那些路徑d比較短的樣本，都是距離主要的樣本中心比較遠的點。因此可以透過計算樣本在所有樹中的平均路徑長度來尋找異常點
 
@@ -46,11 +46,11 @@ max_samples : 每棵樹中的樣本數量
   
 contamination : 設置樣本中異常
   
-max_features : 每顆樹特徵各樹或比例
+max_features : 每顆樹中特徵個數或比例
   
-random_state : 隨機數與random_seed作用是相同
+random_state : 隨機數與random_seed作用相同
   
-2. fit() : 擬和資料
+2. fit() : 擬合資料
 3. predict() : 預測資料
 ```python
 # fit the Model
