@@ -2,7 +2,7 @@
 
 https://scikit-learn.org/stable/auto_examples/applications/wikipedia_principal_eigenvector.html
 
-強調圖中頂點相對重要性的一種經典方法是計算鄰接矩陣的主要特徵向量，以便將每個特徵向量的分量值作為中心度分數分配給每個頂點：
+強調圖中節點相對重要性的一種經典方法是計算鄰接矩陣的主要特徵向量，以便將每個特徵向量的分量值作為中心性分數分配給每個節點：
 
 https://en.wikipedia.org/wiki/Eigenvector_centrality
 
@@ -54,10 +54,10 @@ for url, filename in resources:
         open(filename, 'wb').write(opener.read())
         print()
 ```
-## (三)重定向檔案
+## (三)函數設置
 
 
-```Transitive Closure```中文譯作遞移閉包，用來紀錄由一點能不能走到另一點的關係，如果能走到，則兩點之間以邊相連。
+
 
 ```python
 memory = Memory(cachedir=".")
@@ -74,7 +74,11 @@ SHORTNAME_SLICE = slice(DBPEDIA_RESOURCE_PREFIX_LEN + 1, -1)
 def short_name(nt_uri):
     ""移除 < and > URI 記號以及普遍 URI 開頭"""
     return nt_uri[SHORTNAME_SLICE]
+```
 
+```Transitive Closure```中文譯作遞移閉包，用來紀錄由一點能不能走到另一點的關係，如果能走到，則兩點之間以邊相連。
+
+```python
 def get_redirects(redirects_filename):
     """分析重定向後，建立出遞移閉包的圖"""
     redirects = {}
@@ -106,11 +110,19 @@ def get_redirects(redirects_filename):
 
     return redirects
 ```
-## (四)稀疏矩陣
+## (四)鄰接矩陣
+
 首先，先介紹何謂```稀疏矩陣```，對於一個矩陣而言，
 若數值為零的元素遠遠多於非零元素的個數，且非零元素分佈沒有規律時，這樣的矩陣被稱作稀疏矩陣。
-此函數提取鄰接的圖作為稀疏矩陣(sparse matrix)。
+此函數提取鄰接的圖作為稀疏矩陣(sparse matrix)，
+並使用稀疏矩陣作為鄰接矩陣。
 
+其中運用scipy的```sparse.lil_matrix```建立一個稀疏矩陣。
+```python
+ X = sparse.lil_matrix((len(index_map), len(index_map)), dtype=np.float32)
+ ```
+ 定義鄰接矩陣之函數:
+ 
 ```python
 def get_adjacency_matrix(redirects_filename, page_links_filename, limit=None):
     """Extract the adjacency graph as a scipy sparse matrix
@@ -167,7 +179,8 @@ names = {i: name for name, i in index_map.items()}
 ## (五)計算奇異向量
 
 
-
+使用```randomized_svd```計算SVD(奇異值分解)
+```python
 print("Computing the principal singular vectors using randomized_svd")
 t0 = time()
 U, s, V = randomized_svd(X, 5, n_iter=3)
@@ -178,12 +191,19 @@ print("done in %0.3fs" % (time() - t0))
 print("Top wikipedia pages according to principal singular vectors")
 pprint([names[i] for i in np.abs(U.T[0]).argsort()[-10:]])
 pprint([names[i] for i in np.abs(V[0]).argsort()[-10:]])
+```
+Output：
+
+
 
 
 ## (六)計算主要特徵向量之分數
 
+定義中心性分數(centrality scores)之函數，用Power 迭代法計算主要特徵向量。
+
+
 def centrality_scores(X, alpha=0.85, max_iter=100, tol=1e-10):
-    """Power iteration computation of the principal eigenvector
+    """用Power 迭代法計算主要特徵向量
 
     This method is also known as Google PageRank and the implementation
     is based on the one from the NetworkX project (BSD licensed too)
@@ -225,6 +245,8 @@ t0 = time()
 scores = centrality_scores(X, max_iter=100)
 print("done in %0.3fs" % (time() - t0))
 pprint([names[i] for i in np.abs(scores).argsort()[-10:]])
+
+
 
 
 ## (七)完整程式碼
