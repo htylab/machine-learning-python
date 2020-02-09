@@ -50,16 +50,16 @@ cmap_bold = ListedColormap(['darkorange', 'c', 'darkblue'])
 
 for weights in ['uniform', 'distance']:
     # we create an instance of Neighbours Classifier and fit the data.
-    clf = neighbors.KNeighborsClassifier(n_neighbors, weights=weights)
-    clf.fit(X, y)
+    clf = neighbors.KNeighborsClassifier(n_neighbors, weights=weights) # 使用NNC函式
+    clf.fit(X, y) # 擬合資料集
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].
-    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1 # 設定mesh x的大小邊界
+    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1 # 設定mesh y的大小邊界
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
                          np.arange(y_min, y_max, h))
-    Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = clf.predict(np.c_[xx.ravel(), yy.ravel()]) # 預測資料的分類
 
     # Put the result into a color plot
     Z = Z.reshape(xx.shape)
@@ -76,6 +76,8 @@ for weights in ['uniform', 'distance']:
 
 plt.show()
 ```
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Nearest%20Neighbors/sphx_glr_plot_classification_001.png)
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Nearest%20Neighbors/sphx_glr_plot_classification_002.png)
 ## (四)完整程式碼
 
 https://scikit-learn.org/stable/_downloads/fb5fbc2d9b876b776e016c37233e76fd/plot_classification.py
