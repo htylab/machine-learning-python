@@ -195,13 +195,16 @@ pprint([names[i] for i in np.abs(V[0]).argsort()[-10:]])
 Output：
 
 
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/wikipedia_principal_eigenvector/wikipedia_fig1.JPG) 
+
+
 
 
 ## (六)計算主要特徵向量之分數
 
 定義中心性分數(centrality scores)之函數，用Power 迭代法計算主要特徵向量。
 
-
+```python
 def centrality_scores(X, alpha=0.85, max_iter=100, tol=1e-10):
     """用Power 迭代法計算主要特徵向量
 
@@ -245,9 +248,13 @@ t0 = time()
 scores = centrality_scores(X, max_iter=100)
 print("done in %0.3fs" % (time() - t0))
 pprint([names[i] for i in np.abs(scores).argsort()[-10:]])
+```
 
 
+Output：
 
+
+![](https://github.com/JENNSHIUAN/machine-learning-python/blob/master/application/wikipedia_principal_eigenvector/wikipedia_fig2.JPG) 
 
 ## (七)完整程式碼
 Python source code:wikipedia_principal_eigenvector.py
