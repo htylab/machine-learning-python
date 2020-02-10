@@ -91,6 +91,7 @@ plot_dendrogram(model, truncate_mode='level', p=3)
 plt.xlabel("Number of points in node (or index of point if no parenthesis).")
 plt.show()
 ```
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Clustering/sphx_glr_plot_agglomerative_dendrogram_001.png)
 ## (四)完整程式碼
 
 ```python
