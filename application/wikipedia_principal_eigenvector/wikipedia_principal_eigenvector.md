@@ -57,25 +57,6 @@ for url, filename in resources:
 ## (三)函數設置
 
 
-
-
-```python
-memory = Memory(cachedir=".")
-
-def index(redirects, index_map, k):
-    """重定向之後，找到文章名稱的索引"""
-    k = redirects.get(k, k)
-    return index_map.setdefault(k, len(index_map))
-
-DBPEDIA_RESOURCE_PREFIX_LEN = len("http://dbpedia.org/resource/")
-SHORTNAME_SLICE = slice(DBPEDIA_RESOURCE_PREFIX_LEN + 1, -1)
-
-
-def short_name(nt_uri):
-    ""移除 < and > URI 記號以及普遍 URI 開頭"""
-    return nt_uri[SHORTNAME_SLICE]
-```
-
 ```Transitive Closure```中文譯作遞移閉包，用來紀錄由一點能不能走到另一點的關係，如果能走到，則兩點之間以邊相連。
 
 ```python
@@ -203,19 +184,15 @@ Output：
 ## (六)計算主要特徵向量之分數
 
 定義中心性分數(centrality scores)之函數，用Power 迭代法計算主要特徵向量。
+這個方法也適用於知名的```Google PageRank```上，並實施於NetworkX project(BSD授權條款)
+其版權：
+* Aric Hagberg <hagberg@lanl.gov>
+* Dan Schult <dschult@colgate.edu>
+* Pieter Swart <swart@lanl.gov>
 
 ```python
 def centrality_scores(X, alpha=0.85, max_iter=100, tol=1e-10):
-    """用Power 迭代法計算主要特徵向量
 
-    This method is also known as Google PageRank and the implementation
-    is based on the one from the NetworkX project (BSD licensed too)
-    with copyrights by:
-
-      Aric Hagberg <hagberg@lanl.gov>
-      Dan Schult <dschult@colgate.edu>
-      Pieter Swart <swart@lanl.gov>
-    """
     n = X.shape[0]
     X = X.copy()
     incoming_counts = np.asarray(X.sum(axis=1)).ravel()
@@ -310,7 +287,7 @@ memory = Memory(cachedir=".")
 
 
 def index(redirects, index_map, k):
-    """Find the index of an article name after redirect resolution"""
+    """重定向之後，找到文章名稱的索引"""
     k = redirects.get(k, k)
     return index_map.setdefault(k, len(index_map))
 
@@ -320,12 +297,12 @@ SHORTNAME_SLICE = slice(DBPEDIA_RESOURCE_PREFIX_LEN + 1, -1)
 
 
 def short_name(nt_uri):
-    """Remove the < and > URI markers and the common URI prefix"""
+    """移除 < and > URI 記號以及普遍 URI 開頭"""
     return nt_uri[SHORTNAME_SLICE]
 
 
 def get_redirects(redirects_filename):
-    """Parse the redirections and build a transitively closed map out of it"""
+    """分析重定向後，建立出遞移閉包的圖"""
     redirects = {}
     print("Parsing the NT redirect file")
     for l, line in enumerate(BZ2File(redirects_filename)):
@@ -337,7 +314,7 @@ def get_redirects(redirects_filename):
         if l % 1000000 == 0:
             print("[%s] line: %08d" % (datetime.now().isoformat(), l))
 
-    # compute the transitive closure
+    # 計算遞移閉包
     print("Computing the transitive closure of the redirect relation")
     for l, source in enumerate(redirects.keys()):
         transitive_target = None
@@ -399,7 +376,7 @@ def get_adjacency_matrix(redirects_filename, page_links_filename, limit=None):
     return X, redirects, index_map
 
 
-# stop after 5M links to make it possible to work in RAM
+# 為了能夠在RAM中工作，5M個連結後停止。
 X, redirects, index_map = get_adjacency_matrix(
     redirects_filename, page_links_filename, limit=5000000)
 names = {i: name for name, i in index_map.items()}
