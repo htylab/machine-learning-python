@@ -281,7 +281,7 @@ for url, filename in resources:
 
 
 # #############################################################################
-# Loading the redirect files
+# 讀取重定向檔案
 
 memory = Memory(cachedir=".")
 
