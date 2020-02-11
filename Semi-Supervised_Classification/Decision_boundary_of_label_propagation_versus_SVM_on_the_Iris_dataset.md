@@ -94,7 +94,7 @@ plt.suptitle("Unlabeled points are colored white", y=0.1)
 plt.show()
 ```
 * 顯示了即使只有少部分被標籤的數據，Label Propagation也能很好的學習產生decision boundary
-![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi_Supervised_Classification/plot_label_propagation_versus_svm_iris_001.png)
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi-Supervised_Classification/plot_label_propagation_versus_svm_iris_001.png)
 ## (四)完整程式碼
 
 https://scikit-learn.org/stable/_downloads/97a366ef6b2f7394d4eb409814bf4842/plot_label_propagation_versus_svm_iris.py
