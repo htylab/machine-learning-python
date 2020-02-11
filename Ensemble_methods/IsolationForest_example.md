@@ -11,9 +11,9 @@ IsolationForest是用於異常檢測的unsupervised learning(無監督學習)算
 
 ## (一)引入函式庫
 
-1. numpy : 產生陣列數值
-2. matplotlib.pyplot : 用來繪製影像
-3. sklearn.ensemble import IsolationForest : 匯入隔離森林算法
+* numpy : 產生陣列數值
+* matplotlib.pyplot : 用來繪製影像
+* sklearn.ensemble import IsolationForest : 匯入隔離森林算法
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -21,9 +21,9 @@ from sklearn.ensemble import IsolationForest
 ```
 ## (二)產生訓練樣本
 
-1. np.random.RandomState(seed) : 產生偽隨機數，當seed值相同時，產生的數值為一樣
-2. np.r_[] : 將數據沿第一個軸相連接
-3. rng.uniform() : 隨機數產生
+* np.random.RandomState(seed) : 產生偽隨機數，當seed值相同時，產生的數值為一樣
+* np.r_[] : 將數據沿第一個軸相連接
+* rng.uniform() : 隨機數產生
 ```python
 rng = np.random.RandomState(42)
 
@@ -38,20 +38,14 @@ X_outliers = rng.uniform(low=-4, high=4, size=(20, 2)) # 生成20筆新的異常
 ```
 ## (三)IsolationForest model
 
-1. IsolationForest(n_estimators=100, max_samples='auto', contamination='auto', max_features=1.0, bootstrap=False, n_jobs=None, behaviour='deprecated', random_state=None, verbose=0, warm_start=False)
-
-n_estimators : 森林中樹的棵樹
-  
-max_samples : 每棵樹中的樣本數量
-  
-contamination : 設置樣本中異常
-  
-max_features : 每顆樹中特徵個數或比例
-  
-random_state : 隨機數與random_seed作用相同
-  
-2. fit() : 擬合資料
-3. predict() : 預測資料
+* IsolationForest(n_estimators=100, max_samples='auto', contamination='auto', max_features=1.0, bootstrap=False, n_jobs=None, behaviour='deprecated', random_state=None, verbose=0, warm_start=False)
+1. n_estimators : 森林中樹的棵樹
+2. max_samples : 每棵樹中的樣本數量
+3. contamination : 設置樣本中異常
+4. max_features : 每顆樹中特徵個數或比例
+5. random_state : 隨機數與random_seed作用相同
+* fit() : 擬合資料
+* predict() : 預測資料
 ```python
 # fit the Model
 clf = IsolationForest(max_samples=100, random_state=rng)
@@ -62,11 +56,11 @@ y_pred_outliers = clf.predict(X_outliers)
 ```
 ## (四)繪製結果
 
-1. np.meshgrid() : 從給定的座標向量回傳座標矩陣
-2. np.linspace(start, stop, num) : 回傳指定間格內的數值
-3. numpy.c_[] : 將數據沿第二個軸相連接
-4. plt.contourf() : 繪製輪廓
-5. plt.scatter() : 繪製x與y的散點圖，其中標記大小和顏色不同
+* np.meshgrid() : 從給定的座標向量回傳座標矩陣
+* np.linspace(start, stop, num) : 回傳指定間格內的數值
+* numpy.c_[] : 將數據沿第二個軸相連接
+* plt.contourf() : 繪製輪廓
+* plt.scatter() : 繪製x與y的散點圖，其中標記大小和顏色不同
 最後用下面的程式將所有點繪製出來
 ```python
 xx, yy = np.meshgrid(np.linspace(-5, 5, 50), np.linspace(-5, 5, 50))
