@@ -128,6 +128,8 @@ plot_subfigure(X, Y, 4, "Without unlabeled samples + PCA", "pca")
 plt.subplots_adjust(.04, .02, .97, .94, .09, .2)
 plt.show()
 ```
+* 在圖中，“未標記樣本”並不意味著我們不知道標記（如在半監督學習中一樣），而是樣本根本沒有標記。
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Miscellaneous%20examples/sphx_glr_plot_multilabel_001.png)
 ## (五)完整程式碼
 https://scikit-learn.org/stable/_downloads/39d4a835d597f9ae7842ba4a877fd5b1/plot_multilabel.py
 ```python
