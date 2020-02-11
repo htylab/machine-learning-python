@@ -2,12 +2,10 @@
 https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_label_propagation_versus_svm_iris.html#sphx-glr-auto-examples-semi-supervised-plot-label-propagation-versus-svm-iris-py
 
 此範例是比較藉由Label Propagation(標籤傳播法)及SVM(支持向量機)對iris dataset(鳶尾花卉數據集)生成的decision boundary(決策邊界)
-
-Label Propagation屬於一種Semi-supervised learning(半監督學習)
+* Label Propagation屬於一種Semi-supervised learning(半監督學習)
 
 顯示了即使只有少部分被標籤的數據，Label Propagation也能很好的學習產生decision boundary
-
-![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi%20Supervised%20Classification/plot_label_propagation_versus_svm_iris_001.png)
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi_Supervised_Classification/plot_label_propagation_versus_svm_iris_001.png)
 ## (一)引入函式庫
 
 * numpy : 產生陣列數值
