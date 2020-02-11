@@ -7,10 +7,10 @@ NNC計算的基礎是「物以類聚」，換句話說，同類型的資料應�
 
 ## (一)引入函式庫
 
-1. numpy : 產生陣列數值
-2. matplotlib.pyplot : 用來繪製影像
-3. matplotlib.colors import ListedColormap : 匯入用來生成圖上的顏色表
-4. sklearn import neighbors, datasets : 匯入NNC及資料集
+* numpy : 產生陣列數值
+* matplotlib.pyplot : 用來繪製影像
+* matplotlib.colors import ListedColormap : 匯入用來生成圖上的顏色表
+* sklearn import neighbors, datasets : 匯入NNC及資料集
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -34,15 +34,11 @@ h = .02  # step size in the mesh
 ```
 ## (三)繪製結果圖
 
-1. neighbors.KNeighborsClassifier(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None, **kwargs)
-
-n_neighbors : 近鄰查詢的鄰居數
-
-weights : 用於預測的權重函數。'uniform' 每個點都被平均加權 'distance' 權重是點之間距離的倒數。在這種情況下，查詢點的近鄰比遠處的近鄰具有更大的影響
-
-algorithm{‘auto’, ‘ball_tree’, ‘kd_tree’, ‘brute’} : 用於計算近鄰的算法。
-
-2. np.meshgrid() : 從給定的座標向量回傳座標矩陣
+* neighbors.KNeighborsClassifier(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None, **kwargs)
+1. n_neighbors : 近鄰查詢的鄰居數
+2. weights : 用於預測的權重函數。'uniform' 每個點都被平均加權 'distance' 權重是點之間距離的倒數。在這種情況下，查詢點的近鄰比遠處的近鄰具有更大的影響
+3. algorithm{‘auto’, ‘ball_tree’, ‘kd_tree’, ‘brute’} : 用於計算近鄰的算法。
+* np.meshgrid() : 從給定的座標向量回傳座標矩陣
 ```python
 # Create color maps
 cmap_light = ListedColormap(['orange', 'cyan', 'cornflowerblue'])
@@ -76,9 +72,8 @@ for weights in ['uniform', 'distance']:
 
 plt.show()
 ```
-![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Nearest%20Neighbors/sphx_glr_plot_classification_001.png)
-![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Nearest%20Neighbors/sphx_glr_plot_classification_002.png)
-## (四)完整程式碼
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Nearest_Neighbors/sphx_glr_plot_classification_001.png)
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Nearest_Neighbors/sphx_glr_plot_classification_002.png)
 
 https://scikit-learn.org/stable/_downloads/fb5fbc2d9b876b776e016c37233e76fd/plot_classification.py
 ```python
