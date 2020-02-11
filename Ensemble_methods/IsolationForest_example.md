@@ -85,7 +85,7 @@ plt.legend([b1, b2, c],
            loc="upper left")
 plt.show()
 ```
-![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Ensemble%20methods/sphx_glr_plot_isolation_forest_001.png)
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Ensemble_methods/sphx_glr_plot_isolation_forest_001.png)
 ## (五)完整程式碼
 
 https://scikit-learn.org/stable/_downloads/a48f0894575e256740089d572cff3acd/plot_isolation_forest.py
