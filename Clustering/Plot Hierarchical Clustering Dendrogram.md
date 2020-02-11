@@ -93,7 +93,7 @@ plt.show()
 ```
 ![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Clustering/sphx_glr_plot_agglomerative_dendrogram_001.png)
 ## (四)完整程式碼
-
+https://scikit-learn.org/stable/_downloads/6c3126e55d97d68efdd8da229311ac00/plot_agglomerative_dendrogram.py
 ```python
 import numpy as np
 
