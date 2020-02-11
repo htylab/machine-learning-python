@@ -4,8 +4,6 @@ https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_label_propaga
 此範例是比較藉由Label Propagation(標籤傳播法)及SVM(支持向量機)對iris dataset(鳶尾花卉數據集)生成的decision boundary(決策邊界)
 * Label Propagation屬於一種Semi-supervised learning(半監督學習)
 
-顯示了即使只有少部分被標籤的數據，Label Propagation也能很好的學習產生decision boundary
-![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi_Supervised_Classification/plot_label_propagation_versus_svm_iris_001.png)
 ## (一)引入函式庫
 
 * numpy : 產生陣列數值
@@ -55,7 +53,7 @@ rbf_svc = (svm.SVC(kernel='rbf', gamma=.5).fit(X, y), y)
 
 * min()、max() : 決定x與y的範圍
 * np.meshgrid() : 從給定的座標向量回傳座標矩陣
-* 這裡分別是已x,y的最大、最小值加減1並以h=0.02的間隔來繪製
+* 這裡分別是以x,y的最大、最小值加減1並以h=0.02的間隔來繪製
 ```python
 x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
 y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
@@ -95,6 +93,8 @@ for i, (clf, y_train) in enumerate((ls30, ls50, ls100, rbf_svc)):
 plt.suptitle("Unlabeled points are colored white", y=0.1)
 plt.show()
 ```
+* 顯示了即使只有少部分被標籤的數據，Label Propagation也能很好的學習產生decision boundary
+![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Semi_Supervised_Classification/plot_label_propagation_versus_svm_iris_001.png)
 ## (四)完整程式碼
 
 https://scikit-learn.org/stable/_downloads/97a366ef6b2f7394d4eb409814bf4842/plot_label_propagation_versus_svm_iris.py
