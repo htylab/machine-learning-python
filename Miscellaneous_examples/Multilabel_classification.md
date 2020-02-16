@@ -9,6 +9,7 @@ Multi-Label(多標籤) vs Multi-Class(多分類) :
 範例 :
 -
 模擬multi-label document(多標籤檔案)的分類問題，數據集是依照下面的方式隨機生成的:
+
 1. pick the number of labels: n ~ Poisson(n_labels)
 2. n times, choose a class c: c ~ Multinomial(theta)
 3. pick the document length: k ~ Poisson(length)
@@ -21,6 +22,7 @@ Multi-Label(多標籤) vs Multi-Class(多分類) :
 透過上面的方法，剔除採樣的目的是為了確保n(label數)可以大於2，而且文件的長度不等於0。同樣，也排除已經選過的類別。備標註為2種類別的檔案會以雙重顏色的圈圈表示。
 
 為了進行可視化，藉由PCA (Principal Component Analysis 主成分分析) 和CCA (Canonical Correlation Analysis 典型相關分析) 找到前兩個主要成分將數據projecting(投影)後來執行分類。使用sklearn.multiclass.OneVsRestClassifier，metaclassifier(元分類器)使用兩個帶有線性內核的SVC來學習每個類別的discriminative model(判別模型)。
+
 * PCA用於執行unsupervised(無監督)的降維，而CCA用於執行supervised(監督)的降維。
 
 ## (一)引入函式庫
@@ -31,6 +33,7 @@ Multi-Label(多標籤) vs Multi-Class(多分類) :
 * sklearn.svm import SVC : 匯入Support Vector Classification
 * sklearn.decomposition import PCA : 匯入Principal Component Analysis
 * sklearn.cross_decomposition import CCA : 匯入Canonical Correlation Analysis
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -41,9 +44,11 @@ from sklearn.svm import SVC
 from sklearn.decomposition import PCA
 from sklearn.cross_decomposition import CCA
 ```
+
 ## (二)定義繪製hyperplane函式
 
 * np.linspace() : 回傳指定區間內的相同間隔的數字
+
 ```python
 def plot_hyperplane(clf, min_x, max_x, linestyle, label):
     # get the separating hyperplane
@@ -53,15 +58,22 @@ def plot_hyperplane(clf, min_x, max_x, linestyle, label):
     yy = a * xx - (clf.intercept_[0]) / w[1]
     plt.plot(xx, yy, linestyle, label=label)
 ```
+
 ## (三)定義繪製圖片函式
 
 * PCA(n_components=None, copy=True, whiten=False, svd_solver='auto', tol=0.0, iterated_power='auto', random_state=None)
+
 1. n_components : 要保留的成分數，此範例是保留2項
+
 * CCA(n_components=2, scale=True, max_iter=500, tol=1e-06, copy=True)
+
 1. n_components : 要保留的成分數，此範例是保留2項
 2. scale : 是否縮放數據
+
 * OneVsRestClassifier(estimator, n_jobs=None): 一對一（OvR）的多類/多標籤策略
+
 1. estimator : 估計對象，此範例使用SVC
+
 ```python
 def plot_subfigure(X, Y, subplot, title, transform):
     if transform == "pca":
@@ -108,6 +120,7 @@ def plot_subfigure(X, Y, subplot, title, transform):
 
 plt.figure(figsize=(8, 6))
 ```
+
 ## (四)呼叫函式並輸出圖片
 
 ```python
@@ -128,10 +141,15 @@ plot_subfigure(X, Y, 4, "Without unlabeled samples + PCA", "pca")
 plt.subplots_adjust(.04, .02, .97, .94, .09, .2)
 plt.show()
 ```
+
 * 在圖中，“未標記樣本”並不意味著我們不知道標記（如在半監督學習中一樣），而是樣本根本沒有標記。
+
 ![](https://github.com/sdgary56249128/machine-learning-python/blob/master/Miscellaneous_examples/sphx_glr_plot_multilabel_001.png)
+
 ## (五)完整程式碼
+
 https://scikit-learn.org/stable/_downloads/39d4a835d597f9ae7842ba4a877fd5b1/plot_multilabel.py
+
 ```python
 print(__doc__)
 
