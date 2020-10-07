@@ -1,6 +1,6 @@
-+<script>
- +MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
- +</script>
+<script>
+ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+ </script>
 ##分類法/範例一: Recognizing hand-written digits
 
 http://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html
