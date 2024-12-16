@@ -5,7 +5,7 @@
 
 本書原始資料在 Github 上公開，歡迎大家共同參與維護： [https://github.com/htylab/machine-learning-python](https://github.com/htylab/machine-learning-python)。
 
-歡迎參訪本實驗室： [https://ai.mrilab.org](https://ai.mrilab.org)。
+
 ## 本文件主要的版本發展
 
 ##  Scikit-learn 套件
